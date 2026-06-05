@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Award, Eye, X, ChevronLeft, ChevronRight, Sparkles, Calendar, Key, BadgeCheck } from 'lucide-react';
 
@@ -18,55 +18,7 @@ interface Certificate {
 const CERTIFICATES_DATA: Certificate[] = [
   { 
     id: '01', 
-    name: 'Lean Principles Webinar', 
-    category: 'Workshops & Training', 
-    src: 'Ecert 1.png', 
-    alt: 'Certificate of Appreciation for Lean Principles webinar participation',
-    issuer: 'University of Caloocan City - BSAIS',
-    date: 'November 30, 2022',
-    credentialId: 'N/A',
-    skills: ['Lean Principles', 'Operational Efficiency', 'Process Improvement', 'Career Strategy'],
-    signatories: ['Zenith Camu, CPA, DPA, PhD (Adviser)', 'Rose Ann L. Janer (Presidents/4C)']
-  },
-  { 
-    id: '02', 
-    name: 'Cyber Safe Learning (CLEP)', 
-    category: 'Information Security', 
-    src: 'Ecert 2.png', 
-    alt: 'Cyber Safe Learning for Education Project Certificate of Completion',
-    issuer: 'DICT, ILCDB, GoPhilippines & Microsoft',
-    date: 'September 9, 2022',
-    credentialId: 'N/A (Verified Program Completion)',
-    skills: ['Cyber Security', 'Online Learning Risks', 'Information Protection', 'Digital Literacy'],
-    signatories: ['Maria Lourdes Aquilizan (OIC Director IV)', 'Karl Leung (Chief Partnerships & Strategy Officer)']
-  },
-  { 
-    id: '03', 
-    name: 'Mock Interview (Relentless)', 
-    category: 'Professional Assessment', 
-    src: 'Ecert 3.png', 
-    alt: 'Mock Interview Certificate of Participation - Relentless Academic Conference',
-    issuer: 'NFJPIA-NCR (Northern Metro Manila Chapters)',
-    date: 'January 31, 2021',
-    credentialId: '2000-0011-0009',
-    skills: ['Professional Communications', 'Interview Techniques', 'Self Assessment', 'Accountancy Career Readiness'],
-    signatories: ['Jammiel Cherie Dahilan (Project Head)', 'Jyzzel Ozonia D. Encabo (Regional Council President)', 'Conrad Allan M. Alviz, CPA, CISA, CIA, CSRS (Regional Adviser)']
-  },
-  { 
-    id: '04', 
-    name: 'Financial Analyst POV (FACE)', 
-    category: 'Financial Analysis', 
-    src: 'Ecert 4.png', 
-    alt: 'F.A.C.E Webinar Certificate of Participation - Financial Analyst POV',
-    issuer: 'UCC-North BSAT/BSAIS',
-    date: 'December 4, 2022',
-    credentialId: 'N/A',
-    skills: ['Financial Analysis', 'Accounting System Workflows', 'Corporate Planning', 'Analytical Foresight'],
-    signatories: ['Bernadette Holanda (Guest Speaker)', 'Zenith C. Camu, CPA, DPA, PhD (Chair, BSAIS)']
-  },
-  { 
-    id: '05', 
-    name: 'Introduction to Bookkeeping', 
+    name: 'TESDA Module I - Introduction to Bookkeeping', 
     category: 'TESDA Course Certification', 
     src: 'Ecert 5.png', 
     alt: 'TESDA Course on Introduction to Bookkeeping Completion Certificate',
@@ -77,8 +29,8 @@ const CERTIFICATES_DATA: Certificate[] = [
     signatories: ['Computer-Generated (Verified Online Ledger)']
   },
   { 
-    id: '06', 
-    name: 'Journalizing Transactions', 
+    id: '02', 
+    name: 'TESDA Module II - Journalizing Transactions', 
     category: 'TESDA Course Certification', 
     src: 'Ecert 6.jpg', 
     alt: 'TESDA Course on Journalizing Transactions Completion Certificate',
@@ -89,8 +41,8 @@ const CERTIFICATES_DATA: Certificate[] = [
     signatories: ['Computer-Generated (Verified Online Ledger)']
   },
   { 
-    id: '07', 
-    name: 'Posting Transactions', 
+    id: '03', 
+    name: 'TESDA Module III - Posting Transactions', 
     category: 'TESDA Course Certification', 
     src: 'Ecert 7.png', 
     alt: 'TESDA Course on Posting Transactions Completion Certificate',
@@ -101,8 +53,8 @@ const CERTIFICATES_DATA: Certificate[] = [
     signatories: ['Computer-Generated (Verified Online Ledger)']
   },
   { 
-    id: '08', 
-    name: 'Preparing Trial Balance', 
+    id: '04', 
+    name: 'TESDA Module IV - Preparing Trial Balance', 
     category: 'TESDA Course Certification', 
     src: 'Ecert 8.png', 
     alt: 'TESDA Course on Preparing Trial Balance Completion Certificate',
@@ -113,8 +65,8 @@ const CERTIFICATES_DATA: Certificate[] = [
     signatories: ['Computer-Generated (Verified Online Ledger)']
   },
   { 
-    id: '09', 
-    name: 'Guidance 101: Remote to F2F', 
+    id: '05', 
+    name: 'Guidance 101', 
     category: 'Workshops & Training', 
     src: 'Ecert 9.png', 
     alt: 'Certificate of Participation for Guidance 101: Gradual Transition from Remote Learning to Face-to-Face Classes',
@@ -123,11 +75,145 @@ const CERTIFICATES_DATA: Certificate[] = [
     credentialId: 'N/A',
     skills: ['Adaptive Social Transition', 'Individual Counseling Basics', 'Mental Well-being Support', 'Academic Psychology Adaptation'],
     signatories: ['Ms. Luwalhati Briones, RGC, LPT', 'Mr. Christian Catapat (Resource Speaker)', 'Von Lester Alido (President, UCC Psychology Society)']
+  },
+  { 
+    id: '06', 
+    name: 'LEAN PRINCIPLES', 
+    category: 'Workshops & Training', 
+    src: 'Ecert 1.png', 
+    alt: 'Certificate of Appreciation for Lean Principles webinar participation',
+    issuer: 'University of Caloocan City - BSAIS',
+    date: 'November 30, 2022',
+    credentialId: 'N/A',
+    skills: ['Lean Principles', 'Operational Efficiency', 'Process Improvement', 'Career Strategy'],
+    signatories: ['Zenith Camu, CPA, DPA, PhD (Adviser)', 'Rose Ann L. Janer (Presidents/4C)']
+  },
+  { 
+    id: '07', 
+    name: 'CYBER SAFE LEARNING FOR EDUCATION PROJECT (CLEP)', 
+    category: 'Information Security', 
+    src: 'Ecert 2.png', 
+    alt: 'Cyber Safe Learning for Education Project Certificate of Completion',
+    issuer: 'DICT, ILCDB, GoPhilippines & Microsoft',
+    date: 'September 9, 2022',
+    credentialId: 'N/A (Verified Program Completion)',
+    skills: ['Cyber Security', 'Online Learning Risks', 'Information Protection', 'Digital Literacy'],
+    signatories: ['Maria Lourdes Aquilizan (OIC Director IV)', 'Karl Leung (Chief Partnerships & Strategy Officer)']
+  },
+  { 
+    id: '08', 
+    name: 'RELENTLESS: OUTLINING THE PARAMETER AND REACH THE POST', 
+    category: 'Professional Assessment', 
+    src: 'Ecert 3.png', 
+    alt: 'Mock Interview Certificate of Participation - Relentless Academic Conference',
+    issuer: 'NFJPIA-NCR (Northern Metro Manila Chapters)',
+    date: 'January 31, 2021',
+    credentialId: '2000-0011-0009',
+    skills: ['Professional Communications', 'Interview Techniques', 'Self Assessment', 'Accountancy Career Readiness'],
+    signatories: ['Jammiel Cherie Dahilan (Project Head)', 'Jyzzel Ozonia D. Encabo (Regional Council President)', 'Conrad Allan M. Alviz, CPA, CISA, CIA, CSRS (Regional Adviser)']
+  },
+  { 
+    id: '09', 
+    name: 'F.A.C.E (Fight, Aim, Conquer, Excel)', 
+    category: 'Financial Analysis', 
+    src: 'Ecert 4.png', 
+    alt: 'F.A.C.E Webinar Certificate of Participation - Financial Analyst POV',
+    issuer: 'UCC-North BSAT/BSAIS',
+    date: 'December 4, 2022',
+    credentialId: 'N/A',
+    skills: ['Financial Analysis', 'Accounting System Workflows', 'Corporate Planning', 'Analytical Foresight'],
+    signatories: ['Bernadette Holanda (Guest Speaker)', 'Zenith C. Camu, CPA, DPA, PhD (Chair, BSAIS)']
   }
 ];
 
 export default function Certificates() {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let W = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
+    let H = (canvas.height = canvas.parentElement?.clientHeight || window.innerHeight);
+
+    const handleResize = () => {
+      if (canvas && canvas.parentElement) {
+        W = canvas.width = canvas.parentElement.clientWidth;
+        H = canvas.height = canvas.parentElement.clientHeight;
+      }
+    };
+    window.addEventListener('resize', handleResize);
+
+    const symbols = [
+      '$', '₱', 'Σ', '%', '+', '-', '＝', 'DR', 'CR', 
+      '0.00', '1040', 'Balance', 'Tax', 'ROI', 'Ledger', 
+      'Audit', 'Equity', 'Assets', 'Profit', 'Debit', 'Credit'
+    ];
+
+    const particles = Array.from({ length: 40 }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      text: symbols[Math.floor(Math.random() * symbols.length)],
+      size: Math.random() * 11 + 9, // Font sizes from 9px to 20px
+      speed: Math.random() * 0.35 + 0.1, // Floating speed upwards
+      opacity: Math.random() * 0.10 + 0.03, // Soft subtle opacity
+      rotation: (Math.random() - 0.5) * 0.3,
+      rotSpeed: (Math.random() - 0.5) * 0.004
+    }));
+
+    const render = () => {
+      ctx.clearRect(0, 0, W, H);
+
+      // Faint bookkeeping ledger lines in the background
+      ctx.strokeStyle = 'rgba(192, 132, 252, 0.015)'; // Subtle purple vertical ledger dividers
+      ctx.lineWidth = 1;
+      for (let x = 80; x < W; x += 220) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, H);
+        ctx.stroke();
+      }
+      for (let y = 60; y < H; y += 110) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(W, y);
+        ctx.stroke();
+      }
+
+      // Draw floating accounting/bookkeeping elements
+      particles.forEach(p => {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.font = `600 ${p.size}px 'JetBrains Mono', monospace`;
+        ctx.fillStyle = `rgba(192, 132, 252, ${p.opacity})`;
+        ctx.fillText(p.text, -ctx.measureText(p.text).width / 2, p.size / 2);
+        ctx.restore();
+
+        // Float upwards
+        p.y -= p.speed;
+        p.rotation += p.rotSpeed;
+        if (p.y < -30) {
+          p.y = H + 30;
+          p.x = Math.random() * W;
+          p.opacity = Math.random() * 0.10 + 0.03;
+        }
+      });
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   const handleOpenLightbox = (index: number) => {
     setActiveIdx(index);
@@ -158,6 +244,7 @@ export default function Certificates() {
       {/* Absolute ambient lights */}
       <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[#ddb7ff]/5 rounded-full filter blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] bg-[#842bd2]/5 rounded-full filter blur-[100px] pointer-events-none" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
