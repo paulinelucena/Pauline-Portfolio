@@ -391,6 +391,236 @@ nav {
   .cert-grid { grid-template-columns:1fr; }
   .nav-right .cert-count { display:none; }
 }
+
+/* ── PREMIUM DIGITAL FALLBACKS ── */
+.cert-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #0f172a, #060b14);
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
+  text-align: center;
+  user-select: none;
+}
+.fallback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(221, 183, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.fallback-seal-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: auto 0;
+}
+.fallback-seal {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(221, 183, 255, 0.05);
+  border: 1px solid rgba(221, 183, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+  box-shadow: 0 0 15px rgba(221, 183, 255, 0.05);
+}
+.fallback-seal i {
+  color: var(--cyan);
+  font-size: 0.85rem;
+}
+.fallback-type {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+.fallback-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 3px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 200px;
+}
+.fallback-recipient {
+  font-size: 7px;
+  color: rgba(207, 194, 214, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+.fallback-name {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  text-decoration-color: rgba(221, 183, 255, 0.4);
+  text-underline-offset: 2px;
+}
+.fallback-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  color: rgba(207, 194, 214, 0.4);
+  border-top: 1px solid rgba(221, 183, 255, 0.05);
+  padding-top: 6px;
+}
+.fallback-footer-left { text-align: left; }
+.fallback-footer-right { text-align: right; }
+.fallback-issuer {
+  color: rgba(221, 183, 255, 0.6);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+.fallback-date {
+  color: rgba(207, 194, 214, 0.6);
+  font-weight: 600;
+}
+
+/* ── LIGHTBOX DIGITAL FALLBACK ── */
+.lightbox-fallback {
+  width: 100%;
+  aspect-ratio: 1.414 / 1;
+  max-width: 820px;
+  max-height: 72vh;
+  background: linear-gradient(180deg, #0f172a, #040810);
+  border: 2px solid rgba(221, 183, 255, 0.2);
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.2rem;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  box-shadow: inset 0 0 80px rgba(132, 43, 210, 0.1);
+}
+.lb-fallback-corner-tl { position: absolute; top: 1rem; left: 1rem; width: 1.5rem; height: 1.5rem; border-top: 1px solid rgba(221, 183, 255, 0.4); border-left: 1px solid rgba(221, 183, 255, 0.4); }
+.lb-fallback-corner-tr { position: absolute; top: 1rem; right: 1rem; width: 1.5rem; height: 1.5rem; border-top: 1px solid rgba(221, 183, 255, 0.4); border-right: 1px solid rgba(221, 183, 255, 0.4); }
+.lb-fallback-corner-bl { position: absolute; bottom: 1rem; left: 1rem; width: 1.5rem; height: 1.5rem; border-bottom: 1px solid rgba(221, 183, 255, 0.4); border-left: 1px solid rgba(221, 183, 255, 0.4); }
+.lb-fallback-corner-br { position: absolute; bottom: 1rem; right: 1rem; width: 1.5rem; height: 1.5rem; border-bottom: 1px solid rgba(221, 183, 255, 0.4); border-right: 1px solid rgba(221, 183, 255, 0.4); }
+
+.lb-fb-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.lb-fb-header-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(221, 183, 255, 0.8);
+  letter-spacing: 4px;
+}
+.lb-fb-header-line {
+  height: 2px;
+  width: 4rem;
+  background: linear-gradient(90deg, transparent, rgba(221, 183, 255, 0.4), transparent);
+  margin-top: 4px;
+}
+.lb-fb-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: auto 0;
+}
+.lb-fb-intro {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  color: rgba(207, 194, 214, 0.7);
+  letter-spacing: 0.5px;
+}
+.lb-fb-recipient {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #dae2fd, #ddb7ff, #dae2fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  margin: 0.4rem 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(221, 183, 255, 0.3);
+  text-underline-offset: 6px;
+}
+.lb-fb-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  max-width: 580px;
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(221, 183, 255, 0.1);
+  border-radius: 6px;
+}
+.lb-fb-cat {
+  font-family: var(--font-display);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: rgba(221, 183, 255, 0.1);
+  color: var(--cyan);
+  padding: 0.2rem 0.7rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(221, 183, 255, 0.2);
+}
+.lb-fb-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  border-top: 1px solid rgba(221, 183, 255, 0.15);
+  padding-top: 1rem;
+  text-align: left;
+}
+.lb-fb-footer-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(207, 194, 214, 0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.lb-fb-footer-val {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(221, 183, 255, 0.8);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
 </style>
 </head>
 <body>
@@ -409,7 +639,7 @@ nav {
     <div class="nav-logo"><div class="nav-dot"></div>PAULINE.L</div>
   </div>
   <div class="nav-right">
-    <div class="cert-count">9 Certificates Earned</div>
+    <div class="cert-count">8 Certificates Earned</div>
   </div>
 </nav>
 
@@ -435,108 +665,304 @@ nav {
 
     <div class="cert-card" onclick="openLightbox(0)">
       <div class="img-wrap">
-        <img src="Ecert 1.png" alt="Certificate 1" loading="lazy">
+        <img src="Ecert 1.png" alt="Lean Principles: Crafting Success Webinar" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">Credential</div>
+            <div class="fallback-title">Lean Principles Webinar</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">University of Caloocan City</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">Nov 30, 2022</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">01</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 1</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Lean Principles Webinar</div><div class="cert-sub">Workshops &amp; Training</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
 
     <div class="cert-card" onclick="openLightbox(1)">
       <div class="img-wrap">
-        <img src="Ecert 2.png" alt="Certificate 2" loading="lazy">
+        <img src="Ecert 2.png" alt="Cyber Safe Learning (CLEP)" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">Credential</div>
+            <div class="fallback-title">Cyber Safe Learning (CLEP)</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">DICT, Microsoft Project</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">Sept 9, 2022</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">02</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 2</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Cyber Safe Learning (CLEP)</div><div class="cert-sub">Information Security</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
 
     <div class="cert-card" onclick="openLightbox(2)">
       <div class="img-wrap">
-        <img src="Ecert 3.png" alt="Certificate 3" loading="lazy">
+        <img src="Ecert 3.png" alt="Mock Interview (Relentless)" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">Credential</div>
+            <div class="fallback-title">Mock Interview (Relentless)</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">NFJPIA-NCR Chapters</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">Jan 31, 2021</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">03</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 3</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Mock Interview (Relentless)</div><div class="cert-sub">Professional Assessment</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
 
     <div class="cert-card" onclick="openLightbox(3)">
       <div class="img-wrap">
-        <img src="Ecert 4.png" alt="Certificate 4" loading="lazy">
+        <img src="Ecert 4.png" alt="Financial Analyst POV (FACE)" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">Credential</div>
+            <div class="fallback-title">Financial Analyst POV (FACE)</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">UCC-North BSAT/BSAIS</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">Dec 4, 2022</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">04</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 4</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Financial Analyst POV (FACE)</div><div class="cert-sub">Financial Analysis</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
 
     <div class="cert-card" onclick="openLightbox(4)">
       <div class="img-wrap">
-        <img src="Ecert 5.png" alt="Certificate 5" loading="lazy">
+        <img src="Ecert 5.png" alt="Introduction to Bookkeeping" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">TESDA COMPLETED</div>
+            <div class="fallback-title">Introduction to Bookkeeping</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">TESDA National Institute</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">May 19, 2026</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">05</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 5</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Introduction to Bookkeeping</div><div class="cert-sub">TESDA Course Certification</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
 
     <div class="cert-card" onclick="openLightbox(5)">
       <div class="img-wrap">
-        <img src="Ecert 6.jpg" alt="Certificate 6" loading="lazy">
+        <img src="Ecert 6.jpg" alt="Journalizing Transactions" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">TESDA COMPLETED</div>
+            <div class="fallback-title">Journalizing Transactions</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">TESDA National Institute</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">May 27, 2026</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">06</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 6</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Journalizing Transactions</div><div class="cert-sub">TESDA Course Certification</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
 
     <div class="cert-card" onclick="openLightbox(6)">
       <div class="img-wrap">
-        <img src="Ecert 7.png" alt="Certificate 7" loading="lazy">
+        <img src="Ecert 7.png" alt="Posting Transactions" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">TESDA COMPLETED</div>
+            <div class="fallback-title">Posting Transactions</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">TESDA National Institute</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">May 29, 2026</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">07</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 7</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Posting Transactions</div><div class="cert-sub">TESDA Course Certification</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
 
     <div class="cert-card" onclick="openLightbox(7)">
       <div class="img-wrap">
-        <img src="Ecert 8.png" alt="Certificate 8" loading="lazy">
+        <img src="Ecert 8.png" alt="Preparing Trial Balance" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">TESDA COMPLETED</div>
+            <div class="fallback-title">Preparing Trial Balance</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">TESDA National Institute</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">June 1, 2026</div>
+            </div>
+          </div>
+        </div>
+
         <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
         <div class="card-tag">08</div>
       </div>
       <div class="card-footer">
-        <div><div class="cert-name">Certificate 8</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
-        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-      </div>
-    </div>
-
-    <div class="cert-card" onclick="openLightbox(8)">
-      <div class="img-wrap">
-        <img src="Ecert 9.JPG" alt="Certificate 9" loading="lazy">
-        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
-        <div class="card-tag">09</div>
-      </div>
-      <div class="card-footer">
-        <div><div class="cert-name">Certificate 9</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div><div class="cert-name">Preparing Trial Balance</div><div class="cert-sub">TESDA Course Certification</div></div>
         <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
@@ -556,10 +982,41 @@ nav {
   <div class="lb-backdrop" onclick="closeLightbox()"></div>
   <div class="lb-content">
     <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-    <img class="lb-img" id="lbImg" src="" alt="Certificate">
+    
+    <img class="lb-img" id="lbImg" src="" alt="Certificate" onerror="handleLightboxError(this)">
+
+    <!-- Lightbox Fallback -->
+    <div class="lightbox-fallback" id="lbFallback">
+      <div class="lb-fallback-corner-tl"></div>
+      <div class="lb-fallback-corner-tr"></div>
+      <div class="lb-fallback-corner-bl"></div>
+      <div class="lb-fallback-corner-br"></div>
+      <div class="lb-fb-header">
+        <div class="lb-fb-header-text">Verified Digital Credential</div>
+        <div class="lb-fb-header-line"></div>
+      </div>
+      <div class="lb-fb-body">
+        <span class="lb-fb-intro">This digital ledger record verifies that</span>
+        <p class="lb-fb-recipient">Pauline Lucena</p>
+        <span class="lb-fb-intro">has successfully qualified for and completed</span>
+        <h3 class="lb-fb-title" id="lbFallbackTitle">Course Title</h3>
+        <p class="lb-fb-cat" id="lbFallbackCat">Category</p>
+      </div>
+      <div class="lb-fb-footer">
+        <div>
+          <div class="lb-fb-footer-label">AUTHORIZED ISSUER</div>
+          <div class="lb-fb-footer-val" id="lbFallbackIssuer">Issuer Name</div>
+        </div>
+        <div style="text-align: right;">
+          <div class="lb-fb-footer-label">DATE VERIFIED</div>
+          <div class="lb-fb-footer-val" id="lbFallbackDate">Date</div>
+        </div>
+      </div>
+    </div>
+
     <div class="lb-nav">
       <button class="lb-nav-btn" onclick="navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
-      <span class="lb-counter" id="lbCounter">1 / 9</span>
+      <span class="lb-counter" id="lbCounter">1 / 8</span>
       <button class="lb-nav-btn" onclick="navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
@@ -654,21 +1111,93 @@ function loop() {
 }
 loop();
 
+// ── ERROR HANDLERS ──
+function handleImageError(img) {
+  img.style.display = 'none';
+  const fallback = img.nextElementSibling;
+  if (fallback) {
+    fallback.style.display = 'flex';
+  }
+}
+
+function handleLightboxError(img) {
+  img.style.display = 'none';
+  const fallback = document.getElementById('lbFallback');
+  if (fallback) {
+    fallback.style.display = 'flex';
+  }
+}
+
 // ── LIGHTBOX ──
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbCounter = document.getElementById('lbCounter');
 
 const images = [
-  { src:'Ecert 1.png', alt:'Certificate 1' },
-  { src:'Ecert 2.png', alt:'Certificate 2' },
-  { src:'Ecert 3.png', alt:'Certificate 3' },
-  { src:'Ecert 4.png', alt:'Certificate 4' },
-  { src:'Ecert 5.png', alt:'Certificate 5' },
-  { src:'Ecert 6.jpg', alt:'Certificate 6' },
-  { src:'Ecert 7.png', alt:'Certificate 7' },
-  { src:'Ecert 8.png', alt:'Certificate 8' },
-  { src:'Ecert 9.JPG', alt:'Certificate 9' },
+  { 
+    src: 'Ecert 1.png', 
+    name: 'Lean Principles Webinar', 
+    category: 'Workshops & Training', 
+    alt: 'Certificate of Appreciation for Lean Principles webinar participation',
+    issuer: 'University of Caloocan City - BSAIS',
+    date: 'November 30, 2022'
+  },
+  { 
+    src: 'Ecert 2.png', 
+    name: 'Cyber Safe Learning (CLEP)', 
+    category: 'Information Security', 
+    alt: 'Cyber Safe Learning for Education Project Certificate of Completion',
+    issuer: 'DICT, ILCDB, GoPhilippines & Microsoft',
+    date: 'September 9, 2022'
+  },
+  { 
+    src: 'Ecert 3.png', 
+    name: 'Mock Interview (Relentless)', 
+    category: 'Professional Assessment', 
+    alt: 'Mock Interview Certificate of Participation - Relentless Academic Conference',
+    issuer: 'NFJPIA-NCR Chapters',
+    date: 'January 31, 2021'
+  },
+  { 
+    src: 'Ecert 4.png', 
+    name: 'Financial Analyst POV (FACE)', 
+    category: 'Financial Analysis', 
+    alt: 'F.A.C.E Webinar Certificate of Participation - Financial Analyst POV',
+    issuer: 'UCC-North BSAT/BSAIS',
+    date: 'December 4, 2022'
+  },
+  { 
+    src: 'Ecert 5.png', 
+    name: 'Introduction to Bookkeeping', 
+    category: 'TESDA Course Certification', 
+    alt: 'TESDA Course on Introduction to Bookkeeping Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'May 19, 2026'
+  },
+  { 
+    src: 'Ecert 6.jpg', 
+    name: 'Journalizing Transactions', 
+    category: 'TESDA Course Certification', 
+    alt: 'TESDA Course on Journalizing Transactions Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'May 27, 2026'
+  },
+  { 
+    src: 'Ecert 7.png', 
+    name: 'Posting Transactions', 
+    category: 'TESDA Course Certification', 
+    alt: 'TESDA Course on Posting Transactions Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'May 29, 2026'
+  },
+  { 
+    src: 'Ecert 8.png', 
+    name: 'Preparing Trial Balance', 
+    category: 'TESDA Course Certification', 
+    alt: 'TESDA Course on Preparing Trial Balance Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'June 1, 2026'
+  }
 ];
 
 let current = 0;
@@ -690,13 +1219,34 @@ function navigateLightbox(dir) {
 function updateLightbox() {
   lbImg.style.opacity = '0';
   lbImg.style.transform = 'scale(0.96)';
+  
+  const fallback = document.getElementById('lbFallback');
+  if (fallback) {
+    fallback.style.opacity = '0';
+    fallback.style.transform = 'scale(0.96)';
+    fallback.style.display = 'none';
+  }
+  
   setTimeout(() => {
+    lbImg.style.display = 'block';
     lbImg.src = images[current].src;
     lbImg.alt = images[current].alt;
+    
+    document.getElementById('lbFallbackTitle').textContent = images[current].name;
+    document.getElementById('lbFallbackCat').textContent = "Category: " + images[current].category;
+    document.getElementById('lbFallbackIssuer').textContent = images[current].issuer;
+    document.getElementById('lbFallbackDate').textContent = images[current].date;
+    
     lbCounter.textContent = `${current + 1} / ${images.length}`;
+    
     lbImg.style.transition = 'opacity 0.3s, transform 0.3s';
     lbImg.style.opacity = '1';
     lbImg.style.transform = 'scale(1)';
+    if (fallback) {
+      fallback.style.transition = 'opacity 0.3s, transform 0.3s';
+      fallback.style.opacity = '1';
+      fallback.style.transform = 'scale(1)';
+    }
   }, 120);
 }
 

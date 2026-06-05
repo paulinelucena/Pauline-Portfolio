@@ -8,18 +8,83 @@ interface Certificate {
   category: string;
   src: string;
   alt: string;
+  issuer?: string;
+  date?: string;
 }
 
 const CERTIFICATES_DATA: Certificate[] = [
-  { id: '01', name: 'Certificate 1', category: 'Achievement & Recognition', src: 'Ecert 1.png', alt: 'Certificate 1' },
-  { id: '02', name: 'Certificate 2', category: 'Achievement & Recognition', src: 'Ecert 2.png', alt: 'Certificate 2' },
-  { id: '03', name: 'Certificate 3', category: 'Achievement & Recognition', src: 'Ecert 3.png', alt: 'Certificate 3' },
-  { id: '04', name: 'Certificate 4', category: 'Achievement & Recognition', src: 'Ecert 4.png', alt: 'Certificate 4' },
-  { id: '05', name: 'Certificate 5', category: 'Achievement & Recognition', src: 'Ecert 5.png', alt: 'Certificate 5' },
-  { id: '06', name: 'Certificate 6', category: 'Achievement & Recognition', src: 'Ecert 6.jpg', alt: 'Certificate 6' },
-  { id: '07', name: 'Certificate 7', category: 'Achievement & Recognition', src: 'Ecert 7.png', alt: 'Certificate 7' },
-  { id: '08', name: 'Certificate 8', category: 'Achievement & Recognition', src: 'Ecert 8.png', alt: 'Certificate 8' },
-  { id: '09', name: 'Certificate 9', category: 'Achievement & Recognition', src: 'Ecert 9.JPG', alt: 'Certificate 9' },
+  { 
+    id: '01', 
+    name: 'Lean Principles Webinar', 
+    category: 'Workshops & Training', 
+    src: 'Ecert 1.png', 
+    alt: 'Certificate of Appreciation for Lean Principles webinar participation',
+    issuer: 'University of Caloocan City - BSAIS',
+    date: 'November 30, 2022'
+  },
+  { 
+    id: '02', 
+    name: 'Cyber Safe Learning (CLEP)', 
+    category: 'Information Security', 
+    src: 'Ecert 2.png', 
+    alt: 'Cyber Safe Learning for Education Project Certificate of Completion',
+    issuer: 'DICT, ILCDB, GoPhilippines & Microsoft',
+    date: 'September 9, 2022'
+  },
+  { 
+    id: '03', 
+    name: 'Mock Interview (Relentless)', 
+    category: 'Professional Assessment', 
+    src: 'Ecert 3.png', 
+    alt: 'Mock Interview Certificate of Participation - Relentless Academic Conference',
+    issuer: 'NFJPIA-NCR (Northern Metro Manila Chapters)',
+    date: 'January 31, 2021'
+  },
+  { 
+    id: '04', 
+    name: 'Financial Analyst POV (FACE)', 
+    category: 'Financial Analysis', 
+    src: 'Ecert 4.png', 
+    alt: 'F.A.C.E Webinar Certificate of Participation - Financial Analyst POV',
+    issuer: 'UCC-North BSAT/BSAIS',
+    date: 'December 4, 2022'
+  },
+  { 
+    id: '05', 
+    name: 'Introduction to Bookkeeping', 
+    category: 'TESDA Course Certification', 
+    src: 'Ecert 5.png', 
+    alt: 'TESDA Course on Introduction to Bookkeeping Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'May 19, 2026'
+  },
+  { 
+    id: '06', 
+    name: 'Journalizing Transactions', 
+    category: 'TESDA Course Certification', 
+    src: 'Ecert 6.jpg', 
+    alt: 'TESDA Course on Journalizing Transactions Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'May 27, 2026'
+  },
+  { 
+    id: '07', 
+    name: 'Posting Transactions', 
+    category: 'TESDA Course Certification', 
+    src: 'Ecert 7.png', 
+    alt: 'TESDA Course on Posting Transactions Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'May 29, 2026'
+  },
+  { 
+    id: '08', 
+    name: 'Preparing Trial Balance', 
+    category: 'TESDA Course Certification', 
+    src: 'Ecert 8.png', 
+    alt: 'TESDA Course on Preparing Trial Balance Completion Certificate',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'June 1, 2026'
+  }
 ];
 
 export default function Certificates() {
@@ -110,16 +175,52 @@ export default function Certificates() {
                     // Fallback visual indicator in case of local server missing asset issues
                     e.currentTarget.style.display = 'none';
                     const sib = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (sib) sib.style.opacity = '1';
+                    if (sib) {
+                      sib.style.display = 'flex';
+                      sib.style.opacity = '1';
+                    }
                   }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 saturate-85 group-hover:brightness-100 group-hover:saturate-100"
                 />
 
                 {/* Simulated Beautiful Document Icon Placeholder for missing file error prevention */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#070d18] text-[#cfc2d6]/30 hidden p-6 text-center border-b border-[#4d4354]">
-                  <Award size={48} className="text-[#ddb7ff]/20 mb-2" />
-                  <span className="text-xs font-semibold uppercase tracking-wider">{cert.name}</span>
-                  <span className="text-[10px] mt-1 text-[#cfc2d6]/40">{cert.category}</span>
+                <div className="absolute inset-0 flex-col items-center justify-between bg-gradient-to-b from-[#0f172a] to-[#060b14] text-[#dae2fd] hidden p-5 text-center border-b border-[#4d4354] select-none">
+                  {/* Certificate Top Header */}
+                  <div className="flex justify-between items-center w-full text-[8px] font-mono text-[#ddb7ff]/60 uppercase tracking-wider">
+                    <span>Digital Ledger</span>
+                    <span className="flex items-center gap-1"><Award size={8} /> Verified</span>
+                  </div>
+
+                  {/* Creative Seal and Title decoration */}
+                  <div className="flex flex-col items-center gap-1 my-auto">
+                    <div className="w-9 h-9 rounded-full bg-[#ddb7ff]/5 border border-[#ddb7ff]/20 flex items-center justify-center mb-0.5 shadow-[0_0_15px_rgba(221,183,255,0.05)]">
+                      <Award size={16} className="text-[#ddb7ff] opacity-80" />
+                    </div>
+                    <h4 className="text-[8px] font-mono font-bold tracking-[3px] uppercase text-[#ddb7ff]">
+                      {cert.category.includes('TESDA') ? 'CERTIFICATE OF COMPLETION' : 'CREDENTIAL'}
+                    </h4>
+                    <p className="text-[10px] font-bold text-[#dae2fd] line-clamp-2 max-w-[200px] mt-1 leading-tight uppercase font-sans tracking-tight">
+                      {cert.name}
+                    </p>
+                    <span className="text-[7px] text-[#cfc2d6]/50 uppercase tracking-widest mt-1 block">
+                      Presented to:
+                    </span>
+                    <span className="text-[9px] font-bold text-[#dae2fd] tracking-wide underline decoration-[#ddb7ff]/40 underline-offset-2">
+                      Pauline Lucena
+                    </span>
+                  </div>
+
+                  {/* Footer details of the certificate */}
+                  <div className="w-full flex justify-between items-end text-[7.5px] font-mono text-[#cfc2d6]/40 border-t border-[#4d4354]/30 pt-1.5 shrink-0">
+                    <div className="text-left">
+                      <span>ISSUER:</span>
+                      <p className="text-[#ddb7ff]/60 font-semibold truncate max-w-[120px] uppercase">{cert.issuer}</p>
+                    </div>
+                    <div className="text-right">
+                      <span>DATE:</span>
+                      <p className="text-[#dae2fd]/60 font-semibold uppercase">{cert.date}</p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* View Overlay */}
@@ -189,23 +290,60 @@ export default function Certificates() {
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     const sib = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (sib) sib.style.opacity = '1';
+                    if (sib) {
+                      sib.style.display = 'flex';
+                      sib.style.opacity = '1';
+                    }
                   }}
                   className="max-h-[72vh] w-full object-contain mx-auto rounded-lg"
                 />
 
                 {/* Simulated Document Preview Fallback */}
-                <div className="aspect-[4/3] max-h-[72vh] w-full bg-[#070d18] text-[#cfc2d6]/50 hidden flex-col items-center justify-center rounded-lg p-12 text-center">
-                  <Award size={80} className="text-[#ddb7ff] opacity-40 mb-4 animate-pulse" />
-                  <h4 className="text-lg font-bold text-[#dae2fd] uppercase tracking-wider mb-2">
-                    {CERTIFICATES_DATA[activeIdx].name}
-                  </h4>
-                  <p className="text-sm font-mono text-[#cfc2d6]/60 uppercase tracking-widest">
-                    {CERTIFICATES_DATA[activeIdx].category}
-                  </p>
-                  <p className="text-xs text-[#cfc2d6]/40 mt-8 max-w-sm">
-                    Verified Credential No. {CERTIFICATES_DATA[activeIdx].id} - Interactive verification layer fully enabled.
-                  </p>
+                <div className="aspect-[1.414/1] max-h-[72vh] w-full bg-gradient-to-b from-[#0f172a] to-[#040810] text-[#dae2fd] hidden flex-col items-center justify-between rounded-lg p-5 sm:p-10 text-center border-2 border-[#ddb7ff]/20 relative select-none shadow-[inset_0_0_80px_rgba(132,43,210,0.1)] overflow-hidden">
+                  {/* Decorative corner borders */}
+                  <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-[#ddb7ff]/40" />
+                  <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-[#ddb7ff]/40" />
+                  <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-[#ddb7ff]/40" />
+                  <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-[#ddb7ff]/40" />
+
+                  {/* Header Decoration */}
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="text-[10px] font-mono uppercase text-[#ddb7ff]/80 tracking-[4px]">
+                      Verified Digital Credential
+                    </div>
+                    <div className="h-0.5 w-16 bg-gradient-to-r from-transparent via-[#ddb7ff]/40 to-transparent mt-1" />
+                  </div>
+
+                  {/* Certificate Body text */}
+                  <div className="flex flex-col items-center gap-2 my-auto">
+                    <span className="text-xs sm:text-sm font-serif italic text-[#cfc2d6]/70 tracking-wide mt-2">
+                      This digital ledger record verifies that
+                    </span>
+                    <p className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#dae2fd] via-[#ddb7ff] to-[#dae2fd] tracking-tight uppercase my-2 underline decoration-[#ddb7ff]/30 underline-offset-8">
+                      Pauline Lucena
+                    </p>
+                    <span className="text-xs sm:text-sm font-serif italic text-[#cfc2d6]/70 tracking-wide">
+                      has successfully qualified for and completed
+                    </span>
+                    <h3 className="text-sm sm:text-2xl font-extrabold text-[#dae2fd] uppercase tracking-wide max-w-xl my-3 px-4 py-2 bg-[#ffffff]/2 rounded-lg border border-[#ddb7ff]/10">
+                      {CERTIFICATES_DATA[activeIdx].name}
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-[#cfc2d6]/60 tracking-widest uppercase bg-[#ddb7ff]/10 text-[#ddb7ff] py-1 px-3.5 rounded-full border border-[#ddb7ff]/20">
+                      Category: {CERTIFICATES_DATA[activeIdx].category}
+                    </p>
+                  </div>
+
+                  {/* Signature and Issuer Footers */}
+                  <div className="grid grid-cols-2 w-full border-t border-[#4d4354]/20 pt-4 text-left">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[9px] font-mono uppercase text-[#cfc2d6]/40 tracking-wider">AUTHORIZED ISSUER</span>
+                      <p className="text-xs font-bold text-[#ddb7ff]/80 uppercase truncate max-w-[250px]">{CERTIFICATES_DATA[activeIdx].issuer}</p>
+                    </div>
+                    <div className="flex flex-col gap-1 text-right">
+                      <span className="text-[9px] font-mono uppercase text-[#cfc2d6]/40 tracking-wider">DATE VERIFIED</span>
+                      <p className="text-xs font-bold text-[#dae2fd]/85 uppercase">{CERTIFICATES_DATA[activeIdx].date}</p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
