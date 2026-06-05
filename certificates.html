@@ -306,7 +306,7 @@ nav {
 .lightbox {
   position:fixed; inset:0; z-index:9999;
   display:flex; align-items:center; justify-content:center;
-  padding:2rem;
+  padding:1rem;
   opacity:0; pointer-events:none;
   transition:opacity 0.35s;
 }
@@ -320,19 +320,255 @@ nav {
 
 .lb-content {
   position:relative; z-index:1;
-  display:flex; flex-direction:column; align-items:center; gap:1.5rem;
+  display:flex; flex-direction:column; align-items:center; gap:1.2rem;
   transform:scale(0.92);
   transition:transform 0.4s var(--ease-out);
+  width: 100%;
+  max-width: 1140px;
 }
 .lightbox.open .lb-content { transform:scale(1); }
 
+/* ── SPLIT LIGHTBOX LAYOUT ── */
+.lb-panel-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  background: #0b1326;
+  border: 1px solid var(--border-bright);
+  border-radius: 16px;
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 80px var(--cyan-glow);
+  box-sizing: border-box;
+}
+
+.lb-panel-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(221, 183, 255, 0.1);
+  padding: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 420px;
+}
+
 .lb-img {
-  max-width:min(92vw, 960px);
-  max-height:78vh;
-  border-radius:12px;
-  border:1px solid var(--border-bright);
-  box-shadow:0 40px 100px rgba(0,0,0,0.6), 0 0 80px var(--cyan-glow);
-  object-fit:contain;
+  max-width: 100%;
+  max-height: 62vh;
+  border-radius: 8px;
+  border: none;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+.lb-panel-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  border-left: 1px solid rgba(221, 183, 255, 0.1);
+  padding-left: 2rem;
+  box-sizing: border-box;
+}
+
+.lb-meta-header {
+  margin-bottom: 1.2rem;
+}
+
+.lb-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  background: rgba(221, 183, 255, 0.08);
+  border: 1px solid rgba(221, 183, 255, 0.15);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+
+.lb-meta-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.lb-meta-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin: 0.2rem 0 0 0;
+}
+
+.lb-meta-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.lb-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.lb-detail-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(221, 183, 255, 0.05);
+  border: 1px solid rgba(221, 183, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.lb-detail-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.lb-detail-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  margin-bottom: 2px;
+}
+
+.lb-detail-val {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.lb-meta-code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--cyan);
+  background: rgba(221, 183, 255, 0.1);
+  border: 1px solid rgba(221, 183, 255, 0.15);
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.lb-section-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.lb-meta-skills-section {
+  margin-bottom: 1.2rem;
+}
+
+.lb-meta-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.lb-meta-tag-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: #172136;
+  border: 1px solid rgba(221, 183, 255, 0.12);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  transition: all 0.2s;
+}
+.lb-meta-tag-pill:hover {
+  border-color: var(--cyan);
+  color: var(--text-primary);
+}
+
+.lb-meta-signers-section {
+  margin-bottom: 1.2rem;
+}
+
+.lb-meta-signers-list {
+  background: rgba(19, 27, 46, 0.7);
+  border: 1px solid rgba(221, 183, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lb-meta-signer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.lb-meta-signer-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+}
+
+.lb-meta-footer {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  opacity: 0.25;
+  border-top: 1px solid rgba(221, 183, 255, 0.1);
+  padding-top: 0.6rem;
+  text-transform: uppercase;
+}
+
+/* Responsive adjustment for split lightbox panel */
+@media(max-width: 960px) {
+  .lb-panel-layout {
+    grid-template-columns: 1fr;
+    max-height: 75vh;
+    overflow-y: auto;
+    gap: 1.5rem;
+  }
+  .lb-panel-right {
+    border-left: none;
+    border-top: 1px solid rgba(221, 183, 255, 0.1);
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+  .lb-panel-left {
+    min-height: auto;
+  }
+  .lb-img {
+    max-height: 35vh;
+  }
 }
 
 .lb-close {
@@ -639,7 +875,7 @@ nav {
     <div class="nav-logo"><div class="nav-dot"></div>PAULINE.L</div>
   </div>
   <div class="nav-right">
-    <div class="cert-count">8 Certificates Earned</div>
+    <div class="cert-count">9 Certificates Earned</div>
   </div>
 </nav>
 
@@ -967,6 +1203,44 @@ nav {
       </div>
     </div>
 
+    <div class="cert-card" onclick="openLightbox(8)">
+      <div class="img-wrap">
+        <img src="Ecert 9.png" alt="Guidance 101: Gradual Transition from Remote Learning to Face-to-Face Classes" loading="lazy" onerror="handleImageError(this)">
+        
+        <!-- Fallback Digital Certificate Ledger Document -->
+        <div class="cert-fallback">
+          <div class="fallback-header">
+            <span>Digital Ledger</span>
+            <span><i class="fas fa-award"></i> Verified</span>
+          </div>
+          <div class="fallback-seal-wrap">
+            <div class="fallback-seal"><i class="fas fa-award"></i></div>
+            <div class="fallback-type">Credential</div>
+            <div class="fallback-title">Guidance 101: Gradual Transition from Remote Learning to Face-to-Face Classes</div>
+            <div class="fallback-recipient">Presented to:</div>
+            <div class="fallback-name">Pauline Lucena</div>
+          </div>
+          <div class="fallback-footer">
+            <div class="fallback-footer-left">
+              <span>ISSUER:</span>
+              <div class="fallback-issuer">University of Caloocan City - Guidance & Counseling Center</div>
+            </div>
+            <div class="fallback-footer-right">
+              <span>DATE:</span>
+              <div class="fallback-date">May 22, 2022</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">09</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Guidance 101: Gradual Transition from Remote Learning to Face-to-Face Classes</div><div class="cert-sub">Workshops &amp; Training</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Footer -->
@@ -983,40 +1257,98 @@ nav {
   <div class="lb-content">
     <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
     
-    <img class="lb-img" id="lbImg" src="" alt="Certificate" onerror="handleLightboxError(this)">
+    <div class="lb-panel-layout">
+      <!-- Left side: Digital Certificate Document -->
+      <div class="lb-panel-left">
+        <img class="lb-img" id="lbImg" src="" alt="Certificate" onerror="handleLightboxError(this)">
 
-    <!-- Lightbox Fallback -->
-    <div class="lightbox-fallback" id="lbFallback">
-      <div class="lb-fallback-corner-tl"></div>
-      <div class="lb-fallback-corner-tr"></div>
-      <div class="lb-fallback-corner-bl"></div>
-      <div class="lb-fallback-corner-br"></div>
-      <div class="lb-fb-header">
-        <div class="lb-fb-header-text">Verified Digital Credential</div>
-        <div class="lb-fb-header-line"></div>
-      </div>
-      <div class="lb-fb-body">
-        <span class="lb-fb-intro">This digital ledger record verifies that</span>
-        <p class="lb-fb-recipient">Pauline Lucena</p>
-        <span class="lb-fb-intro">has successfully qualified for and completed</span>
-        <h3 class="lb-fb-title" id="lbFallbackTitle">Course Title</h3>
-        <p class="lb-fb-cat" id="lbFallbackCat">Category</p>
-      </div>
-      <div class="lb-fb-footer">
-        <div>
-          <div class="lb-fb-footer-label">AUTHORIZED ISSUER</div>
-          <div class="lb-fb-footer-val" id="lbFallbackIssuer">Issuer Name</div>
+        <!-- Lightbox Fallback -->
+        <div class="lightbox-fallback" id="lbFallback">
+          <div class="lb-fallback-corner-tl"></div>
+          <div class="lb-fallback-corner-tr"></div>
+          <div class="lb-fallback-corner-bl"></div>
+          <div class="lb-fallback-corner-br"></div>
+          <div class="lb-fb-header">
+            <div class="lb-fb-header-text">Verified Digital Credential</div>
+            <div class="lb-fb-header-line"></div>
+          </div>
+          <div class="lb-fb-body">
+            <span class="lb-fb-intro">This digital ledger record verifies that</span>
+            <p class="lb-fb-recipient">Pauline Lucena</p>
+            <span class="lb-fb-intro">has successfully qualified for and completed</span>
+            <h3 class="lb-fb-title" id="lbFallbackTitle">Course Title</h3>
+            <p class="lb-fb-cat" id="lbFallbackCat">Category</p>
+          </div>
+          <div class="lb-fb-footer">
+            <div>
+              <div class="lb-fb-footer-label">AUTHORIZED ISSUER</div>
+              <div class="lb-fb-footer-val" id="lbFallbackIssuer">Issuer Name</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="lb-fb-footer-label">DATE VERIFIED</div>
+              <div class="lb-fb-footer-val" id="lbFallbackDate">Date</div>
+            </div>
+          </div>
         </div>
-        <div style="text-align: right;">
-          <div class="lb-fb-footer-label">DATE VERIFIED</div>
-          <div class="lb-fb-footer-val" id="lbFallbackDate">Date</div>
+      </div>
+      
+      <!-- Right Side: Official Technical Metadata Ledger -->
+      <div class="lb-panel-right">
+        <div class="lb-meta-header">
+          <div class="lb-meta-tag"><i class="fas fa-award"></i> Credential Ledger Profile</div>
+          <h3 id="lbMetaTitle" class="lb-meta-title">Guidance 101: Remote to F2F</h3>
+          <p class="lb-meta-subtitle">Official Professional Verification Record</p>
+        </div>
+        
+        <div class="lb-meta-details">
+          <div class="lb-detail-item">
+            <div class="lb-detail-icon"><i class="fas fa-award"></i></div>
+            <div class="lb-detail-info">
+              <span class="lb-detail-label">ISSUING ORGANIZATION</span>
+              <span id="lbMetaIssuer" class="lb-detail-val">University of Caloocan City</span>
+            </div>
+          </div>
+          
+          <div class="lb-detail-item">
+            <div class="lb-detail-icon"><i class="far fa-calendar-alt"></i></div>
+            <div class="lb-detail-info">
+              <span class="lb-detail-label">DATE CONFERRED & SECURED</span>
+              <span id="lbMetaDate" class="lb-detail-val">May 22, 2022</span>
+            </div>
+          </div>
+          
+          <div class="lb-detail-item">
+            <div class="lb-detail-icon"><i class="fas fa-fingerprint"></i></div>
+            <div class="lb-detail-info">
+              <span class="lb-detail-label">REGISTRATION / CREDENTIAL ID</span>
+              <span id="lbMetaID" class="lb-meta-code font-mono">2000-011-009</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lb-meta-skills-section">
+          <span class="lb-section-title">VERIFIED TECHNICAL SKILLS & SUBJECTS</span>
+          <div id="lbMetaSkills" class="lb-meta-tags-container">
+            <!-- Dynamically populated tags -->
+          </div>
+        </div>
+        
+        <div class="lb-meta-signers-section">
+          <span class="lb-section-title">CERTIFIED SIGNATORY OFFICERS</span>
+          <div id="lbMetaSigners" class="lb-meta-signers-list">
+            <!-- Dynamically populated list items -->
+          </div>
+        </div>
+        
+        <div class="lb-meta-footer">
+          IMAGE INTEGRITY CONFORMITY: This is a direct rendering of the unmodified certificate document uploaded by Pauline Lucena. Let there be no structural adjustments.
         </div>
       </div>
     </div>
 
     <div class="lb-nav">
       <button class="lb-nav-btn" onclick="navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
-      <span class="lb-counter" id="lbCounter">1 / 8</span>
+      <span class="lb-counter" id="lbCounter">1 / 9</span>
       <button class="lb-nav-btn" onclick="navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
@@ -1140,7 +1472,10 @@ const images = [
     category: 'Workshops & Training', 
     alt: 'Certificate of Appreciation for Lean Principles webinar participation',
     issuer: 'University of Caloocan City - BSAIS',
-    date: 'November 30, 2022'
+    date: 'November 30, 2022',
+    credentialId: 'N/A',
+    skills: ['Lean Principles', 'Operational Efficiency', 'Process Improvement', 'Career Strategy'],
+    signatories: ['Zenith Camu, CPA, DPA, PhD (Adviser)', 'Rose Ann L. Janer (Presidents/4C)']
   },
   { 
     src: 'Ecert 2.png', 
@@ -1148,7 +1483,10 @@ const images = [
     category: 'Information Security', 
     alt: 'Cyber Safe Learning for Education Project Certificate of Completion',
     issuer: 'DICT, ILCDB, GoPhilippines & Microsoft',
-    date: 'September 9, 2022'
+    date: 'September 9, 2022',
+    credentialId: 'N/A (Verified Program Completion)',
+    skills: ['Cyber Security', 'Online Learning Risks', 'Information Protection', 'Digital Literacy'],
+    signatories: ['Maria Lourdes Aquilizan (OIC Director IV)', 'Karl Leung (Chief Partnerships & Strategy Officer)']
   },
   { 
     src: 'Ecert 3.png', 
@@ -1156,7 +1494,10 @@ const images = [
     category: 'Professional Assessment', 
     alt: 'Mock Interview Certificate of Participation - Relentless Academic Conference',
     issuer: 'NFJPIA-NCR Chapters',
-    date: 'January 31, 2021'
+    date: 'January 31, 2021',
+    credentialId: '2000-0011-0009',
+    skills: ['Professional Communications', 'Interview Techniques', 'Self Assessment', 'Accountancy Career Readiness'],
+    signatories: ['Jammiel Cherie Dahilan (Project Head)', 'Jyzzel Ozonia D. Encabo (Regional Council President)', 'Conrad Allan M. Alviz, CPA, CISA, CIA, CSRS (Regional Adviser)']
   },
   { 
     src: 'Ecert 4.png', 
@@ -1164,7 +1505,10 @@ const images = [
     category: 'Financial Analysis', 
     alt: 'F.A.C.E Webinar Certificate of Participation - Financial Analyst POV',
     issuer: 'UCC-North BSAT/BSAIS',
-    date: 'December 4, 2022'
+    date: 'December 4, 2022',
+    credentialId: 'N/A',
+    skills: ['Financial Analysis', 'Accounting System Workflows', 'Corporate Planning', 'Analytical Foresight'],
+    signatories: ['Bernadette Holanda (Guest Speaker)', 'Zenith C. Camu, CPA, DPA, PhD (Chair, BSAIS)']
   },
   { 
     src: 'Ecert 5.png', 
@@ -1172,7 +1516,10 @@ const images = [
     category: 'TESDA Course Certification', 
     alt: 'TESDA Course on Introduction to Bookkeeping Completion Certificate',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'May 19, 2026'
+    date: 'May 19, 2026',
+    credentialId: 'TuGONvkvcs',
+    skills: ['Double-Entry Accounting', 'Account Classification', 'Balance Sheet Terminology', 'Bookkeeping Basics'],
+    signatories: ['Computer-Generated (Verified Online Ledger)']
   },
   { 
     src: 'Ecert 6.jpg', 
@@ -1180,7 +1527,10 @@ const images = [
     category: 'TESDA Course Certification', 
     alt: 'TESDA Course on Journalizing Transactions Completion Certificate',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'May 27, 2026'
+    date: 'May 27, 2026',
+    credentialId: 'hO9tJ16lul',
+    skills: ['Journal Entries Creation', 'Debit and Credit Application', 'Dual-Effect Principles', 'General Journals Logging'],
+    signatories: ['Computer-Generated (Verified Online Ledger)']
   },
   { 
     src: 'Ecert 7.png', 
@@ -1188,7 +1538,10 @@ const images = [
     category: 'TESDA Course Certification', 
     alt: 'TESDA Course on Posting Transactions Completion Certificate',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'May 29, 2026'
+    date: 'May 29, 2026',
+    credentialId: 'DRTxR74RfE',
+    skills: ['Ledger Posting Mechanics', 'General & Subsidiary Ledgers', 'Balance Extraction', 'Transaction Auditing'],
+    signatories: ['Computer-Generated (Verified Online Ledger)']
   },
   { 
     src: 'Ecert 8.png', 
@@ -1196,7 +1549,21 @@ const images = [
     category: 'TESDA Course Certification', 
     alt: 'TESDA Course on Preparing Trial Balance Completion Certificate',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'June 1, 2026'
+    date: 'June 1, 2026',
+    credentialId: '24QVQYLp6B',
+    skills: ['Trial Balance Formulation', 'Discrepancy Investigation', 'Adjusting Entry Prep', 'Accounting Cycle Reconciliation'],
+    signatories: ['Computer-Generated (Verified Online Ledger)']
+  },
+  { 
+    src: 'Ecert 9.png', 
+    name: 'Guidance 101: Remote to F2F', 
+    category: 'Workshops & Training', 
+    alt: 'Certificate of Participation for Guidance 101: Gradual Transition from Remote Learning to Face-to-Face Classes',
+    issuer: 'University of Caloocan City - Guidance & Counseling Center',
+    date: 'May 22, 2022',
+    credentialId: 'N/A',
+    skills: ['Adaptive Social Transition', 'Individual Counseling Basics', 'Mental Well-being Support', 'Academic Psychology Adaptation'],
+    signatories: ['Ms. Luwalhati Briones, RGC, LPT', 'Mr. Christian Catapat (Resource Speaker)', 'Von Lester Alido (President, UCC Psychology Society)']
   }
 ];
 
@@ -1232,10 +1599,37 @@ function updateLightbox() {
     lbImg.src = images[current].src;
     lbImg.alt = images[current].alt;
     
+    // Fallback structure sets
     document.getElementById('lbFallbackTitle').textContent = images[current].name;
     document.getElementById('lbFallbackCat').textContent = "Category: " + images[current].category;
     document.getElementById('lbFallbackIssuer').textContent = images[current].issuer;
     document.getElementById('lbFallbackDate').textContent = images[current].date;
+    
+    // Right Side dynamic technical dashboard fields
+    document.getElementById('lbMetaTitle').textContent = images[current].name;
+    document.getElementById('lbMetaIssuer').textContent = images[current].issuer;
+    document.getElementById('lbMetaDate').textContent = images[current].date;
+    document.getElementById('lbMetaID').textContent = images[current].credentialId || 'N/A (Verified Registration)';
+    
+    // Populate verified competency badges
+    const skillsContainer = document.getElementById('lbMetaSkills');
+    skillsContainer.innerHTML = '';
+    images[current].skills.forEach(skill => {
+      const pill = document.createElement('span');
+      pill.className = 'lb-meta-tag-pill';
+      pill.textContent = skill;
+      skillsContainer.appendChild(pill);
+    });
+    
+    // Populate key administrative signatories list
+    const signersContainer = document.getElementById('lbMetaSigners');
+    signersContainer.innerHTML = '';
+    images[current].signatories.forEach(signer => {
+      const item = document.createElement('div');
+      item.className = 'lb-meta-signer-item';
+      item.innerHTML = '<span class="lb-meta-signer-dot"></span><span>' + signer + '</span>';
+      signersContainer.appendChild(item);
+    });
     
     lbCounter.textContent = `${current + 1} / ${images.length}`;
     
