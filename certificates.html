@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificates & Achievements — Pauline Lucena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;450;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --bg-void: #0b1326;
+  --bg-surface: #070d18;
+  --bg-card: rgba(23, 31, 51, 0.7);
+  --bg-card-hover: #131b2e;
+  --cyan: #ddb7ff; /* Premium Lavender Accent */
+  --cyan-dim: #c084fc;
+  --cyan-glow: rgba(221, 183, 255, 0.12);
+  --cyan-glow-strong: rgba(221, 183, 255, 0.25);
+  --teal: #ffffff;
+  --teal-dim: rgba(255,255,255,0.6);
+  --text-primary: #dae2fd;
+  --text-secondary: #cfc2d6;
+  --text-muted: #4d4354;
+  --border: rgba(221, 183, 255, 0.08);
+  --border-bright: rgba(221, 183, 255, 0.25);
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Inter', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg-void);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { text-decoration:none; color:inherit; }
+
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--bg-void); }
+::-webkit-scrollbar-thumb { background:var(--cyan-dim); border-radius:4px; }
+
+/* scanline */
+body::after {
+  content:''; position:fixed; inset:0;
+  background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.015) 2px,rgba(0,0,0,0.015) 4px);
+  pointer-events:none; z-index:9998;
+}
+
+/* ── AMBIENT ── */
+.ambient-grid {
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(rgba(221,183,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,183,255,0.012) 1px, transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none; z-index:0;
+}
+.ambient-glow {
+  position:fixed; border-radius:50%;
+  filter:blur(130px); pointer-events:none; z-index:0; opacity:0.06;
+}
+.ambient-glow.tl { width:500px;height:500px;top:-150px;left:-150px;background:var(--cyan); }
+.ambient-glow.br { width:400px;height:400px;bottom:-120px;right:-120px;background:#842bd2; }
+
+/* floating particles canvas */
+#cert-canvas { position:fixed; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  padding:1.2rem 3rem;
+  display:flex; justify-content:space-between; align-items:center;
+  background:rgba(11,19,38,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-left { display:flex; align-items:center; gap:1.5rem; }
+
+.back-btn {
+  display:flex; align-items:center; gap:0.7rem;
+  font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;
+  color:var(--text-secondary); border:1px solid rgba(221, 183, 255, 0.15);
+  padding:0.55rem 1.2rem; border-radius:8px;
+  background:rgba(221, 183, 255, 0.04); transition:all 0.3s var(--ease-out);
+  font-weight: 700;
+}
+.back-btn:hover { color:var(--cyan); border-color:var(--cyan); background:rgba(221,183,255,0.1); transform:translateX(-3px); }
+.back-btn i { font-size:0.75rem; }
+
+.nav-logo {
+  font-family:var(--font-display);
+  font-size:0.95rem; font-weight:800;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--cyan);
+  display:flex; align-items:center; gap:0.6rem;
+}
+.nav-dot { width:7px;height:7px;background:var(--cyan-dim);border-radius:50%;animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.15;} }
+
+.nav-right { display:flex; align-items:center; gap:1.5rem; }
+.cert-count {
+  font-size:0.65rem; letter-spacing:3px; text-transform:uppercase;
+  color:var(--text-secondary); border:1px solid var(--border);
+  padding:0.4rem 1rem; border-radius:6px;
+  display:flex; align-items:center; gap:0.6rem;
+  background:rgba(11, 19, 38, 0.5);
+  font-family: var(--font-mono);
+}
+.cert-count::before { content:''; width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:blink 2s ease-in-out infinite; }
+
+/* ── WRAPPER ── */
+.wrapper {
+  position:relative; z-index:1;
+  max-width:1300px; margin:0 auto;
+  padding:8rem 2rem 6rem;
+}
+
+/* ── HERO HEADER ── */
+.page-hero {
+  margin-bottom:5rem;
+}
+
+.s-label {
+  font-size:0.66rem; letter-spacing:4px; text-transform:uppercase;
+  color:var(--cyan); margin-bottom:1rem;
+  display:flex; align-items:center; gap:1rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.s-label::before { content:''; display:inline-block; width:28px; height:1px; background:var(--cyan); }
+
+.page-title {
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem, 5vw, 4rem);
+  font-weight:800; letter-spacing:-2px; line-height:1.1;
+  color:var(--text-primary); margin-bottom:1rem;
+  text-transform: uppercase;
+}
+.page-title span {
+  background:linear-gradient(90deg,var(--cyan),#ffffff);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+
+.page-sub {
+  font-size:0.88rem; color:var(--text-secondary);
+  max-width:480px; line-height:1.9;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display:flex; align-items:center; gap:1.5rem;
+  margin-bottom:4rem;
+}
+.divider-line { flex:1; height:1px; background:linear-gradient(90deg, var(--border-bright), transparent); }
+.divider-label {
+  font-size:0.62rem; letter-spacing:4px; text-transform:uppercase;
+  color:var(--text-secondary); white-space:nowrap;
+  font-family: var(--font-mono);
+}
+
+/* ── CERT GRID ── */
+.cert-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
+  gap:1.5rem;
+}
+
+/* ── CERT CARD ── */
+.cert-card {
+  background:var(--bg-card);
+  backdrop-filter: blur(10px);
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  transition:all 0.4s var(--ease-out);
+}
+
+/* top accent bar */
+.cert-card::before {
+  content:''; position:absolute; top:0;left:0;right:0; height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--cyan-dim));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform 0.4s var(--ease-out);
+}
+.cert-card:hover::before { transform:scaleX(1); }
+
+/* shimmer */
+.cert-card::after {
+  content:''; position:absolute; top:0; left:-120%;
+  width:60%; height:100%;
+  background:linear-gradient(105deg, transparent 40%, rgba(221,183,255,0.04) 50%, transparent 60%);
+  transition:left 0.55s ease;
+  pointer-events:none; z-index:2;
+}
+.cert-card:hover::after { left:160%; }
+
+.cert-card:hover {
+  border-color:rgba(221, 183, 255, 0.4);
+  background:var(--bg-card-hover);
+  transform:translateY(-7px);
+  box-shadow:0 24px 48px rgba(0,0,0,0.45), 0 0 32px var(--cyan-glow);
+}
+
+/* ── IMAGE WRAP ── */
+.img-wrap {
+  position:relative; width:100%; height:220px;
+  background:rgba(0,0,0,0.4);
+  overflow:hidden;
+}
+
+.img-wrap img {
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform 0.7s var(--ease-out), filter 0.4s;
+  filter:brightness(0.88) saturate(0.85);
+}
+
+.cert-card:hover .img-wrap img {
+  transform:scale(1.07);
+  filter:brightness(1.05) saturate(1.1);
+}
+
+/* overlay */
+.view-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(23, 31, 51, 0.75), rgba(221,183,255,0.15));
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transition:opacity 0.35s;
+  backdrop-filter: blur(2px);
+}
+.cert-card:hover .view-overlay { opacity:1; }
+
+.view-btn {
+  background:rgba(221,183,255,0.12);
+  border:1px solid rgba(221,183,255,0.35);
+  color:var(--cyan);
+  font-family:var(--font-display); font-size:0.72rem;
+  font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  padding:0.6rem 1.5rem; border-radius:6px;
+  display:flex; align-items:center; gap:0.6rem;
+  transform:translateY(10px) scale(0.95);
+  transition:transform 0.35s var(--ease-out) 0.05s;
+  backdrop-filter:blur(8px);
+}
+.cert-card:hover .view-btn { transform:translateY(0) scale(1); }
+
+/* card number tag */
+.card-tag {
+  position:absolute; top:12px; left:12px;
+  background:rgba(23, 31, 51, 0.85);
+  border:1px solid var(--border-bright);
+  color:var(--cyan);
+  font-family:var(--font-mono); font-size:0.62rem;
+  font-weight:700; letter-spacing:2px;
+  padding:3px 10px; border-radius:4px;
+  backdrop-filter:blur(8px); z-index:3;
+}
+
+/* ── CARD FOOTER ── */
+.card-footer {
+  padding:1.2rem 1.4rem;
+  display:flex; align-items:center; justify-content:space-between;
+  border-top:1px solid rgba(221, 183, 255, 0.05);
+  gap:1rem;
+}
+
+.cert-name {
+  font-family:var(--font-display);
+  font-size:0.88rem; font-weight:750;
+  color:var(--text-primary); letter-spacing:-0.01em;
+  text-transform: uppercase;
+  margin-bottom:0.2rem;
+}
+.cert-sub {
+  font-size:0.65rem; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--text-secondary);
+  opacity: 0.7;
+}
+
+.zoom-icon {
+  width:32px; height:32px; border-radius:6px;
+  background:rgba(221, 183, 255, 0.05); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--cyan); font-size:0.72rem; flex-shrink:0;
+  transition:all 0.3s;
+}
+.cert-card:hover .zoom-icon {
+  border-color:var(--border-bright);
+  box-shadow:0 0 12px var(--cyan-glow);
+  transform:rotate(8deg) scale(1.1);
+  background: rgba(221, 183, 255, 0.1);
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  padding:2rem;
+  opacity:0; pointer-events:none;
+  transition:opacity 0.35s;
+}
+.lightbox.open { opacity:1; pointer-events:all; }
+
+.lb-backdrop {
+  position:absolute; inset:0;
+  background:rgba(11, 19, 38, 0.95);
+  backdrop-filter:blur(24px);
+}
+
+.lb-content {
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; align-items:center; gap:1.5rem;
+  transform:scale(0.92);
+  transition:transform 0.4s var(--ease-out);
+}
+.lightbox.open .lb-content { transform:scale(1); }
+
+.lb-img {
+  max-width:min(92vw, 960px);
+  max-height:78vh;
+  border-radius:12px;
+  border:1px solid var(--border-bright);
+  box-shadow:0 40px 100px rgba(0,0,0,0.6), 0 0 80px var(--cyan-glow);
+  object-fit:contain;
+}
+
+.lb-close {
+  position:absolute; top:-14px; right:-14px;
+  width:38px; height:38px; border-radius:8px;
+  background:#131b2e; border:1px solid var(--border-bright);
+  color:var(--text-secondary); font-size:1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all 0.3s; z-index:2;
+}
+.lb-close:hover {
+  background:rgba(255,80,80,0.15);
+  border-color:rgba(255,80,80,0.4); color:#ff8080;
+  transform:rotate(90deg) scale(1.1);
+}
+
+.lb-nav { display:flex; align-items:center; gap:1rem; z-index:1; }
+
+.lb-nav-btn {
+  width:42px; height:42px; border-radius:8px;
+  background:#131b2e; border:1px solid var(--border);
+  color:var(--cyan); font-size:0.9rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all 0.25s;
+}
+.lb-nav-btn:hover {
+  border-color:var(--border-bright);
+  background:rgba(221, 183, 255, 0.1);
+  box-shadow:0 0 14px var(--cyan-glow);
+  transform:scale(1.08);
+}
+
+.lb-counter {
+  font-family:var(--font-mono);
+  font-size:0.75rem; font-weight:700; letter-spacing:2px;
+  color:var(--text-secondary); min-width:52px; text-align:center;
+}
+
+/* ── FOOTER ── */
+.page-footer {
+  text-align:center; margin-top:6rem;
+  padding-top:2rem; border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:0.68rem; letter-spacing:1px; color:var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav { padding:1rem 1.5rem; }
+  .wrapper { padding:6rem 1.25rem 4rem; }
+  .cert-grid { grid-template-columns:1fr 1fr; gap:1rem; }
+  .page-footer { flex-direction:column; gap:0.8rem; text-align:center; }
+}
+@media(max-width:520px){
+  .cert-grid { grid-template-columns:1fr; }
+  .nav-right .cert-count { display:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="ambient-grid"></div>
+<div class="ambient-glow tl"></div>
+<div class="ambient-glow br"></div>
+<canvas id="cert-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <div class="nav-logo"><div class="nav-dot"></div>PAULINE.L</div>
+  </div>
+  <div class="nav-right">
+    <div class="cert-count">9 Certificates Earned</div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="wrapper">
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="s-label">Certifying Excellence</div>
+    <h1 class="page-title">Certificates &<br><span>Achievements.</span></h1>
+    <p class="page-sub">A premium collection of verified certifications earned through dedicated learning, professional assessment, and continuous development.</p>
+  </div>
+
+  <!-- Divider -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-label">Achievements &amp; Recognition</span>
+    <div class="divider-line" style="background:linear-gradient(90deg,transparent,var(--border-bright));"></div>
+  </div>
+
+  <!-- Grid -->
+  <div class="cert-grid" id="certGrid">
+
+    <div class="cert-card" onclick="openLightbox(0)">
+      <div class="img-wrap">
+        <img src="Ecert 1.png" alt="Certificate 1" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">01</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 1</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(1)">
+      <div class="img-wrap">
+        <img src="Ecert 2.png" alt="Certificate 2" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">02</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 2</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(2)">
+      <div class="img-wrap">
+        <img src="Ecert 3.png" alt="Certificate 3" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">03</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 3</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(3)">
+      <div class="img-wrap">
+        <img src="Ecert 4.png" alt="Certificate 4" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">04</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 4</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(4)">
+      <div class="img-wrap">
+        <img src="Ecert 5.png" alt="Certificate 5" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">05</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 5</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(5)">
+      <div class="img-wrap">
+        <img src="Ecert 6.jpg" alt="Certificate 6" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">06</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 6</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(6)">
+      <div class="img-wrap">
+        <img src="Ecert 7.png" alt="Certificate 7" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">07</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 7</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(7)">
+      <div class="img-wrap">
+        <img src="Ecert 8.png" alt="Certificate 8" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">08</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 8</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+    <div class="cert-card" onclick="openLightbox(8)">
+      <div class="img-wrap">
+        <img src="Ecert 9.JPG" alt="Certificate 9" loading="lazy">
+        <div class="view-overlay"><div class="view-btn"><i class="fas fa-expand-alt"></i> View Full</div></div>
+        <div class="card-tag">09</div>
+      </div>
+      <div class="card-footer">
+        <div><div class="cert-name">Certificate 9</div><div class="cert-sub">Achievement &amp; Recognition</div></div>
+        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <span>© 2026 Pauline Lucena. All rights reserved.</span>
+    <span>All certificates are fully verified, authentic records. Click on any credential card to expand.</span>
+  </footer>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-backdrop" onclick="closeLightbox()"></div>
+  <div class="lb-content">
+    <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+    <img class="lb-img" id="lbImg" src="" alt="Certificate">
+    <div class="lb-nav">
+      <button class="lb-nav-btn" onclick="navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+      <span class="lb-counter" id="lbCounter">1 / 9</span>
+      <button class="lb-nav-btn" onclick="navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── PARTICLE CANVAS ──
+const canvas = document.getElementById('cert-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+const mouse = { x:null, y:null };
+
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', () => { resize(); initParticles(); });
+window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+const SYMS = ['$','€','¥','%','∑','≈','∆','//','#','0','1','↑','↓','—'];
+
+class Particle {
+  constructor() { this.init(true); }
+  init(rand = false) {
+    this.x = Math.random() * W;
+    this.y = rand ? Math.random() * H : H + 10;
+    this.vy = -(Math.random() * 0.45 + 0.08);
+    this.vx = (Math.random() - 0.5) * 0.25;
+    this.alpha = Math.random() * 0.35 + 0.04;
+    this.size = Math.random() * 1.2 + 0.4;
+    this.isText = Math.random() > 0.72;
+    this.sym = SYMS[Math.floor(Math.random() * SYMS.length)];
+    // Premium theme lavender/violet hues matching Pauline's ledger design colors
+    this.hue = Math.random() > 0.55 ? 275 : (Math.random() > 0.5 ? 295 : 240);
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    if (mouse.x !== null) {
+      const dx = mouse.x - this.x, dy = mouse.y - this.y;
+      const d = Math.sqrt(dx*dx + dy*dy);
+      if (d < 110) { this.vx += dx * 0.00006; this.vy += dy * 0.00006; }
+    }
+    if (this.y < -20) this.init();
+    if (this.x < 0 || this.x > W) this.vx *= -1;
+  }
+  draw() {
+    ctx.save(); ctx.globalAlpha = this.alpha;
+    if (this.isText) {
+      ctx.font = `${8 + this.size * 3}px JetBrains Mono,monospace`;
+      ctx.fillStyle = `hsla(${this.hue},100%,75%,1)`;
+      ctx.fillText(this.sym, this.x, this.y);
+    } else {
+      ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+      ctx.fillStyle = `hsla(${this.hue},100%,75%,1)`; ctx.fill();
+    }
+    ctx.restore();
+  }
+}
+
+function initParticles() {
+  particles = [];
+  const n = Math.min(140, Math.floor((W * H) / 9000));
+  for (let i = 0; i < n; i++) particles.push(new Particle());
+}
+initParticles();
+
+function drawLines() {
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i+1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const d = Math.hypot(dx, dy);
+      if (d < 90) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(221,183,255,${(1-d/90)*0.12})`;
+        ctx.lineWidth = 0.4;
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function loop() {
+  ctx.clearRect(0, 0, W, H);
+  const g = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, H*0.65);
+  g.addColorStop(0,'rgba(23,31,51,0.25)');
+  g.addColorStop(1,'rgba(11,19,38,0)');
+  ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+  drawLines();
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(loop);
+}
+loop();
+
+// ── LIGHTBOX ──
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCounter = document.getElementById('lbCounter');
+
+const images = [
+  { src:'Ecert 1.png', alt:'Certificate 1' },
+  { src:'Ecert 2.png', alt:'Certificate 2' },
+  { src:'Ecert 3.png', alt:'Certificate 3' },
+  { src:'Ecert 4.png', alt:'Certificate 4' },
+  { src:'Ecert 5.png', alt:'Certificate 5' },
+  { src:'Ecert 6.jpg', alt:'Certificate 6' },
+  { src:'Ecert 7.png', alt:'Certificate 7' },
+  { src:'Ecert 8.png', alt:'Certificate 8' },
+  { src:'Ecert 9.JPG', alt:'Certificate 9' },
+];
+
+let current = 0;
+
+function openLightbox(index) {
+  current = index;
+  updateLightbox();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function navigateLightbox(dir) {
+  current = (current + dir + images.length) % images.length;
+  updateLightbox();
+}
+function updateLightbox() {
+  lbImg.style.opacity = '0';
+  lbImg.style.transform = 'scale(0.96)';
+  setTimeout(() => {
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].alt;
+    lbCounter.textContent = `${current + 1} / ${images.length}`;
+    lbImg.style.transition = 'opacity 0.3s, transform 0.3s';
+    lbImg.style.opacity = '1';
+    lbImg.style.transform = 'scale(1)';
+  }, 120);
+}
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navigateLightbox(-1);
+  if (e.key === 'ArrowRight') navigateLightbox(1);
+});
+</script>
+</body>
+</html>
