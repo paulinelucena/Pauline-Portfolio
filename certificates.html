@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificates & Achievements — Pauline Lucena</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root {
@@ -130,45 +130,191 @@ nav {
 
 /* ── CLASSIC RESPLENDENT THEMATIC CERTIFICATE FALLBACKS ── */
 
-/* 1. QuickBooks ProAdvisor (Sleek Clean White/Teal Branding) */
-.fallback-container.cert-style-proadvisor {
+/* ── AUTHENTIC INTUIT QUICKBOOKS PROADVISOR COMPONENT STYLES ── */
+.qbo-cert-card {
   background: #ffffff !important;
-  color: #1e293b !important;
-  border: 4px double #4eb845 !important;
-  box-shadow: inset 0 0 0 1px rgba(78, 184, 69, 0.2) !important;
+  color: #1a1a1a !important;
+  border: 1px solid #dcdcdc !important;
+  border-radius: 8px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 18px 16px 14px 18px !important;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-.fallback-container.cert-style-proadvisor .fb-header {
-  color: #64748b !important;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 4px;
+
+/* Authentic ProAdvisor Shield Badge */
+.qbo-shield-sm {
+  width: 78px;
+  height: 94px;
+  background: #ffffff;
+  border: 1.5px solid #002244;
+  border-radius: 6px 6px 32px 32px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column !important;
+  font-family: 'Inter', sans-serif !important;
+  text-align: center;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  z-index: 12;
 }
-.fallback-container.cert-style-proadvisor .fb-seal {
-  width: 44px;
-  height: 44px;
-  background: rgba(44, 160, 28, 0.08) !important;
-  border: 1.5px solid #2ca01c !important;
-  color: #2ca01c !important;
-  box-shadow: 0 0 12px rgba(44, 160, 28, 0.1) !important;
+.qbo-shield-hdr-sm {
+  background: #002244;
+  color: #ffffff;
+  padding: 3px 2px 2px;
+  font-size: 4.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5px;
+  border-bottom: 0.8px solid #002244;
 }
-.fallback-container.cert-style-proadvisor .fb-recipient,
-.fallback-container.cert-style-proadvisor .fb-footer label {
-  color: #64748b !important;
+.qbo-shield-circle-sm {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2ca01c;
+  color: #ffffff;
+  font-size: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
 }
-.fallback-container.cert-style-proadvisor .fb-name {
-  color: #0f172a !important;
-  font-family: var(--font-display);
+.qbo-shield-certified-sm {
+  color: #4b5563;
+  font-size: 6px;
+  font-weight: 750;
+  padding: 4px 0 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+.qbo-shield-band-sm {
+  background: #2ca01c;
+  color: #ffffff;
+  font-size: 4.8px;
+  font-weight: 700;
+  padding: 3px 1px;
+  text-transform: uppercase;
+}
+.qbo-shield-proadvisor-sm {
+  color: #002244;
+  font-size: 5px;
+  font-weight: 700;
+  padding: 4px 0;
+  text-transform: uppercase;
+}
+
+/* Card typography matching the image */
+.qbo-card-completion {
+  font-size: 1.1rem;
   font-weight: 800;
-  text-decoration-color: #2ca01c !important;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+  text-align: left;
 }
-.fallback-container.cert-style-proadvisor .fb-title {
-  color: #0077c5 !important;
-  font-family: var(--font-display);
+.qbo-card-recipient {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #000000;
+  text-align: left;
+  margin-bottom: 2px;
 }
-.fallback-container.cert-style-proadvisor .fb-footer {
-  border-top: 1px solid #e2e8f0;
+.qbo-card-passed {
+  font-size: 0.48rem;
+  color: #555555;
+  text-align: left;
+  margin-bottom: 4px;
 }
-.fallback-container.cert-style-proadvisor .fb-footer span {
-  color: #0c66a6 !important;
+.qbo-card-achieved {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.15;
+  text-align: left;
+  margin-bottom: 6px;
+}
+.qbo-card-date {
+  font-size: 0.52rem;
+  color: #444444;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Bottom brand and logo elements */
+.qbo-card-logo {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.qbo-card-logo-circle {
+  width: 13px;
+  height: 13px;
+  background: #2ca01c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 8px;
+  line-height: 1;
+}
+.qbo-card-logo-text {
+  font-size: 0.62rem;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+}
+.qbo-card-logo-text strong {
+  font-weight: 800;
+}
+.qbo-card-sig-block {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.qbo-card-sig-hand {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  margin-bottom: -3px;
+  line-height: 1;
+  transform: rotate(-2deg);
+  font-weight: 600;
+}
+.qbo-card-sig-line {
+  width: 65px;
+  height: 1px;
+  background: #cccccc;
+  margin-bottom: 2px;
+}
+.qbo-card-sig-name {
+  font-size: 0.45rem;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.1;
+}
+.qbo-card-sig-role {
+  font-size: 0.35rem;
+  color: #666666;
+  line-height: 1.2;
+  max-width: 100px;
+  text-align: right;
 }
 
 /* 2. TESDA Certified (Ivory Paper & Deep Blue / Bronze Academic Layout) */
@@ -394,47 +540,196 @@ nav {
 
 /* ── LIGHTBOX RESPLENDENT THEMATIC CERTIFICATE FALLBACKS (HIGH-RES PREVIEW) ── */
 
-/* 1. QuickBooks ProAdvisor (Lightbox) */
-.lb-fallback-container.lb-style-proadvisor {
+/* 1. QuickBooks ProAdvisor (Lightbox Styling - Accurate replica of real cert) */
+.qbo-cert-lb {
   background: #ffffff !important;
-  color: #1e293b !important;
-  border: 6px double #4eb845 !important;
-  box-shadow: inset 0 0 0 2px rgba(78, 184, 69, 0.15) !important;
+  color: #1a1a1a !important;
+  border: 1px solid #dcdcdc !important;
+  border-radius: 12px !important;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.15) !important;
+  font-family: 'Inter', sans-serif !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 40px !important;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  aspect-ratio: 1.414 / 1;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
 }
-.lb-fallback-container.lb-style-proadvisor .lb-fb-header {
-  color: #64748b !important;
-  border-bottom: 2px solid #e2e8f0 !important;
-  padding-bottom: 6px;
+
+/* Shield in the Lightbox (Larger, High Resolution Details) */
+.qbo-shield {
+  width: 140px;
+  height: 170px;
+  background: #ffffff;
+  border: 3.5px solid #002244;
+  border-radius: 12px 12px 60px 60px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column !important;
+  font-family: 'Inter', sans-serif !important;
+  text-align: center;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  z-index: 20;
 }
-.lb-fallback-container.lb-style-proadvisor .lb-fb-seal {
-  width: 60px;
-  height: 60px;
-  background: rgba(44, 160, 28, 0.08) !important;
-  border: 2px solid #2ca01c !important;
-  color: #2ca01c !important;
-  box-shadow: 0 0 16px rgba(44, 160, 28, 0.15) !important;
+.qbo-shield-hdr {
+  background: #002244;
+  color: #ffffff;
+  padding: 8px 4px 6px;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-bottom: 1.5px solid #002244;
 }
-.lb-fallback-container.lb-style-proadvisor .lb-fb-recipient,
-.lb-fallback-container.lb-style-proadvisor .lb-fb-footer label {
-  color: #64748b !important;
+.qbo-shield-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2ca01c;
+  color: #ffffff;
+  font-size: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
 }
-.lb-fallback-container.lb-style-proadvisor .lb-fb-name {
-  color: #0f172a !important;
-  font-family: var(--font-display);
-  font-size: 1.7rem !important;
-  font-weight: 800 !important;
-  text-decoration-color: #2ca01c !important;
+.qbo-shield-certified {
+  color: #4b5563;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 8px 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-.lb-fallback-container.lb-style-proadvisor .lb-fb-title {
-  color: #0077c5 !important;
-  font-family: var(--font-display);
-  font-size: 1.25rem !important;
+.qbo-shield-band {
+  background: #2ca01c;
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 5px 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
-.lb-fallback-container.lb-style-proadvisor .lb-fb-footer {
-  border-top: 1px solid #e2e8f0 !important;
+.qbo-shield-proadvisor {
+  color: #002244;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 8px 0;
+  text-transform: uppercase;
 }
-.lb-fallback-container.lb-style-proadvisor .lb-fb-footer span {
-  color: #0c66a6 !important;
+
+/* Lightbox Typography to replicate the image */
+.qbo-lb-completion {
+  font-size: 2.1rem;
+  font-weight: 850;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -1px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+.qbo-lb-recipient {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #000000;
+  text-align: left;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.qbo-lb-passed {
+  font-size: 0.95rem;
+  color: #555555;
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.qbo-lb-achieved {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.qbo-lb-date {
+  font-size: 0.85rem;
+  color: #444444;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Bottom Brand and Signatures for Lightbox */
+.qbo-lb-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.qbo-lb-logo-circle {
+  width: 26px;
+  height: 26px;
+  background: #2ca01c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1;
+}
+.qbo-lb-logo-text {
+  font-size: 1.1rem;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+}
+.qbo-lb-logo-text strong {
+  font-weight: 800;
+}
+.qbo-lb-sig-block {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.qbo-lb-sig-hand {
+  font-family: 'Caveat', cursive;
+  font-size: 1.9rem;
+  color: #1a1a1a;
+  margin-bottom: -5px;
+  line-height: 1;
+  transform: rotate(-2.5deg);
+  font-weight: 600;
+}
+.qbo-lb-sig-line {
+  width: 130px;
+  height: 1px;
+  background: #bbbbbb;
+  margin-bottom: 6px;
+}
+.qbo-lb-sig-name {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.2;
+}
+.qbo-lb-sig-role {
+  font-size: 0.62rem;
+  color: #666666;
+  line-height: 1.3;
+  max-width: 220px;
+  text-align: right;
 }
 
 /* 2. TESDA Certified (Lightbox) */
@@ -916,13 +1211,57 @@ Object.keys(groups)
       const card = document.createElement('div');
       card.className = 'cert-card';
       card.onclick = () => openLightbox(idx);
-      card.innerHTML = `
-        <div class="img-wrap" style="position:relative;">
-          <img src="${cert.src}" id="img-asset-${idx}" alt="${cert.title}" loading="lazy" onerror="handleMainImgError(${idx})">
-          <div class="card-tag">REF-${(idx+1).toString().padStart(2, '0')}</div>
-          
+      
+      const cat = categoryFor(idx);
+      let fallbackMarkup = '';
+      
+      if (cat === 'proadvisor') {
+        fallbackMarkup = `
+          <!-- Embedded Beautiful Replica of QBO Certificate -->
+          <div class="qbo-cert-card" id="fallback-card-${idx}" style="display:none;">
+            <div style="display:flex; flex-direction:column; justify-content:flex-start; height:100%; text-align:left;">
+              <div class="qbo-card-completion">Certificate of completion</div>
+              <div style="margin-top: 4px;">
+                <div class="qbo-card-recipient">Pauline Lucena</div>
+                <div class="qbo-card-passed">Has successfully passed the exam and achieved:</div>
+              </div>
+              <div class="qbo-card-achieved">QuickBooks Online<br>Accountant Certification</div>
+              <div class="qbo-card-date">Dated: 10 June 2026</div>
+            </div>
+            
+            <!-- Badge on the right -->
+            <div class="qbo-shield-sm">
+              <div class="qbo-shield-hdr-sm">
+                <div class="qbo-shield-circle-sm">qb</div>
+                <span>intuit</span>
+              </div>
+              <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; padding-bottom:3px; box-sizing:border-box;">
+                <div class="qbo-shield-certified-sm">Certified</div>
+                <div class="qbo-shield-band-sm">QuickBooks<br>Online</div>
+                <div class="qbo-shield-proadvisor-sm">ProAdvisor</div>
+              </div>
+            </div>
+            
+            <!-- Bottom brand and signature -->
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; width:100%; margin-top: auto; z-index:11;">
+              <div class="qbo-card-logo">
+                <div class="qbo-card-logo-circle">qb</div>
+                <span class="qbo-card-logo-text">intuit <strong>quickbooks</strong></span>
+              </div>
+              
+              <div class="qbo-card-sig-block">
+                <div class="qbo-card-sig-hand">Amanda Newton</div>
+                <div class="qbo-card-sig-line"></div>
+                <div class="qbo-card-sig-name">Amanda Newton</div>
+                <div class="qbo-card-sig-role">GTM Segment Lead, Rest of World</div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        fallbackMarkup = `
           <!-- Embedded Fallback Vector (Hidden by default unless src fails to load) -->
-          <div class="fallback-container cert-style-${categoryFor(idx)}" id="fallback-card-${idx}" style="display:none;">
+          <div class="fallback-container cert-style-${cat}" id="fallback-card-${idx}" style="display:none;">
             <div class="fb-header">
               <span>DIGITAL RECORD</span>
               <span><i class="fas fa-shield-alt"></i> VERIFIED</span>
@@ -950,6 +1289,14 @@ Object.keys(groups)
               </div>
             </div>
           </div>
+        `;
+      }
+
+      card.innerHTML = `
+        <div class="img-wrap" style="position:relative;">
+          <img src="${cert.src}" id="img-asset-${idx}" alt="${cert.title}" loading="lazy" onerror="handleMainImgError(${idx})">
+          <div class="card-tag">REF-${(idx+1).toString().padStart(2, '0')}</div>
+          ${fallbackMarkup}
         </div>
         <div class="card-footer">
           <div>
@@ -1046,36 +1393,83 @@ function handleLbImgError() {
   const div = document.createElement('div');
   div.id = 'lbFallback';
   const cat = categoryFor(current);
-  div.className = `lb-fallback-container lb-style-${cat}`;
-  div.innerHTML = `
-    <div class="lb-fb-header">
-      <span>SECURE LEDGER RECORD</span>
-      <span><i class="fas fa-shield-alt"></i> AUTHENTICATED</span>
-    </div>
-    
-    <div class="lb-fb-seal">
-      <i class="fas fa-award"></i>
-    </div>
-    
-    <div style="margin: 1rem 0;">
-      <div class="lb-fb-recipient">This digital record confirms that</div>
-      <div class="lb-fb-name">Pauline Lucena</div>
-      <div class="lb-fb-recipient" style="margin-top:0.4rem;">has successfully completed and qualified in:</div>
-    </div>
-    
-    <div class="lb-fb-title">${cert.title}</div>
-    
-    <div class="lb-fb-footer">
-      <div>
-        <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">ISSUING ORGANIZATION:</label>
-        <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.issuer}</span>
+  
+  if (cat === 'proadvisor') {
+    div.className = 'qbo-cert-lb';
+    div.innerHTML = `
+      <div style="display:flex; flex-direction:column; justify-content:flex-start; height:100%; text-align:left;">
+        <div class="qbo-lb-completion">Certificate of completion</div>
+        <div style="margin-top: 15px;">
+          <div class="qbo-lb-recipient">Pauline Lucena</div>
+          <div class="qbo-lb-passed">Has successfully passed the exam and achieved:</div>
+        </div>
+        <div class="qbo-lb-achieved">QuickBooks Online<br>Accountant Certification</div>
+        <div class="qbo-lb-date">Dated: 10 June 2026</div>
       </div>
-      <div style="text-align:right;">
-        <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">DATE CONFERRED:</label>
-        <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.date}</span>
+      
+      <!-- Badge on the right -->
+      <div class="qbo-shield">
+        <div class="qbo-shield-hdr">
+          <div class="qbo-shield-circle">qb</div>
+          <span>intuit</span>
+        </div>
+        <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; padding-bottom:10px; box-sizing:border-box;">
+          <div class="qbo-shield-certified">Certified</div>
+          <div class="qbo-shield-band">QuickBooks Online</div>
+          <div class="qbo-shield-proadvisor">ProAdvisor</div>
+        </div>
       </div>
-    </div>
-  `;
+      
+      <!-- Bottom brand and signature -->
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; width:100%; margin-top: auto; z-index:22;">
+        <div class="qbo-lb-logo">
+          <div class="qbo-lb-logo-circle">qb</div>
+          <span class="qbo-lb-logo-text">intuit <strong>quickbooks</strong></span>
+        </div>
+        
+        <div class="qbo-lb-sig-block">
+          <div class="qbo-lb-sig-hand">Amanda Newton</div>
+          <div class="qbo-lb-sig-line"></div>
+          <div class="qbo-lb-sig-name">Amanda Newton</div>
+          <div class="qbo-lb-sig-role">
+            GTM Segment Lead,<br>
+            Accountant Channel - Rest of World Portfolio
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    div.className = `lb-fallback-container lb-style-${cat}`;
+    div.innerHTML = `
+      <div class="lb-fb-header">
+        <span>SECURE LEDGER RECORD</span>
+        <span><i class="fas fa-shield-alt"></i> AUTHENTICATED</span>
+      </div>
+      
+      <div class="lb-fb-seal">
+        <i class="fas fa-award"></i>
+      </div>
+      
+      <div style="margin: 1rem 0;">
+        <div class="lb-fb-recipient">This digital record confirms that</div>
+        <div class="lb-fb-name">Pauline Lucena</div>
+        <div class="lb-fb-recipient" style="margin-top:0.4rem;">has successfully completed and qualified in:</div>
+      </div>
+      
+      <div class="lb-fb-title">${cert.title}</div>
+      
+      <div class="lb-fb-footer">
+        <div>
+          <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">ISSUING ORGANIZATION:</label>
+          <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.issuer}</span>
+        </div>
+        <div style="text-align:right;">
+          <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">DATE CONFERRED:</label>
+          <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.date}</span>
+        </div>
+      </div>
+    `;
+  }
   frameEl.appendChild(div);
 }
 
