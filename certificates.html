@@ -1311,10 +1311,37 @@ Object.keys(groups)
     sectionsRoot.appendChild(section);
   });
 
+const alternateExtensions = ['.png', '.PNG', '.jpg', '.JPG', '.jpeg', '.JPEG', '.webp', '.WEBP'];
+const triedExtensions = {
+  main: {},
+  lightbox: {}
+};
+
 function handleMainImgError(idx) {
   const imgEl = document.getElementById(`img-asset-${idx}`);
+  if (!imgEl) return;
+  
+  const currentSrc = imgEl.src;
+  const match = currentSrc.match(/(.*)\.([a-zA-Z0-9]+)$/);
+  if (match) {
+    const basePath = match[1];
+    const ext = '.' + match[2];
+    
+    if (!triedExtensions.main[idx]) {
+      triedExtensions.main[idx] = [];
+    }
+    
+    const nextExt = alternateExtensions.find(e => !triedExtensions.main[idx].includes(e) && e.toLowerCase() !== ext.toLowerCase());
+    
+    if (nextExt) {
+      triedExtensions.main[idx].push(nextExt);
+      imgEl.src = basePath + nextExt;
+      return;
+    }
+  }
+  
   const fallbackEl = document.getElementById(`fallback-card-${idx}`);
-  if (imgEl && fallbackEl) {
+  if (fallbackEl) {
     imgEl.style.display = 'none';
     fallbackEl.style.display = 'flex';
   }
@@ -1341,12 +1368,13 @@ function updateLightbox() {
   const cert = certificates[current];
   const imgEl = document.getElementById('lbImg');
   
-  // Reset fallback state
+  // Reset fallback and retry states
   imgEl.style.display = 'block';
   const existingFb = document.getElementById('lbFallback');
   if (existingFb) {
     existingFb.remove();
   }
+  triedExtensions.lightbox[current] = [];
 
   imgEl.src = cert.src;
   document.getElementById('lbTitle').textContent = cert.title;
@@ -1383,7 +1411,27 @@ function handleLbImgLoad() {
 
 function handleLbImgError() {
   const imgEl = document.getElementById('lbImg');
-  const frameEl = document.getElementById('lbFrame');
+  if (!imgEl) return;
+  
+  const currentSrc = imgEl.src;
+  const match = currentSrc.match(/(.*)\.([a-zA-Z0-9]+)$/);
+  if (match) {
+    const basePath = match[1];
+    const ext = '.' + match[2];
+    
+    if (!triedExtensions.lightbox[current]) {
+      triedExtensions.lightbox[current] = [];
+    }
+    
+    const nextExt = alternateExtensions.find(e => !triedExtensions.lightbox[current].includes(e) && e.toLowerCase() !== ext.toLowerCase());
+    
+    if (nextExt) {
+      triedExtensions.lightbox[current].push(nextExt);
+      imgEl.src = basePath + nextExt;
+      return;
+    }
+  }
+
   imgEl.style.display = 'none';
   
   // Check if already has fallback to prevent duplicate creation
