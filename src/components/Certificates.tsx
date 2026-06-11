@@ -149,7 +149,7 @@ export default function Certificates() {
 
         {/* Bottom micro security indicator */}
         <div className="mt-8 flex items-center justify-center gap-1.5 text-[10px] font-mono text-[#cfc2d6]/40 uppercase tracking-[2px]">
-          <span>STATUS: SHA-256 DIGITAL LEDGER ONLINE</span>
+          <span>STATUS: 2026 </span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
         </div>
       </div>
