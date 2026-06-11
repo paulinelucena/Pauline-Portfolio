@@ -70,6 +70,8 @@ nav {
   transition:0.3s; text-decoration: none;
 }
 .back-btn:hover { color:var(--cyan); border-color:var(--border-bright); transform:translateX(-3px); }
+.nav-logo-group { display:flex; align-items:center; gap:0.5rem; }
+.nav-logo-svg { width:24px; height:24px; }
 .nav-logo { font-family:var(--font-display); font-size:0.95rem; font-weight:800; color:var(--cyan); letter-spacing:2px; }
 
 .wrapper { position:relative; z-index:1; max-width:1300px; margin:0 auto; padding:8rem 2rem 6rem; }
@@ -81,18 +83,88 @@ nav {
 
 /* ── GRID ── */
 .cert-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:1.5rem; }
+.cert-section { margin-bottom: 3.5rem; }
+.cert-section-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 0 0 1.5rem 0;
+}
+.cert-section-header .sh-bar { flex: 0 0 40px; height: 1px; background: var(--cyan); opacity: 0.6; }
+.cert-section-header .sh-line { flex: 1; height: 1px; background: var(--border); }
+.cert-section-header .sh-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--text-primary); letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.cert-section-header .sh-count {
+  font-family: var(--font-mono);
+  font-size: 0.65rem; letter-spacing: 2px;
+  color: var(--cyan); text-transform: uppercase;
+  border: 1px solid var(--border-bright);
+  padding: 0.3rem 0.7rem; border-radius: 2px;
+}
+
 .cert-card {
   background:var(--bg-card); border:1px solid var(--border); border-radius:4px;
   overflow:hidden; cursor:pointer; position:relative; transition:0.4s var(--ease-out);
 }
 .cert-card:hover { transform:translateY(-7px); border-color:var(--border-bright); box-shadow:0 20px 40px rgba(0,0,0,0.4), 0 0 25px var(--cyan-glow); }
 .img-wrap { position:relative; height:220px; overflow:hidden; background: #000; }
-.img-wrap img { width:100%; height:100%; object-fit:cover; opacity:0.7; transition:0.7s; }
+.img-wrap img { width:100%; height:100%; object-fit:cover; opacity:0.75; transition:0.7s; }
 .cert-card:hover .img-wrap img { opacity:1; transform:scale(1.05); }
 .card-tag { position:absolute; top:12px; left:12px; background:rgba(3,1,10,0.8); color:var(--cyan); font-size:0.6rem; padding:3px 8px; border:1px solid var(--border-bright); z-index: 2; }
 .card-footer { padding:1.2rem; display:flex; justify-content:space-between; align-items:center; }
 .cert-name { font-family:var(--font-display); font-size:0.85rem; font-weight:700; color:var(--text-primary); margin-bottom: 2px; }
 .cert-sub { font-size:0.6rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; }
+
+/* ── FALLBACK VECTOR DESIGN ── */
+.fallback-container {
+  display: flex !important; flex-direction: column; justify-content: space-between;
+  position: absolute; inset: 0; padding:1.25rem;
+  background: linear-gradient(135deg, #110729 0%, #03010a 100%);
+  border: 1px dashed rgba(192, 132, 252, 0.25);
+  box-shadow: inset 0 0 30px rgba(168, 85, 247, 0.08);
+  color: var(--text-primary); text-align: center;
+  user-select: none; z-index: 1;
+}
+.fb-header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.5rem; color: var(--text-muted); letter-spacing: 2px;
+  font-family: var(--font-mono); width: 100%;
+}
+.fb-header span { display: flex; align-items: center; gap: 4px; }
+.fb-seal {
+  display: flex; justify-content: center; align-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(192, 132, 252, 0.05); border: 1px solid rgba(192, 132, 252, 0.25);
+  color: var(--cyan); box-shadow: 0 0 15px var(--cyan-glow);
+  margin: 0.8rem auto 0.3rem !important;
+}
+.fb-label {
+  font-[8px] font-mono tracking-[3px] uppercase text-[#ddb7ff] opacity-80;
+}
+.fb-recipient {
+  font-size: 0.5rem; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.fb-name {
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 800;
+  color: var(--text-primary); text-transform: uppercase; letter-spacing: 1.5px;
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--cyan-dim);
+}
+.fb-title {
+  font-size: 0.75rem; font-weight: 700; color: var(--teal);
+  max-width: 90%; margin: 0.4rem auto; line-clamp: 2; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  line-height: 1.25; text-transform: uppercase;
+}
+.fb-footer {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-size: 0.55rem; color: var(--text-muted);
+  border-top: 1px solid rgba(192, 132, 252, 0.1); padding-top: 0.4rem; width: 100%;
+  text-align: left;
+}
+.fb-footer span { color: var(--text-secondary); font-weight: 500; }
 
 /* ── LIGHTBOX DASHBOARD ── */
 .lightbox {
@@ -145,6 +217,48 @@ nav {
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   border: 1px solid rgba(192, 132, 252, 0.2);
 }
+
+.lb-fallback-container {
+  display: flex !important; flex-direction: column; justify-content: space-between;
+  width: 100%; aspect-ratio: 1.414 / 1; max-height: 480px;
+  background: linear-gradient(135deg, #110729 0%, #03010a 100%);
+  border: 2px dashed rgba(192, 132, 252, 0.3);
+  border-radius: 8px; padding: 2.5rem; text-align: center;
+  box-shadow: inset 0 0 60px rgba(168, 85, 247, 0.1);
+  color: var(--text-primary); user-select: none; z-index: 1;
+}
+.lb-fb-header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.65rem; color: var(--text-muted); letter-spacing: 3px;
+  font-family: var(--font-mono); width: 100%;
+}
+.lb-fb-seal {
+  display: flex; justify-content: center; align-items: center;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(192, 132, 252, 0.08); border: 1.5px solid rgba(192, 132, 252, 0.35);
+  color: var(--cyan); box-shadow: 0 0 20px var(--cyan-glow);
+  margin: 1rem auto 0.5rem; font-size: 1.4rem;
+}
+.lb-fb-recipient {
+  font-size: 0.7rem; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 2px;
+}
+.lb-fb-name {
+  font-family: var(--font-display); font-size: 1.6rem; font-weight: 800;
+  color: var(--text-primary); text-transform: uppercase; letter-spacing: 2px;
+  text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--cyan-dim);
+}
+.lb-fb-title {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--teal);
+  max-width: 85%; margin: 1rem auto; line-height: 1.3; text-transform: uppercase;
+}
+.lb-fb-footer {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-size: 0.7rem; color: var(--text-muted);
+  border-top: 1px solid rgba(192, 132, 252, 0.15); padding-top: 1rem; width: 100%;
+  text-align: left;
+}
+.lb-fb-footer span { color: var(--text-secondary); font-weight: 500; }
 
 /* Right side: Credential Data */
 .lb-info-side {
@@ -199,11 +313,32 @@ nav {
 .nav-counter { font-size: 0.75rem; color: var(--text-muted); min-width: 60px; text-align: center; }
 
 @media(max-width: 950px) {
-  .lb-content-split { flex-direction: column; }
-  .lb-view-side { padding: 30px; min-height: 300px; }
-  .lb-info-side { padding: 30px; }
-  .lb-container { height: 95vh; overflow-y: auto; }
+  .lightbox {
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 15px 0;
+  }
+  .lb-backdrop { position: fixed; }
+  .lb-content-split { flex-direction: column; min-height: 0; }
+  .lb-view-side { padding: 50px 20px 25px; min-height: auto; }
+  .lb-info-side { padding: 25px 20px; border-left: none; border-top: 1px solid rgba(192,132,252,0.1); }
+  .lb-container {
+    width: 94%;
+    margin: 0 auto;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .lb-img { max-height: none; width: 100%; height: auto; }
+  .lb-fallback-container { max-height: none; width: 100%; height: auto; padding: 1.5rem; }
+  .lb-fb-title { font-size: 1.05rem; margin: 0.5rem auto; }
+  .lb-fb-name { font-size: 1.3rem; }
+  .lb-fb-footer { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .lb-title { font-size: 1.4rem; }
   .lb-nav-bar { flex-direction: column; gap: 15px; padding: 20px; text-align: center; }
+  .lb-close { top: 12px; right: 12px; }
 }
 </style>
 </head>
@@ -215,7 +350,14 @@ nav {
 <nav>
   <div class="nav-left">
     <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Portfolio</a>
-    <div class="nav-logo">PAULINE.L</div>
+    <div class="nav-logo-group">
+      <svg class="nav-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="44" fill="rgba(168, 85, 247, 0.04)" />
+        <path d="M 30 76 L 30 26 C 30 18, 38 12, 48 12 L 58 12 C 72 12, 80 20, 80 32 C 80 44, 72 52, 58 52 L 30 52" stroke="#c084fc" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 54 52 L 54 70 C 54 76, 60 81, 68 81 L 80 81" stroke="#c084fc" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="nav-logo">PAULINE.L</div>
+    </div>
   </div>
   <div class="nav-right" style="font-size:0.6rem; color:var(--text-muted); letter-spacing:2px;">SECURE LEDGER ACCESS</div>
 </nav>
@@ -226,8 +368,7 @@ nav {
     <h1 class="page-title">Certificates &<br><span>Achievements.</span></h1>
   </div>
 
-  <div class="cert-grid" id="certGrid">
-  </div>
+  <div id="certSections"></div>
 </div>
 
 <div class="lightbox" id="lightbox">
@@ -237,8 +378,8 @@ nav {
     
     <div class="lb-content-split">
       <div class="lb-view-side">
-        <div class="cert-frame">
-          <img class="lb-img" id="lbImg" src="" alt="Certificate">
+        <div class="cert-frame" id="lbFrame">
+          <img class="lb-img" id="lbImg" src="" alt="Certificate" onload="handleLbImgLoad()" onerror="handleLbImgError()">
         </div>
       </div>
 
@@ -267,7 +408,7 @@ nav {
           <div class="meta-icon"><i class="fas fa-fingerprint"></i></div>
           <div class="meta-text">
             <label>Validation Status</label>
-            <span style="color: var(--cyan);"><i class="fas fa-check-circle"></i> Authenticated</span>
+            <span style="color: #34d399;"><i class="fas fa-check-circle"></i> Authenticated</span>
           </div>
         </div>
 
@@ -286,7 +427,7 @@ nav {
       </div>
       <div class="nav-controls">
         <button class="nav-btn" onclick="navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
-        <span class="nav-counter" id="lbCounter">1 / 9</span>
+        <span class="nav-counter" id="lbCounter">1 / 10</span>
         <button class="nav-btn" onclick="navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
@@ -297,112 +438,203 @@ nav {
 const certificates = [
   // 1-4: TESDA COURSES
   {
-    src: 'Ecert 5.png',
+    src: 'Ecert 1.png',
     title: 'TESDA Module I - Introduction to Bookkeeping',
     type: 'TESDA Course Certification 1',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
     date: 'May 19, 2026',
-    skills: ['Double-Entry Accounting', 'Account Classification', 'Balance Sheet Terminology', 'Bookkeeping Basics'],
-    signatories: ['Computer-Generated (Verified Online Ledger)']
+    skills: ['Understanding the Accounting Equation', 'Identification of Account Classifications', 'Application of Rules of Debits and Credits', 'Analyzing Business Transactions'],
+    signatories: ['TESDA Regional Assessment Center']
   },
   {
-    src: 'Ecert 6.jpg',
+    src: 'Ecert 2.png',
     title: 'TESDA Module II - Journalizing Transactions',
     type: 'TESDA Course Certification 2',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
     date: 'May 27, 2026',
-    skills: ['Journal Entries Creation', 'Debit and Credit Application', 'Dual-Effect Principles', 'General Journals Logging'],
-    signatories: ['Computer-Generated (Verified Online Ledger)']
+    skills: ['Prepare chart of accounts', 'Analyze business documents and transactions', 'Determine debit and credit accounts', 'Record transactions in the General Journal','Record transactions in Special Journals','Maintain journal entry accuracy and supporting documents'],
+    signatories: ['TESDA Regional Assessment Center']
   },
   {
-    src: 'Ecert 7.png',
+    src: 'Ecert 3.png',
     title: 'TESDA Module III - Posting Transactions',
     type: 'TESDA Course Certification 3',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
     date: 'May 29, 2026',
-    skills: ['Ledger Posting Mechanics', 'General & Subsidiary Ledgers', 'Balance Extraction', 'Transaction Auditing'],
-    signatories: ['Computer-Generated (Verified Online Ledger)']
+    skills: ['Open and maintain the General Ledger', 'Post journal entries from the General Journal to the General Ledger', 'Post journal entries from Special Journals to Subsidiary Ledgers (Accounts Receivable and Accounts Payable)', 'Verify posting accuracy using cross-referencing and folio numbers', 'Calculate and update running balances of individual accounts' , 'Prepare a Trial Balance from the ledger balances'],
+    signatories: ['TESDA Regional Assessment Center']
   },
   {
-    src: 'Ecert 8.png',
+    src: 'Ecert 4.png',
     title: 'TESDA Module IV - Preparing Trial Balance',
     type: 'TESDA Course Certification 4',
     issuer: 'Technical Education and Skills Development Authority (TESDA)',
     date: 'June 1, 2026',
-    skills: ['Trial Balance Formulation', 'Discrepancy Investigation', 'Adjusting Entry Prep', 'Accounting Cycle Reconciliation'],
-    signatories: ['Computer-Generated (Verified Online Ledger)']
+    skills: ['Gather and extract ending account balances from the General Ledger', 'List accounts with debit balances in the left column', 'List accounts with credit balances in the right column','Total the debit and credit columns to ensure mathematical equality','Identify and locate errors if the Trial Balance does not balance','Prepare adjustments for unrecorded transactions, depreciation, and accruals','Formulate an Adjusted Trial Balance as a basis for financial statements'],
+    signatories: ['TESDA Regional Assessment Center']
   },
-  // 5-9: COLLEGE WEBINARS
+  // 5-9: COLLEGE WEBINARS & RECOGNITION
   {
-    src: 'Ecert 9.png',
-    title: 'Guidance 101',
-    type: 'Achievement & Recognition',
-    issuer: 'University of Caloocan City - Guidance & Counseling Center',
-    date: 'May 22, 2022',
-    skills: ['Adaptive Social Transition', 'Individual Counseling Basics', 'Mental Well-being Support', 'Academic Psychology Adaptation'],
-    signatories: ['Ms. Luwalhati Briones, RGC, LPT', 'Mr. Christian Catapat (Resource Speaker)', 'Von Lester Alido (President, UCC Psychology Society)']
-  },
-  {
-    src: 'Ecert 1.png',
-    title: 'LEAN PRINCIPLES',
-    type: 'Achievement & Recognition',
-    issuer: 'University of Caloocan City - BSAIS',
-    date: 'November 30, 2022',
-    skills: ['Lean Principles', 'Operational Efficiency', 'Process Improvement', 'Career Strategy'],
-    signatories: ['Zenith Camu, CPA, DPA, PhD (Adviser)', 'Rose Ann L. Janer (Presidents/4C)']
+    src: 'Ecert 5.png',
+    title: 'TESDA Module V - Preparing Financial Reports',
+    type: 'TESDA Course Certification 5',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'June 7, 2026',
+    skills: ['Preparing Financial Statements', 'Verifying Financial Data', 'Analyzing Financial Statements', 'Fundamentals of Notes to Financial Statements'],
+    signatories: ['TESDA Regional Assessment Center']
   },
   {
-    src: 'Ecert 2.png',
+    src: 'Ecert 6.png',
+    title: 'TESDA Module VI - Reviewing Internal Control System',
+    type: 'TESDA Course Certification 6',
+    issuer: 'Technical Education and Skills Development Authority (TESDA)',
+    date: 'June 7, 2026',
+    skills: ['Components of Internal Control System', 'Fundamentals of Internal Control System', 'Checking Internal Control Policy Compliance Report', 'Preparing Policy Compliance Report'],
+    signatories: ['TESDA Regional Assessment Center']
+  },
+  {
+    src: 'Ecert 7.png',
     title: 'CYBER SAFE LEARNING FOR EDUCATION PROJECT (CLEP)',
     type: 'Achievement & Recognition',
     issuer: 'DICT, ILCDB, GoPhilippines & Microsoft',
     date: 'September 9, 2022',
-    skills: ['Cyber Security', 'Online Learning Risks', 'Information Protection', 'Digital Literacy'],
-    signatories: ['Maria Lourdes Aquilizan (OIC Director IV)', 'Karl Leung (Chief Partnerships & Strategy Officer)']
+    skills: ['Basic Cybersecurity (The "Human Firewall" Training)', 'Data Privacy (Crucial for Corporate Work)', 'Digital Literacy & Secure Collaboration'],
+    signatories: ['MARIA LOURDES AQUILIZAN [OIC Director IV/DICT-ILCDB]', 'KARL LEUNG [Chief Partnership and Strategy Officer / Go Philippines]', 'DICT', 'ILCDB', 'GOPHILIPPINES', 'Microsoft']
   },
   {
-    src: 'Ecert 3.png',
+    src: 'Ecert 8.png',
     title: 'RELENTLESS: OUTLINING THE PARAMETER AND REACH THE POST',
     type: 'Achievement & Recognition',
-    issuer: 'NFJPIA-NCR Chapters',
+    issuer: 'University of Caloocan City - BSAIS',
     date: 'January 31, 2021',
-    skills: ['Professional Communications', 'Interview Techniques', 'Self Assessment', 'Accountancy Career Readiness'],
-    signatories: ['Jammiel Cherie Dahilan (Project Head)', 'Jyzzel Ozonia D. Encabo (Regional Council President)', 'Conrad Allan M. Alviz, CPA, CISA, CIA, CSRS (Regional Adviser)']
+    skills: ['Technical accounting competency standards', 'Professional employment strategies.'],
+    signatories: ['Remedios R. Santos, CPA, MBA [PICPA NMMC President]', "Jyzzel Ozonia D. Encabo [Regional Council President]"]
   },
   {
-    src: 'Ecert 4.png',
+    src: 'Ecert 9.png',
     title: 'F.A.C.E (Fight, Aim, Conquer, Excel)',
     type: 'Achievement & Recognition',
-    issuer: 'UCC-North BSAT/BSAIS',
+    issuer: 'University of Caloocan City - BSAIS',
     date: 'December 4, 2022',
-    skills: ['Financial Analysis', 'Accounting System Workflows', 'Corporate Planning', 'Analytical Foresight'],
-    signatories: ['Bernadette Holanda (Guest Speaker)', 'Zenith C. Camu, CPA, DPA, PhD (Chair, BSAIS)']
+    skills: ['Financial Analyst\'s POV Webinar'],
+    signatories: ['BERNADETTE HOLANDA [Guest Speaker]', 'Zenith Camu, CPA, DPA, PhD (Adviser)']
+  },
+  {
+    src: 'QuickBooksOnlineCertification.jpg',
+    title: 'QuickBooks Online Accountant Certification',
+    type: 'Professional ProAdvisor Certification',
+    issuer: 'Intuit QuickBooks',
+    date: 'June 10, 2026',
+    skills: ['QuickBooks Online Accountant Setup & Navigation', 'Client Management & Books Review', 'Banking, Reconciliation & Transactions', 'Reporting & Financial Statement Preparation', 'Payroll, Sales Tax & Advanced Features'],
+    signatories: ['Amanda Newton [GTM Segment Lead, Accountant Channel - Rest of World Portfolio]', 'Intuit QuickBooks']
   }
 ];
 
-const grid = document.getElementById('certGrid');
+// Category assignment by index:
+//   0-5  → TESDA Modules I-VI
+//   6    → DICT Webinar (CLEP)
+//   7-8  → College Webinars
+//   9    → Intuit QuickBooks ProAdvisor
+const categoryFor = (idx) => {
+  if (idx <= 5) return 'tesda';
+  if (idx === 6) return 'dict';
+  if (idx === 9) return 'proadvisor';
+  return 'college';
+};
+const categoryLabels = {
+  proadvisor: { sub: 'INTUIT PROADVISOR', title: 'Professional ProAdvisor Certification', order: 1 },
+  tesda:      { sub: 'TESDA CERTIFIED',   title: 'TESDA Certificate of Completion',                  order: 2 },
+  dict:       { sub: 'DICT WEBINAR',      title: 'DICT Webinar',                          order: 3 },
+  college:    { sub: 'COLLEGE WEBINAR',   title: 'College Webinars',                      order: 4 },
+};
+
+const sectionsRoot = document.getElementById('certSections');
 let current = 0;
 
-// Init Grid
+// Group certificates by category while preserving original indices
+const groups = {};
 certificates.forEach((cert, idx) => {
-  const card = document.createElement('div');
-  card.className = 'cert-card';
-  card.onclick = () => openLightbox(idx);
-  card.innerHTML = `
-    <div class="img-wrap">
-      <img src="${cert.src}" alt="${cert.title}" loading="lazy">
-      <div class="card-tag">REF-${(idx+1).toString().padStart(2, '0')}</div>
-    </div>
-    <div class="card-footer">
-      <div>
-        <div class="cert-name">${cert.title}</div>
-        <div class="cert-sub">${idx < 4 ? 'TESDA CERTIFIED' : 'COLLEGE WEBINAR'}</div>
-      </div>
-      <div style="color:var(--cyan); font-size:0.8rem;"><i class="fas fa-plus"></i></div>
-    </div>
-  `;
-  grid.appendChild(card);
+  const cat = categoryFor(idx);
+  (groups[cat] = groups[cat] || []).push({ cert, idx });
 });
+
+// Render sections in defined order
+Object.keys(groups)
+  .sort((a, b) => categoryLabels[a].order - categoryLabels[b].order)
+  .forEach((cat) => {
+    const items = groups[cat];
+    const section = document.createElement('section');
+    section.className = 'cert-section';
+    section.innerHTML = `
+      <div class="cert-section-header">
+        <span class="sh-bar"></span>
+        <span class="sh-title">${categoryLabels[cat].title}</span>
+        <span class="sh-count">${items.length.toString().padStart(2,'0')} ${items.length === 1 ? 'Credential' : 'Credentials'}</span>
+        <span class="sh-line"></span>
+      </div>
+      <div class="cert-grid"></div>
+    `;
+    const grid = section.querySelector('.cert-grid');
+    items.forEach(({ cert, idx }) => {
+      const card = document.createElement('div');
+      card.className = 'cert-card';
+      card.onclick = () => openLightbox(idx);
+      card.innerHTML = `
+        <div class="img-wrap" style="position:relative;">
+          <img src="${cert.src}" id="img-asset-${idx}" alt="${cert.title}" loading="lazy" onerror="handleMainImgError(${idx})">
+          <div class="card-tag">REF-${(idx+1).toString().padStart(2, '0')}</div>
+          
+          <!-- Embedded Fallback Vector (Hidden by default unless src fails to load) -->
+          <div class="fallback-container" id="fallback-card-${idx}" style="display:none;">
+            <div class="fb-header">
+              <span>DIGITAL RECORD</span>
+              <span><i class="fas fa-shield-alt"></i> VERIFIED</span>
+            </div>
+            
+            <div class="fb-seal">
+              <i class="fas fa-award"></i>
+            </div>
+            
+            <div style="margin: 0.3rem 0;">
+              <div class="fb-recipient">Presented to:</div>
+              <div class="fb-name">Pauline Lucena</div>
+            </div>
+            
+            <div class="fb-title">${cert.title}</div>
+            
+            <div class="fb-footer">
+              <div>
+                <label style="display:block; font-size: 0.4rem; color: var(--text-muted); text-transform:uppercase;">AUTHORITY:</label>
+                <span style="font-size:0.55rem; font-weight:600; color:var(--text-secondary); max-width:140px; display:inline-block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${cert.issuer}</span>
+              </div>
+              <div style="text-align:right;">
+                <label style="display:block; font-size: 0.4rem; color: var(--text-muted); text-transform:uppercase;">DATE ISSUED:</label>
+                <span style="font-size:0.55rem; font-weight:600; color:var(--text-secondary);">${cert.date}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">${cert.title}</div>
+            <div class="cert-sub">${categoryLabels[cat].sub}</div>
+          </div>
+          <div style="color:var(--cyan); font-size:0.8rem;"><i class="fas fa-plus"></i></div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    sectionsRoot.appendChild(section);
+  });
+
+function handleMainImgError(idx) {
+  const imgEl = document.getElementById(`img-asset-${idx}`);
+  const fallbackEl = document.getElementById(`fallback-card-${idx}`);
+  if (imgEl && fallbackEl) {
+    imgEl.style.display = 'none';
+    fallbackEl.style.display = 'flex';
+  }
+}
 
 function openLightbox(index) {
   current = index;
@@ -423,7 +655,16 @@ function navigateLightbox(dir) {
 
 function updateLightbox() {
   const cert = certificates[current];
-  document.getElementById('lbImg').src = cert.src;
+  const imgEl = document.getElementById('lbImg');
+  
+  // Reset fallback state
+  imgEl.style.display = 'block';
+  const existingFb = document.getElementById('lbFallback');
+  if (existingFb) {
+    existingFb.remove();
+  }
+
+  imgEl.src = cert.src;
   document.getElementById('lbTitle').textContent = cert.title;
   document.getElementById('lbType').textContent = cert.type;
   document.getElementById('lbIssuer').textContent = cert.issuer;
@@ -451,16 +692,67 @@ function updateLightbox() {
   });
 }
 
-// Accounting Custom Animated Canvas Background
+function handleLbImgLoad() {
+  // Done loading, ensure visible
+  document.getElementById('lbImg').style.display = 'block';
+}
+
+function handleLbImgError() {
+  const imgEl = document.getElementById('lbImg');
+  const frameEl = document.getElementById('lbFrame');
+  imgEl.style.display = 'none';
+  
+  // Check if already has fallback to prevent duplicate creation
+  if (document.getElementById('lbFallback')) return;
+  
+  const cert = certificates[current];
+  const div = document.createElement('div');
+  div.id = 'lbFallback';
+  div.className = 'lb-fallback-container';
+  div.innerHTML = `
+    <div class="lb-fb-header">
+      <span>SECURE LEDGER RECORD</span>
+      <span><i class="fas fa-shield-alt"></i> AUTHENTICATED</span>
+    </div>
+    
+    <div class="lb-fb-seal">
+      <i class="fas fa-award"></i>
+    </div>
+    
+    <div style="margin: 1rem 0;">
+      <div class="lb-fb-recipient">This digital record confirms that</div>
+      <div class="lb-fb-name">Pauline Lucena</div>
+      <div class="lb-fb-recipient" style="margin-top:0.4rem;">has successfully completed and qualified in:</div>
+    </div>
+    
+    <div class="lb-fb-title">${cert.title}</div>
+    
+    <div class="lb-fb-footer">
+      <div>
+        <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">ISSUING ORGANIZATION:</label>
+        <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.issuer}</span>
+      </div>
+      <div style="text-align:right;">
+        <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">DATE CONFERRED:</label>
+        <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.date}</span>
+      </div>
+    </div>
+  `;
+  frameEl.appendChild(div);
+}
+
+// Particle Background Fix
 const canvas = document.getElementById('cert-canvas');
 const ctx = canvas.getContext('2d');
 let W, H;
-function resize() { 
-  W = canvas.width = window.innerWidth; 
-  H = canvas.height = window.innerHeight; 
-}
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
 resize();
 window.addEventListener('resize', resize);
+
+const particles = Array.from({ length: 45 }, () => ({
+  x: Math.random(),
+  y: Math.random()
+}));
 
 const symbols = [
   '$', '₱', 'Σ', '%', '+', '-', '＝', 'DR', 'CR', 
@@ -468,22 +760,21 @@ const symbols = [
   'Audit', 'Equity', 'Assets', 'Profit', 'Debit', 'Credit'
 ];
 
-const particles = Array.from({ length: 45 }, () => ({
-  x: Math.random() * window.innerWidth,
-  y: Math.random() * window.innerHeight,
+const richParticles = particles.map(p => ({
+  ...p,
   text: symbols[Math.floor(Math.random() * symbols.length)],
-  size: Math.random() * 12 + 10, // Font sizes from 10px to 22px
-  speed: Math.random() * 0.4 + 0.1, // Floating speed upwards
-  opacity: Math.random() * 0.12 + 0.04, // Soft opacity to keep it premium and subtle
-  rotation: (Math.random() - 0.5) * 0.3, // Slight angle to look natural
+  size: Math.random() * 12 + 10,
+  speed: Math.random() * 0.4 + 0.1,
+  opacity: Math.random() * 0.12 + 0.04,
+  rotation: (Math.random() - 0.5) * 0.3,
   rotSpeed: (Math.random() - 0.5) * 0.005
 }));
 
 function loop() {
-  ctx.clearRect(0, 0, W, H);
+  ctx.clearRect(0,0,W,H);
   
   // Faint bookkeeping ledger lines in the background
-  ctx.strokeStyle = 'rgba(192, 132, 252, 0.02)'; // Subtle purple vertical ledger dividers
+  ctx.strokeStyle = 'rgba(192, 132, 252, 0.02)';
   ctx.lineWidth = 1;
   for (let x = 100; x < W; x += 250) {
     ctx.beginPath();
@@ -491,7 +782,6 @@ function loop() {
     ctx.lineTo(x, H);
     ctx.stroke();
   }
-  // Horizontal ledger table lines
   for (let y = 80; y < H; y += 120) {
     ctx.beginPath();
     ctx.moveTo(0, y);
@@ -499,26 +789,23 @@ function loop() {
     ctx.stroke();
   }
 
-  // Draw floating accounting/bookkeeping elements
-  particles.forEach(p => {
+  richParticles.forEach(p => {
     ctx.save();
-    ctx.translate(p.x, p.y);
+    ctx.translate(p.x * W, p.y * H);
     ctx.rotate(p.rotation);
     ctx.font = `600 ${p.size}px 'JetBrains Mono', monospace`;
-    ctx.fillStyle = `rgba(192, 132, 252, ${p.opacity})`; 
+    ctx.fillStyle = `rgba(192, 132, 252, ${p.opacity})`;
     ctx.fillText(p.text, -ctx.measureText(p.text).width / 2, p.size / 2);
     ctx.restore();
-    
-    // Float upwards
-    p.y -= p.speed;
+
+    p.y -= (p.speed / H) * 20;
     p.rotation += p.rotSpeed;
-    if (p.y < -30) {
-      p.y = H + 30;
-      p.x = Math.random() * W;
-      p.opacity = Math.random() * 0.12 + 0.04;
+    if (p.y < -0.05) {
+      p.y = 1.05;
+      p.x = Math.random();
     }
   });
-  
+
   requestAnimationFrame(loop);
 }
 loop();
