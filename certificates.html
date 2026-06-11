@@ -117,860 +117,11 @@ nav {
 .cert-name { font-family:var(--font-display); font-size:0.85rem; font-weight:700; color:var(--text-primary); margin-bottom: 2px; }
 .cert-sub { font-size:0.6rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; }
 
-/* ── FALLBACK VECTOR DESIGN ── */
-.fallback-container {
-  display: flex !important; flex-direction: column; justify-content: space-between;
-  position: absolute; inset: 0; padding:1.25rem;
-  background: linear-gradient(135deg, #110729 0%, #03010a 100%);
-  border: 1px dashed rgba(192, 132, 252, 0.25);
-  box-shadow: inset 0 0 30px rgba(168, 85, 247, 0.08);
-  color: var(--text-primary); text-align: center;
-  user-select: none; z-index: 1;
-}
-
-/* ── CLASSIC RESPLENDENT THEMATIC CERTIFICATE FALLBACKS ── */
-
-/* ── AUTHENTIC INTUIT QUICKBOOKS PROADVISOR COMPONENT STYLES ── */
-.qbo-cert-card {
-  background: #ffffff !important;
-  color: #1a1a1a !important;
-  border: 1px solid #dcdcdc !important;
-  border-radius: 8px !important;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  padding: 18px 16px 14px 18px !important;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-/* Authentic ProAdvisor Shield Badge */
-.qbo-shield-sm {
-  width: 78px;
-  height: 94px;
-  background: #ffffff;
-  border: 1.5px solid #002244;
-  border-radius: 6px 6px 32px 32px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex !important;
-  flex-direction: column !important;
-  font-family: 'Inter', sans-serif !important;
-  text-align: center;
-  position: absolute;
-  right: 18px;
-  top: 18px;
-  z-index: 12;
-}
-.qbo-shield-hdr-sm {
-  background: #002244;
-  color: #ffffff;
-  padding: 3px 2px 2px;
-  font-size: 4.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5px;
-  border-bottom: 0.8px solid #002244;
-}
-.qbo-shield-circle-sm {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #2ca01c;
-  color: #ffffff;
-  font-size: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-}
-.qbo-shield-certified-sm {
-  color: #4b5563;
-  font-size: 6px;
-  font-weight: 750;
-  padding: 4px 0 2px;
-  text-transform: uppercase;
-  letter-spacing: 0.2px;
-}
-.qbo-shield-band-sm {
-  background: #2ca01c;
-  color: #ffffff;
-  font-size: 4.8px;
-  font-weight: 700;
-  padding: 3px 1px;
-  text-transform: uppercase;
-}
-.qbo-shield-proadvisor-sm {
-  color: #002244;
-  font-size: 5px;
-  font-weight: 700;
-  padding: 4px 0;
-  text-transform: uppercase;
-}
-
-/* Card typography matching the image */
-.qbo-card-completion {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #000000;
-  font-family: 'Inter', sans-serif;
-  letter-spacing: -0.5px;
-  margin-bottom: 4px;
-  text-align: left;
-}
-.qbo-card-recipient {
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: #000000;
-  text-align: left;
-  margin-bottom: 2px;
-}
-.qbo-card-passed {
-  font-size: 0.48rem;
-  color: #555555;
-  text-align: left;
-  margin-bottom: 4px;
-}
-.qbo-card-achieved {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: #000000;
-  line-height: 1.15;
-  text-align: left;
-  margin-bottom: 6px;
-}
-.qbo-card-date {
-  font-size: 0.52rem;
-  color: #444444;
-  text-align: left;
-  font-weight: 600;
-}
-
-/* Bottom brand and logo elements */
-.qbo-card-logo {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-.qbo-card-logo-circle {
-  width: 13px;
-  height: 13px;
-  background: #2ca01c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 8px;
-  line-height: 1;
-}
-.qbo-card-logo-text {
-  font-size: 0.62rem;
-  color: #000000;
-  font-family: 'Inter', sans-serif;
-}
-.qbo-card-logo-text strong {
-  font-weight: 800;
-}
-.qbo-card-sig-block {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.qbo-card-sig-hand {
-  font-family: 'Caveat', cursive;
-  font-size: 1.1rem;
-  color: #1a1a1a;
-  margin-bottom: -3px;
-  line-height: 1;
-  transform: rotate(-2deg);
-  font-weight: 600;
-}
-.qbo-card-sig-line {
-  width: 65px;
-  height: 1px;
-  background: #cccccc;
-  margin-bottom: 2px;
-}
-.qbo-card-sig-name {
-  font-size: 0.45rem;
-  font-weight: 800;
-  color: #000000;
-  line-height: 1.1;
-}
-.qbo-card-sig-role {
-  font-size: 0.35rem;
-  color: #666666;
-  line-height: 1.2;
-  max-width: 100px;
-  text-align: right;
-}
-
-/* 2. TESDA Certified (Ivory Paper & Deep Blue / Bronze Academic Layout) */
-.fallback-container.cert-style-tesda {
-  background: #fdfaf4 !important;
-  color: #1c1917 !important;
-  border: 5px double #1e3a8a !important;
-  box-shadow: inset 0 0 0 2px #d97706 !important;
-}
-.fallback-container.cert-style-tesda .fb-header {
-  color: #78716c !important;
-  border-bottom: 1px solid #e7e5e4;
-  padding-bottom: 4px;
-}
-.fallback-container.cert-style-tesda .fb-seal {
-  width: 44px;
-  height: 44px;
-  background: rgba(217, 119, 6, 0.08) !important;
-  border: 1.5px solid #d97706 !important;
-  color: #b45309 !important;
-  box-shadow: 0 0 12px rgba(217, 119, 6, 0.1) !important;
-}
-.fallback-container.cert-style-tesda .fb-recipient,
-.fallback-container.cert-style-tesda .fb-footer label {
-  color: #78716c !important;
-}
-.fallback-container.cert-style-tesda .fb-name {
-  color: #1e3a8a !important;
-  font-family: var(--font-display);
-  font-weight: 850;
-  text-decoration-color: #d97706 !important;
-}
-.fallback-container.cert-style-tesda .fb-title {
-  color: #1c1917 !important;
-}
-.fallback-container.cert-style-tesda .fb-footer {
-  border-top: 1px solid #e7e5e4;
-}
-.fallback-container.cert-style-tesda .fb-footer span {
-  color: #1e3a8a !important;
-}
-
-/* 3. DICT Tech Webinar (Premium Crisp Grid & Modern Blue) */
-.fallback-container.cert-style-dict {
-  background: #f8fafc !important;
-  color: #334155 !important;
-  border: 2px solid #0284c7 !important;
-  border-left: 10px solid #0284c7 !important;
-}
-.fallback-container.cert-style-dict .fb-header {
-  color: #64748b !important;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 4px;
-}
-.fallback-container.cert-style-dict .fb-seal {
-  width: 44px;
-  height: 44px;
-  background: rgba(2, 132, 199, 0.08) !important;
-  border: 1.5px solid #0284c7 !important;
-  color: #0284c7 !important;
-}
-.fallback-container.cert-style-dict .fb-recipient,
-.fallback-container.cert-style-dict .fb-footer label {
-  color: #64748b !important;
-}
-.fallback-container.cert-style-dict .fb-name {
-  color: #0f172a !important;
-  font-family: var(--font-display);
-  text-decoration-color: #0284c7 !important;
-}
-.fallback-container.cert-style-dict .fb-title {
-  color: #0369a1 !important;
-  font-family: var(--font-display);
-}
-.fallback-container.cert-style-dict .fb-footer {
-  border-top: 1px solid #e2e8f0;
-}
-.fallback-container.cert-style-dict .fb-footer span {
-  color: #0284c7 !important;
-}
-
-/* 4. University / College (Warm Gold & Maroon Ornate Layout) */
-.fallback-container.cert-style-college {
-  background: #fbfbf6 !important;
-  color: #3f2f12 !important;
-  border: 3px solid #d4af37 !important;
-  outline: 1.5px solid #3f2f12 !important;
-  outline-offset: -5px !important;
-}
-.fallback-container.cert-style-college .fb-header {
-  color: #8c7f6e !important;
-  border-bottom: 1px solid #ebeae2;
-  padding-bottom: 4px;
-}
-.fallback-container.cert-style-college .fb-seal {
-  width: 44px;
-  height: 44px;
-  background: rgba(212, 175, 55, 0.08) !important;
-  border: 1.5px solid #d4af37 !important;
-  color: #b8860b !important;
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.1) !important;
-}
-.fallback-container.cert-style-college .fb-recipient,
-.fallback-container.cert-style-college .fb-footer label {
-  color: #8c7f6e !important;
-}
-.fallback-container.cert-style-college .fb-name {
-  color: #7f1d1d !important;
-  font-family: var(--font-display);
-  text-decoration-color: #d4af37 !important;
-}
-.fallback-container.cert-style-college .fb-title {
-  color: #1a1a1a !important;
-  font-family: var(--font-display);
-}
-.fallback-container.cert-style-college .fb-footer {
-  border-top: 1px solid #ebeae2;
-}
-.fallback-container.cert-style-college .fb-footer span {
-  color: #7f1d1d !important;
-}
-
-.fb-header {
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.5rem; color: var(--text-muted); letter-spacing: 2px;
-  font-family: var(--font-mono); width: 100%;
-}
-.fb-header span { display: flex; align-items: center; gap: 4px; }
-.fb-seal {
-  display: flex; justify-content: center; align-items: center;
-  width: 44px; height: 44px; border-radius: 50%;
-  background: rgba(192, 132, 252, 0.05); border: 1px solid rgba(192, 132, 252, 0.25);
-  color: var(--cyan); box-shadow: 0 0 15px var(--cyan-glow);
-  margin: 0.8rem auto 0.3rem !important;
-}
-.fb-label {
-  font-[8px] font-mono tracking-[3px] uppercase text-[#ddb7ff] opacity-80;
-}
-.fb-recipient {
-  font-size: 0.5rem; color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 1px;
-}
-.fb-name {
-  font-family: var(--font-display); font-size: 0.85rem; font-weight: 800;
-  color: var(--text-primary); text-transform: uppercase; letter-spacing: 1.5px;
-  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--cyan-dim);
-}
-.fb-title {
-  font-size: 0.75rem; font-weight: 700; color: var(--teal);
-  max-width: 90%; margin: 0.4rem auto; line-clamp: 2; display: -webkit-box;
-  -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-  line-height: 1.25; text-transform: uppercase;
-}
-.fb-footer {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  font-size: 0.55rem; color: var(--text-muted);
-  border-top: 1px solid rgba(192, 132, 252, 0.1); padding-top: 0.4rem; width: 100%;
-  text-align: left;
-}
-.fb-footer span { color: var(--text-secondary); font-weight: 500; }
-
-/* ── LIGHTBOX DASHBOARD ── */
-.lightbox {
-  position:fixed; inset:0; z-index:9999;
-  display:flex; align-items:center; justify-content:center;
-  opacity:0; pointer-events:none; transition:0.4s;
-}
-.lightbox.open { opacity:1; pointer-events:all; }
-.lb-backdrop { position:absolute; inset:0; background:rgba(3,1,10,0.97); backdrop-filter:blur(15px); }
-
-.lb-container {
-  position:relative; width:94%; max-width:1150px;
-  background: #090317;
-  border: 1px solid rgba(192, 132, 252, 0.15);
-  border-radius: 8px;
-  display: flex; flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 50px 100px rgba(0,0,0,0.8), 0 0 50px var(--cyan-glow-strong);
-  transform: scale(0.95); transition: 0.4s var(--ease-out);
-}
-.lightbox.open .lb-container { transform: scale(1); }
-
-.lb-close {
-  position:absolute; top:20px; right:20px; z-index:10;
-  background:rgba(192, 132, 252, 0.05); border:1px solid rgba(192, 132, 252, 0.15); 
-  color:#fff; cursor:pointer; width: 35px; height: 35px; border-radius: 4px;
-}
-
-.lb-content-split { display:flex; min-height: 580px; }
-
-/* Left side: The Certificate Preview */
-.lb-view-side {
-  flex: 1.2; background: #03010a; 
-  display:flex; align-items:center; justify-content:center;
-  padding: 40px; position: relative;
-}
-.cert-frame {
-  position: relative; width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-}
-.cert-frame::before, .cert-frame::after {
-  content: ''; position: absolute; width: 30px; height: 30px;
-  border: 1px solid var(--text-muted); pointer-events: none; opacity: 0.5;
-}
-.cert-frame::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
-.cert-frame::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
-
-.lb-img {
-  max-width: 100%; max-height: 480px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  border: 1px solid rgba(192, 132, 252, 0.2);
-}
-
-.lb-fallback-container {
-  display: flex !important; flex-direction: column; justify-content: space-between;
-  width: 100%; aspect-ratio: 1.414 / 1; max-height: 480px;
-  background: linear-gradient(135deg, #110729 0%, #03010a 100%);
-  border: 2px dashed rgba(192, 132, 252, 0.3);
-  border-radius: 8px; padding: 2.5rem; text-align: center;
-  box-shadow: inset 0 0 60px rgba(168, 85, 247, 0.1);
-  color: var(--text-primary); user-select: none; z-index: 1;
-}
-
-/* ── LIGHTBOX RESPLENDENT THEMATIC CERTIFICATE FALLBACKS (HIGH-RES PREVIEW) ── */
-
-/* 1. QuickBooks ProAdvisor (Lightbox Styling - Accurate replica of real cert) */
-.qbo-cert-lb {
-  background: #ffffff !important;
-  color: #1a1a1a !important;
-  border: 1px solid #dcdcdc !important;
-  border-radius: 12px !important;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.15) !important;
-  font-family: 'Inter', sans-serif !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  padding: 40px !important;
-  width: 100%;
-  max-width: 650px;
-  height: auto;
-  aspect-ratio: 1.414 / 1;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 10;
-}
-
-/* Shield in the Lightbox (Larger, High Resolution Details) */
-.qbo-shield {
-  width: 140px;
-  height: 170px;
-  background: #ffffff;
-  border: 3.5px solid #002244;
-  border-radius: 12px 12px 60px 60px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  overflow: hidden;
-  display: flex !important;
-  flex-direction: column !important;
-  font-family: 'Inter', sans-serif !important;
-  text-align: center;
-  position: absolute;
-  right: 40px;
-  top: 40px;
-  z-index: 20;
-}
-.qbo-shield-hdr {
-  background: #002244;
-  color: #ffffff;
-  padding: 8px 4px 6px;
-  font-size: 8px;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  border-bottom: 1.5px solid #002244;
-}
-.qbo-shield-circle {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #2ca01c;
-  color: #ffffff;
-  font-size: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-family: 'Inter', sans-serif;
-}
-.qbo-shield-certified {
-  color: #4b5563;
-  font-size: 11px;
-  font-weight: 800;
-  padding: 8px 0 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.qbo-shield-band {
-  background: #2ca01c;
-  color: #ffffff;
-  font-size: 9.5px;
-  font-weight: 700;
-  padding: 5px 2px;
-  text-transform: uppercase;
-  letter-spacing: 0.2px;
-}
-.qbo-shield-proadvisor {
-  color: #002244;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 8px 0;
-  text-transform: uppercase;
-}
-
-/* Lightbox Typography to replicate the image */
-.qbo-lb-completion {
-  font-size: 2.1rem;
-  font-weight: 850;
-  color: #000000;
-  font-family: 'Inter', sans-serif;
-  letter-spacing: -1px;
-  margin-bottom: 25px;
-  text-align: left;
-}
-.qbo-lb-recipient {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #000000;
-  text-align: left;
-  margin-bottom: 10px;
-  letter-spacing: -0.5px;
-}
-.qbo-lb-passed {
-  font-size: 0.95rem;
-  color: #555555;
-  text-align: left;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-.qbo-lb-achieved {
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: #000000;
-  line-height: 1.2;
-  text-align: left;
-  margin-bottom: 20px;
-}
-.qbo-lb-date {
-  font-size: 0.85rem;
-  color: #444444;
-  text-align: left;
-  font-weight: 600;
-}
-
-/* Bottom Brand and Signatures for Lightbox */
-.qbo-lb-logo {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.qbo-lb-logo-circle {
-  width: 26px;
-  height: 26px;
-  background: #2ca01c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 16px;
-  line-height: 1;
-}
-.qbo-lb-logo-text {
-  font-size: 1.1rem;
-  color: #000000;
-  font-family: 'Inter', sans-serif;
-}
-.qbo-lb-logo-text strong {
-  font-weight: 800;
-}
-.qbo-lb-sig-block {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.qbo-lb-sig-hand {
-  font-family: 'Caveat', cursive;
-  font-size: 1.9rem;
-  color: #1a1a1a;
-  margin-bottom: -5px;
-  line-height: 1;
-  transform: rotate(-2.5deg);
-  font-weight: 600;
-}
-.qbo-lb-sig-line {
-  width: 130px;
-  height: 1px;
-  background: #bbbbbb;
-  margin-bottom: 6px;
-}
-.qbo-lb-sig-name {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #000000;
-  line-height: 1.2;
-}
-.qbo-lb-sig-role {
-  font-size: 0.62rem;
-  color: #666666;
-  line-height: 1.3;
-  max-width: 220px;
-  text-align: right;
-}
-
-/* 2. TESDA Certified (Lightbox) */
-.lb-fallback-container.lb-style-tesda {
-  background: #fdfaf4 !important;
-  color: #1c1917 !important;
-  border: 8px double #1e3a8a !important;
-  box-shadow: inset 0 0 0 3px #d97706 !important;
-}
-.lb-fallback-container.lb-style-tesda .lb-fb-header {
-  color: #78716c !important;
-  border-bottom: 2px solid #e7e5e4 !important;
-  padding-bottom: 6px;
-}
-.lb-fallback-container.lb-style-tesda .lb-fb-seal {
-  width: 60px;
-  height: 60px;
-  background: rgba(217, 119, 6, 0.08) !important;
-  border: 2px solid #d97706 !important;
-  color: #b45309 !important;
-  box-shadow: 0 0 16px rgba(217, 119, 6, 0.15) !important;
-}
-.lb-fallback-container.lb-style-tesda .lb-fb-recipient,
-.lb-fallback-container.lb-style-tesda .lb-fb-footer label {
-  color: #78716c !important;
-}
-.lb-fallback-container.lb-style-tesda .lb-fb-name {
-  color: #1e3a8a !important;
-  font-family: var(--font-display);
-  font-size: 1.65rem !important;
-  font-weight: 850 !important;
-  text-decoration-color: #d97706 !important;
-}
-.lb-fallback-container.lb-style-tesda .lb-fb-title {
-  color: #1c1917 !important;
-  font-family: var(--font-display);
-  font-size: 1.15rem !important;
-}
-.lb-fallback-container.lb-style-tesda .lb-fb-footer {
-  border-top: 1px solid #e7e5e4 !important;
-}
-.lb-fallback-container.lb-style-tesda .lb-fb-footer span {
-  color: #1e3a8a !important;
-}
-
-/* 3. DICT Tech Webinar (Lightbox) */
-.lb-fallback-container.lb-style-dict {
-  background: #f8fafc !important;
-  color: #334155 !important;
-  border: 3px solid #0284c7 !important;
-  border-left: 14px solid #0284c7 !important;
-}
-.lb-fallback-container.lb-style-dict .lb-fb-header {
-  color: #64748b !important;
-  border-bottom: 2px solid #e2e8f0 !important;
-  padding-bottom: 6px;
-}
-.lb-fallback-container.lb-style-dict .lb-fb-seal {
-  width: 60px;
-  height: 60px;
-  background: rgba(2, 132, 199, 0.08) !important;
-  border: 2px solid #0284c7 !important;
-  color: #0284c7 !important;
-}
-.lb-fallback-container.lb-style-dict .lb-fb-recipient,
-.lb-fallback-container.lb-style-dict .lb-fb-footer label {
-  color: #64748b !important;
-}
-.lb-fallback-container.lb-style-dict .lb-fb-name {
-  color: #0f172a !important;
-  font-family: var(--font-display);
-  font-size: 1.8rem !important;
-  text-decoration-color: #0284c7 !important;
-}
-.lb-fallback-container.lb-style-dict .lb-fb-title {
-  color: #0369a1 !important;
-  font-family: var(--font-display);
-  font-size: 1.2rem !important;
-}
-.lb-fallback-container.lb-style-dict .lb-fb-footer {
-  border-top: 1px solid #e2e8f0 !important;
-}
-.lb-fallback-container.lb-style-dict .lb-fb-footer span {
-  color: #0284c7 !important;
-}
-
-/* 4. University / College (Lightbox) */
-.lb-fallback-container.lb-style-college {
-  background: #fbfbf6 !important;
-  color: #3f2f12 !important;
-  border: 5px solid #d4af37 !important;
-  outline: 2px solid #3f2f12 !important;
-  outline-offset: -8px !important;
-}
-.lb-fallback-container.lb-style-college .lb-fb-header {
-  color: #8c7f6e !important;
-  border-bottom: 2px solid #ebeae2 !important;
-  padding-bottom: 6px;
-}
-.lb-fallback-container.lb-style-college .lb-fb-seal {
-  width: 60px;
-  height: 60px;
-  background: rgba(212, 175, 55, 0.08) !important;
-  border: 2px solid #d4af37 !important;
-  color: #b8860b !important;
-  box-shadow: 0 0 16px rgba(212, 175, 55, 0.15) !important;
-}
-.lb-fallback-container.lb-style-college .lb-fb-recipient,
-.lb-fallback-container.lb-style-college .lb-fb-footer label {
-  color: #8c7f6e !important;
-}
-.lb-fallback-container.lb-style-college .lb-fb-name {
-  color: #7f1d1d !important;
-  font-family: var(--font-display);
-  font-size: 1.7rem !important;
-  text-decoration-color: #d4af37 !important;
-}
-.lb-fallback-container.lb-style-college .lb-fb-title {
-  color: #1a1a1a !important;
-  font-family: var(--font-display);
-  font-size: 1.2rem !important;
-}
-.lb-fallback-container.lb-style-college .lb-fb-footer {
-  border-top: 1px solid #ebeae2 !important;
-}
-.lb-fallback-container.lb-style-college .lb-fb-footer span {
-  color: #7f1d1d !important;
-}
-
-.lb-fb-header {
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.65rem; color: var(--text-muted); letter-spacing: 3px;
-  font-family: var(--font-mono); width: 100%;
-}
-.lb-fb-seal {
-  display: flex; justify-content: center; align-items: center;
-  width: 60px; height: 60px; border-radius: 50%;
-  background: rgba(192, 132, 252, 0.08); border: 1.5px solid rgba(192, 132, 252, 0.35);
-  color: var(--cyan); box-shadow: 0 0 20px var(--cyan-glow);
-  margin: 1rem auto 0.5rem; font-size: 1.4rem;
-}
-.lb-fb-recipient {
-  font-size: 0.7rem; color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 2px;
-}
-.lb-fb-name {
-  font-family: var(--font-display); font-size: 1.6rem; font-weight: 800;
-  color: var(--text-primary); text-transform: uppercase; letter-spacing: 2px;
-  text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--cyan-dim);
-}
-.lb-fb-title {
-  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--teal);
-  max-width: 85%; margin: 1rem auto; line-height: 1.3; text-transform: uppercase;
-}
-.lb-fb-footer {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  font-size: 0.7rem; color: var(--text-muted);
-  border-top: 1px solid rgba(192, 132, 252, 0.15); padding-top: 1rem; width: 100%;
-  text-align: left;
-}
-.lb-fb-footer span { color: var(--text-secondary); font-weight: 500; }
-
-/* Right side: Credential Data */
-.lb-info-side {
-  flex: 1; padding: 45px;
-  border-left: 1px solid rgba(192, 132, 252, 0.1);
-  background: linear-gradient(135deg, #110729 0%, #090317 100%);
-}
-
-.ledger-tag {
-  font-size: 0.6rem; letter-spacing: 3px; color: var(--teal);
-  text-transform: uppercase; margin-bottom: 1rem; display: block;
-}
-.lb-title { font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 0.4rem; line-height: 1.2; }
-.lb-subtitle { color: var(--text-secondary); font-size: 0.75rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
-
-.meta-item { display: flex; gap: 1.2rem; margin-bottom: 1.4rem; }
-.meta-icon {
-  width: 38px; height: 38px; background: rgba(192, 132, 252, 0.05);
-  border-radius: 4px; display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(192, 132, 252, 0.15); color: var(--cyan);
-}
-.meta-text label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1.5px; margin-bottom: 2px; }
-.meta-text span { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; }
-
-.skills-title { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; margin-top: 2rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
-.skills-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
-.skill-tag { 
-  background: rgba(233, 213, 255, 0.05); border: 1px solid rgba(233, 213, 255, 0.15);
-  color: var(--teal); font-size: 0.62rem; padding: 4px 10px; border-radius: 3px;
-}
-
-.signatories {
-  background: rgba(0,0,0,0.25); border-radius: 4px; padding: 15px; border: 1px solid rgba(192, 132, 255, 0.03);
-}
-.sign-item { font-size: 0.7rem; color: var(--text-secondary); display: block; margin-bottom: 4px; }
-.sign-item::before { content: '•'; color: var(--cyan); margin-right: 10px; }
-
-/* Bottom Nav Bar */
-.lb-nav-bar {
-  background: #03010a; border-top: 1px solid rgba(192, 132, 252, 0.1);
-  padding: 15px 40px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-id-badge { background: rgba(192, 132, 252, 0.08); border: 1px solid rgba(192, 132, 252, 0.12); font-size: 0.6rem; padding: 4px 10px; border-radius: 2px; color: var(--cyan); margin-right: 15px; }
-.nav-current-name { font-size: 0.75rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
-
-.nav-controls { display: flex; align-items: center; gap: 12px; }
-.nav-btn {
-  background: #110729; border: 1px solid var(--border); color: var(--cyan);
-  width: 45px; height: 35px; cursor: pointer; transition: 0.2s; border-radius: 2px;
-}
-.nav-btn:hover { background: var(--cyan); color: #000; border-color: var(--cyan); }
-.nav-counter { font-size: 0.75rem; color: var(--text-muted); min-width: 60px; text-align: center; }
-
 @media(max-width: 950px) {
-  .lightbox {
-    align-items: flex-start;
-    justify-content: flex-start;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 15px 0;
-  }
-  .lb-backdrop { position: fixed; }
-  .lb-content-split { flex-direction: column; min-height: 0; }
-  .lb-view-side { padding: 50px 20px 25px; min-height: auto; }
-  .lb-info-side { padding: 25px 20px; border-left: none; border-top: 1px solid rgba(192,132,252,0.1); }
-  .lb-container {
-    width: 94%;
-    margin: 0 auto;
-    height: auto;
-    max-height: none;
-    overflow: visible;
-  }
-  .lb-img { max-height: none; width: 100%; height: auto; }
-  .lb-fallback-container { max-height: none; width: 100%; height: auto; padding: 1.5rem; }
-  .lb-fb-title { font-size: 1.05rem; margin: 0.5rem auto; }
-  .lb-fb-name { font-size: 1.3rem; }
-  .lb-fb-footer { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
-  .lb-title { font-size: 1.4rem; }
-  .lb-nav-bar { flex-direction: column; gap: 15px; padding: 20px; text-align: center; }
-  .lb-close { top: 12px; right: 12px; }
+  nav { padding: 1rem 1.5rem; }
+  .wrapper { padding: 6rem 1rem 4rem; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .page-title { font-size: clamp(1.5rem, 4vw, 2.5rem); }
 }
 </style>
 </head>
@@ -1000,604 +151,244 @@ nav {
     <h1 class="page-title">Certificates &<br><span>Achievements.</span></h1>
   </div>
 
-  <div id="certSections"></div>
-</div>
-
-<div class="lightbox" id="lightbox">
-  <div class="lb-backdrop" onclick="closeLightbox()"></div>
-  <div class="lb-container">
-    <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-    
-    <div class="lb-content-split">
-      <div class="lb-view-side">
-        <div class="cert-frame" id="lbFrame">
-          <img class="lb-img" id="lbImg" src="" alt="Certificate" onload="handleLbImgLoad()" onerror="handleLbImgError()">
-        </div>
-      </div>
-
-      <div class="lb-info-side">
-        <span class="ledger-tag"><i class="fas fa-shield-alt"></i> Verified Credential Record</span>
-        <h2 class="lb-title" id="lbTitle">Certificate Title</h2>
-        <p class="lb-subtitle" id="lbType">Category Description</p>
-
-        <div class="meta-item">
-          <div class="meta-icon"><i class="fas fa-university"></i></div>
-          <div class="meta-text">
-            <label>Issuing Organization</label>
-            <span id="lbIssuer">Institution Name</span>
-          </div>
-        </div>
-
-        <div class="meta-item">
-          <div class="meta-icon"><i class="far fa-calendar-check"></i></div>
-          <div class="meta-text">
-            <label>Date Secured</label>
-            <span id="lbDate">Month DD, YYYY</span>
-          </div>
-        </div>
-
-        <div class="meta-item">
-          <div class="meta-icon"><i class="fas fa-fingerprint"></i></div>
-          <div class="meta-text">
-            <label>Validation Status</label>
-            <span style="color: #34d399;"><i class="fas fa-check-circle"></i> Authenticated</span>
-          </div>
-        </div>
-
-        <div class="skills-title">Competencies & Skills</div>
-        <div class="skills-tags" id="lbSkills"></div>
-
-        <div class="skills-title">Authorized Signatories</div>
-        <div class="signatories" id="lbSignatories"></div>
-      </div>
+  <!-- TESDA CREDENTIALS SECTION -->
+  <div class="cert-section">
+    <div class="cert-section-header">
+      <div class="sh-bar"></div>
+      <div class="sh-title">TESDA Credentials</div>
+      <div class="sh-count">6 CREDENTIALS</div>
+      <div class="sh-line"></div>
     </div>
-
-    <div class="lb-nav-bar">
-      <div>
-        <span class="nav-id-badge" id="lbBottomTag">INDEX 01</span>
-        <span class="nav-current-name" id="lbBottomTitle">Title</span>
-      </div>
-      <div class="nav-controls">
-        <button class="nav-btn" onclick="navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
-        <span class="nav-counter" id="lbCounter">1 / 10</span>
-        <button class="nav-btn" onclick="navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-const certificates = [
-  // 1-4: TESDA COURSES
-  {
-    src: 'Ecert 1.png',
-    title: 'TESDA Module I - Introduction to Bookkeeping',
-    type: 'TESDA Course Certification 1',
-    issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'May 19, 2026',
-    skills: ['Understanding the Accounting Equation', 'Identification of Account Classifications', 'Application of Rules of Debits and Credits', 'Analyzing Business Transactions'],
-    signatories: ['TESDA Regional Assessment Center']
-  },
-  {
-    src: 'Ecert 2.png',
-    title: 'TESDA Module II - Journalizing Transactions',
-    type: 'TESDA Course Certification 2',
-    issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'May 27, 2026',
-    skills: ['Prepare chart of accounts', 'Analyze business documents and transactions', 'Determine debit and credit accounts', 'Record transactions in the General Journal','Record transactions in Special Journals','Maintain journal entry accuracy and supporting documents'],
-    signatories: ['TESDA Regional Assessment Center']
-  },
-  {
-    src: 'Ecert 3.png',
-    title: 'TESDA Module III - Posting Transactions',
-    type: 'TESDA Course Certification 3',
-    issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'May 29, 2026',
-    skills: ['Open and maintain the General Ledger', 'Post journal entries from the General Journal to the General Ledger', 'Post journal entries from Special Journals to Subsidiary Ledgers (Accounts Receivable and Accounts Payable)', 'Verify posting accuracy using cross-referencing and folio numbers', 'Calculate and update running balances of individual accounts' , 'Prepare a Trial Balance from the ledger balances'],
-    signatories: ['TESDA Regional Assessment Center']
-  },
-  {
-    src: 'Ecert 4.png',
-    title: 'TESDA Module IV - Preparing Trial Balance',
-    type: 'TESDA Course Certification 4',
-    issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'June 1, 2026',
-    skills: ['Gather and extract ending account balances from the General Ledger', 'List accounts with debit balances in the left column', 'List accounts with credit balances in the right column','Total the debit and credit columns to ensure mathematical equality','Identify and locate errors if the Trial Balance does not balance','Prepare adjustments for unrecorded transactions, depreciation, and accruals','Formulate an Adjusted Trial Balance as a basis for financial statements'],
-    signatories: ['TESDA Regional Assessment Center']
-  },
-  // 5-9: COLLEGE WEBINARS & RECOGNITION
-  {
-    src: 'Ecert 5.png',
-    title: 'TESDA Module V - Preparing Financial Reports',
-    type: 'TESDA Course Certification 5',
-    issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'June 7, 2026',
-    skills: ['Preparing Financial Statements', 'Verifying Financial Data', 'Analyzing Financial Statements', 'Fundamentals of Notes to Financial Statements'],
-    signatories: ['TESDA Regional Assessment Center']
-  },
-  {
-    src: 'Ecert 6.png',
-    title: 'TESDA Module VI - Reviewing Internal Control System',
-    type: 'TESDA Course Certification 6',
-    issuer: 'Technical Education and Skills Development Authority (TESDA)',
-    date: 'June 7, 2026',
-    skills: ['Components of Internal Control System', 'Fundamentals of Internal Control System', 'Checking Internal Control Policy Compliance Report', 'Preparing Policy Compliance Report'],
-    signatories: ['TESDA Regional Assessment Center']
-  },
-  {
-    src: 'Ecert 7.png',
-    title: 'CYBER SAFE LEARNING FOR EDUCATION PROJECT (CLEP)',
-    type: 'Achievement & Recognition',
-    issuer: 'DICT, ILCDB, GoPhilippines & Microsoft',
-    date: 'September 9, 2022',
-    skills: ['Basic Cybersecurity (The "Human Firewall" Training)', 'Data Privacy (Crucial for Corporate Work)', 'Digital Literacy & Secure Collaboration'],
-    signatories: ['MARIA LOURDES AQUILIZAN [OIC Director IV/DICT-ILCDB]', 'KARL LEUNG [Chief Partnership and Strategy Officer / Go Philippines]', 'DICT', 'ILCDB', 'GOPHILIPPINES', 'Microsoft']
-  },
-  {
-    src: 'Ecert 8.png',
-    title: 'RELENTLESS: OUTLINING THE PARAMETER AND REACH THE POST',
-    type: 'Achievement & Recognition',
-    issuer: 'University of Caloocan City - BSAIS',
-    date: 'January 31, 2021',
-    skills: ['Technical accounting competency standards', 'Professional employment strategies.'],
-    signatories: ['Remedios R. Santos, CPA, MBA [PICPA NMMC President]', "Jyzzel Ozonia D. Encabo [Regional Council President]"]
-  },
-  {
-    src: 'Ecert 9.png',
-    title: 'F.A.C.E (Fight, Aim, Conquer, Excel)',
-    type: 'Achievement & Recognition',
-    issuer: 'University of Caloocan City - BSAIS',
-    date: 'December 4, 2022',
-    skills: ['Financial Analyst\'s POV Webinar'],
-    signatories: ['BERNADETTE HOLANDA [Guest Speaker]', 'Zenith Camu, CPA, DPA, PhD (Adviser)']
-  },
-  {
-    src: 'QuickBooksOnlineCertification.jpg',
-    title: 'QuickBooks Online Accountant Certification',
-    type: 'Professional ProAdvisor Certification',
-    issuer: 'Intuit QuickBooks',
-    date: 'June 10, 2026',
-    skills: ['QuickBooks Online Accountant Setup & Navigation', 'Client Management & Books Review', 'Banking, Reconciliation & Transactions', 'Reporting & Financial Statement Preparation', 'Payroll, Sales Tax & Advanced Features'],
-    signatories: ['Amanda Newton [GTM Segment Lead, Accountant Channel - Rest of World Portfolio]', 'Intuit QuickBooks']
-  }
-];
-
-// Category assignment by index:
-//   0-5  → TESDA Modules I-VI
-//   6    → DICT Webinar (CLEP)
-//   7-8  → College Webinars
-//   9    → Intuit QuickBooks ProAdvisor
-const categoryFor = (idx) => {
-  if (idx <= 5) return 'tesda';
-  if (idx === 6) return 'dict';
-  if (idx === 9) return 'proadvisor';
-  return 'college';
-};
-const categoryLabels = {
-  proadvisor: { sub: 'INTUIT PROADVISOR', title: 'Professional ProAdvisor Certification', order: 1 },
-  tesda:      { sub: 'TESDA CERTIFIED',   title: 'TESDA Certificate of Completion',                  order: 2 },
-  dict:       { sub: 'DICT WEBINAR',      title: 'DICT Webinar',                          order: 3 },
-  college:    { sub: 'COLLEGE WEBINAR',   title: 'College Webinars',                      order: 4 },
-};
-
-const sectionsRoot = document.getElementById('certSections');
-let current = 0;
-
-// Group certificates by category while preserving original indices
-const groups = {};
-certificates.forEach((cert, idx) => {
-  const cat = categoryFor(idx);
-  (groups[cat] = groups[cat] || []).push({ cert, idx });
-});
-
-// Render sections in defined order
-Object.keys(groups)
-  .sort((a, b) => categoryLabels[a].order - categoryLabels[b].order)
-  .forEach((cat) => {
-    const items = groups[cat];
-    const section = document.createElement('section');
-    section.className = 'cert-section';
-    section.innerHTML = `
-      <div class="cert-section-header">
-        <span class="sh-bar"></span>
-        <span class="sh-title">${categoryLabels[cat].title}</span>
-        <span class="sh-count">${items.length.toString().padStart(2,'0')} ${items.length === 1 ? 'Credential' : 'Credentials'}</span>
-        <span class="sh-line"></span>
-      </div>
-      <div class="cert-grid"></div>
-    `;
-    const grid = section.querySelector('.cert-grid');
-    items.forEach(({ cert, idx }) => {
-      const card = document.createElement('div');
-      card.className = 'cert-card';
-      card.onclick = () => openLightbox(idx);
-      
-      const cat = categoryFor(idx);
-      let fallbackMarkup = '';
-      
-      if (cat === 'proadvisor') {
-        fallbackMarkup = `
-          <!-- Embedded Beautiful Replica of QBO Certificate -->
-          <div class="qbo-cert-card" id="fallback-card-${idx}" style="display:none;">
-            <div style="display:flex; flex-direction:column; justify-content:flex-start; height:100%; text-align:left;">
-              <div class="qbo-card-completion">Certificate of completion</div>
-              <div style="margin-top: 4px;">
-                <div class="qbo-card-recipient">Pauline Lucena</div>
-                <div class="qbo-card-passed">Has successfully passed the exam and achieved:</div>
-              </div>
-              <div class="qbo-card-achieved">QuickBooks Online<br>Accountant Certification</div>
-              <div class="qbo-card-date">Dated: 10 June 2026</div>
-            </div>
-            
-            <!-- Badge on the right -->
-            <div class="qbo-shield-sm">
-              <div class="qbo-shield-hdr-sm">
-                <div class="qbo-shield-circle-sm">qb</div>
-                <span>intuit</span>
-              </div>
-              <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; padding-bottom:3px; box-sizing:border-box;">
-                <div class="qbo-shield-certified-sm">Certified</div>
-                <div class="qbo-shield-band-sm">QuickBooks<br>Online</div>
-                <div class="qbo-shield-proadvisor-sm">ProAdvisor</div>
-              </div>
-            </div>
-            
-            <!-- Bottom brand and signature -->
-            <div style="display:flex; justify-content:space-between; align-items:flex-end; width:100%; margin-top: auto; z-index:11;">
-              <div class="qbo-card-logo">
-                <div class="qbo-card-logo-circle">qb</div>
-                <span class="qbo-card-logo-text">intuit <strong>quickbooks</strong></span>
-              </div>
-              
-              <div class="qbo-card-sig-block">
-                <div class="qbo-card-sig-hand">Amanda Newton</div>
-                <div class="qbo-card-sig-line"></div>
-                <div class="qbo-card-sig-name">Amanda Newton</div>
-                <div class="qbo-card-sig-role">GTM Segment Lead, Rest of World</div>
-              </div>
-            </div>
-          </div>
-        `;
-      } else {
-        fallbackMarkup = `
-          <!-- Embedded Fallback Vector (Hidden by default unless src fails to load) -->
-          <div class="fallback-container cert-style-${cat}" id="fallback-card-${idx}" style="display:none;">
-            <div class="fb-header">
-              <span>DIGITAL RECORD</span>
-              <span><i class="fas fa-shield-alt"></i> VERIFIED</span>
-            </div>
-            
-            <div class="fb-seal">
-              <i class="fas fa-award"></i>
-            </div>
-            
-            <div style="margin: 0.3rem 0;">
-              <div class="fb-recipient">Presented to:</div>
-              <div class="fb-name">Pauline Lucena</div>
-            </div>
-            
-            <div class="fb-title">${cert.title}</div>
-            
-            <div class="fb-footer">
-              <div>
-                <label style="display:block; font-size: 0.4rem; color: var(--text-muted); text-transform:uppercase;">AUTHORITY:</label>
-                <span style="font-size:0.55rem; font-weight:600; color:var(--text-secondary); max-width:140px; display:inline-block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${cert.issuer}</span>
-              </div>
-              <div style="text-align:right;">
-                <label style="display:block; font-size: 0.4rem; color: var(--text-muted); text-transform:uppercase;">DATE ISSUED:</label>
-                <span style="font-size:0.55rem; font-weight:600; color:var(--text-secondary);">${cert.date}</span>
-              </div>
-            </div>
-          </div>
-        `;
-      }
-
-      card.innerHTML = `
-        <div class="img-wrap" style="position:relative;">
-          <img src="${cert.src}" id="img-asset-${idx}" alt="${cert.title}" loading="lazy" onerror="handleMainImgError(${idx})">
-          <div class="card-tag">REF-${(idx+1).toString().padStart(2, '0')}</div>
-          ${fallbackMarkup}
+    <div class="cert-grid">
+      <!-- Certificate 1 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 1.png" alt="TESDA Certificate 1">
+          <span class="card-tag">REF-01</span>
         </div>
         <div class="card-footer">
           <div>
-            <div class="cert-name">${cert.title}</div>
-            <div class="cert-sub">${categoryLabels[cat].sub}</div>
-          </div>
-          <div style="color:var(--cyan); font-size:0.8rem;"><i class="fas fa-plus"></i></div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-    sectionsRoot.appendChild(section);
-  });
-
-const alternateExtensions = ['.png', '.PNG', '.jpg', '.JPG', '.jpeg', '.JPEG', '.webp', '.WEBP'];
-const triedExtensions = {
-  main: {},
-  lightbox: {}
-};
-
-function handleMainImgError(idx) {
-  const imgEl = document.getElementById(`img-asset-${idx}`);
-  if (!imgEl) return;
-  
-  const currentSrc = imgEl.src;
-  const match = currentSrc.match(/(.*)\.([a-zA-Z0-9]+)$/);
-  if (match) {
-    const basePath = match[1];
-    const ext = '.' + match[2];
-    
-    if (!triedExtensions.main[idx]) {
-      triedExtensions.main[idx] = [];
-    }
-    
-    const nextExt = alternateExtensions.find(e => !triedExtensions.main[idx].includes(e) && e.toLowerCase() !== ext.toLowerCase());
-    
-    if (nextExt) {
-      triedExtensions.main[idx].push(nextExt);
-      imgEl.src = basePath + nextExt;
-      return;
-    }
-  }
-  
-  const fallbackEl = document.getElementById(`fallback-card-${idx}`);
-  if (fallbackEl) {
-    imgEl.style.display = 'none';
-    fallbackEl.style.display = 'flex';
-  }
-}
-
-function openLightbox(index) {
-  current = index;
-  updateLightbox();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function navigateLightbox(dir) {
-  current = (current + dir + certificates.length) % certificates.length;
-  updateLightbox();
-}
-
-function updateLightbox() {
-  const cert = certificates[current];
-  const imgEl = document.getElementById('lbImg');
-  
-  // Reset fallback and retry states
-  imgEl.style.display = 'block';
-  const existingFb = document.getElementById('lbFallback');
-  if (existingFb) {
-    existingFb.remove();
-  }
-  triedExtensions.lightbox[current] = [];
-
-  imgEl.src = cert.src;
-  document.getElementById('lbTitle').textContent = cert.title;
-  document.getElementById('lbType').textContent = cert.type;
-  document.getElementById('lbIssuer').textContent = cert.issuer;
-  document.getElementById('lbDate').textContent = cert.date;
-  document.getElementById('lbBottomTitle').textContent = cert.title;
-  document.getElementById('lbBottomTag').textContent = `INDEX ${(current+1).toString().padStart(2, '0')}`;
-  document.getElementById('lbCounter').textContent = `${current + 1} / ${certificates.length}`;
-
-  const skillContainer = document.getElementById('lbSkills');
-  skillContainer.innerHTML = '';
-  cert.skills.forEach(s => {
-    const span = document.createElement('span');
-    span.className = 'skill-tag';
-    span.textContent = s;
-    skillContainer.appendChild(span);
-  });
-
-  const signContainer = document.getElementById('lbSignatories');
-  signContainer.innerHTML = '';
-  cert.signatories.forEach(s => {
-    const span = document.createElement('span');
-    span.className = 'sign-item';
-    span.textContent = s;
-    signContainer.appendChild(span);
-  });
-}
-
-function handleLbImgLoad() {
-  // Done loading, ensure visible
-  document.getElementById('lbImg').style.display = 'block';
-}
-
-function handleLbImgError() {
-  const imgEl = document.getElementById('lbImg');
-  if (!imgEl) return;
-  
-  const currentSrc = imgEl.src;
-  const match = currentSrc.match(/(.*)\.([a-zA-Z0-9]+)$/);
-  if (match) {
-    const basePath = match[1];
-    const ext = '.' + match[2];
-    
-    if (!triedExtensions.lightbox[current]) {
-      triedExtensions.lightbox[current] = [];
-    }
-    
-    const nextExt = alternateExtensions.find(e => !triedExtensions.lightbox[current].includes(e) && e.toLowerCase() !== ext.toLowerCase());
-    
-    if (nextExt) {
-      triedExtensions.lightbox[current].push(nextExt);
-      imgEl.src = basePath + nextExt;
-      return;
-    }
-  }
-
-  imgEl.style.display = 'none';
-  
-  // Check if already has fallback to prevent duplicate creation
-  if (document.getElementById('lbFallback')) return;
-  
-  const cert = certificates[current];
-  const div = document.createElement('div');
-  div.id = 'lbFallback';
-  const cat = categoryFor(current);
-  
-  if (cat === 'proadvisor') {
-    div.className = 'qbo-cert-lb';
-    div.innerHTML = `
-      <div style="display:flex; flex-direction:column; justify-content:flex-start; height:100%; text-align:left;">
-        <div class="qbo-lb-completion">Certificate of completion</div>
-        <div style="margin-top: 15px;">
-          <div class="qbo-lb-recipient">Pauline Lucena</div>
-          <div class="qbo-lb-passed">Has successfully passed the exam and achieved:</div>
-        </div>
-        <div class="qbo-lb-achieved">QuickBooks Online<br>Accountant Certification</div>
-        <div class="qbo-lb-date">Dated: 10 June 2026</div>
-      </div>
-      
-      <!-- Badge on the right -->
-      <div class="qbo-shield">
-        <div class="qbo-shield-hdr">
-          <div class="qbo-shield-circle">qb</div>
-          <span>intuit</span>
-        </div>
-        <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; padding-bottom:10px; box-sizing:border-box;">
-          <div class="qbo-shield-certified">Certified</div>
-          <div class="qbo-shield-band">QuickBooks Online</div>
-          <div class="qbo-shield-proadvisor">ProAdvisor</div>
-        </div>
-      </div>
-      
-      <!-- Bottom brand and signature -->
-      <div style="display:flex; justify-content:space-between; align-items:flex-end; width:100%; margin-top: auto; z-index:22;">
-        <div class="qbo-lb-logo">
-          <div class="qbo-lb-logo-circle">qb</div>
-          <span class="qbo-lb-logo-text">intuit <strong>quickbooks</strong></span>
-        </div>
-        
-        <div class="qbo-lb-sig-block">
-          <div class="qbo-lb-sig-hand">Amanda Newton</div>
-          <div class="qbo-lb-sig-line"></div>
-          <div class="qbo-lb-sig-name">Amanda Newton</div>
-          <div class="qbo-lb-sig-role">
-            GTM Segment Lead,<br>
-            Accountant Channel - Rest of World Portfolio
+            <div class="cert-name">TESDA Certificate</div>
+            <div class="cert-sub">Verified Credential</div>
           </div>
         </div>
       </div>
-    `;
-  } else {
-    div.className = `lb-fallback-container lb-style-${cat}`;
-    div.innerHTML = `
-      <div class="lb-fb-header">
-        <span>SECURE LEDGER RECORD</span>
-        <span><i class="fas fa-shield-alt"></i> AUTHENTICATED</span>
-      </div>
-      
-      <div class="lb-fb-seal">
-        <i class="fas fa-award"></i>
-      </div>
-      
-      <div style="margin: 1rem 0;">
-        <div class="lb-fb-recipient">This digital record confirms that</div>
-        <div class="lb-fb-name">Pauline Lucena</div>
-        <div class="lb-fb-recipient" style="margin-top:0.4rem;">has successfully completed and qualified in:</div>
-      </div>
-      
-      <div class="lb-fb-title">${cert.title}</div>
-      
-      <div class="lb-fb-footer">
-        <div>
-          <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">ISSUING ORGANIZATION:</label>
-          <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.issuer}</span>
-        </div>
-        <div style="text-align:right;">
-          <label style="display:block; font-size: 0.5rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom: 2px;">DATE CONFERRED:</label>
-          <span style="font-size:0.75rem; font-weight:600; color:var(--text-secondary);">${cert.date}</span>
-        </div>
-      </div>
-    `;
-  }
-  frameEl.appendChild(div);
-}
 
-// Particle Background Fix
+      <!-- Certificate 2 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 2.png" alt="TESDA Certificate 2">
+          <span class="card-tag">REF-02</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">TESDA Certificate</div>
+            <div class="cert-sub">Verified Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 3.png" alt="TESDA Certificate 3">
+          <span class="card-tag">REF-03</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">TESDA Certificate</div>
+            <div class="cert-sub">Verified Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 4.png" alt="TESDA Certificate 4">
+          <span class="card-tag">REF-04</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">TESDA Certificate</div>
+            <div class="cert-sub">Verified Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 5 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 5.png" alt="TESDA Certificate 5">
+          <span class="card-tag">REF-05</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">TESDA Certificate</div>
+            <div class="cert-sub">Verified Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 6 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 6.png" alt="TESDA Certificate 6">
+          <span class="card-tag">REF-06</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">TESDA Certificate</div>
+            <div class="cert-sub">Verified Credential</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADDITIONAL CREDENTIALS SECTION -->
+  <div class="cert-section">
+    <div class="cert-section-header">
+      <div class="sh-bar"></div>
+      <div class="sh-title">Professional Certifications</div>
+      <div class="sh-count">4 CREDENTIALS</div>
+      <div class="sh-line"></div>
+    </div>
+    <div class="cert-grid">
+      <!-- Certificate 7 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 7.png" alt="Professional Certificate 7">
+          <span class="card-tag">REF-07</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">Professional Cert</div>
+            <div class="cert-sub">Advanced Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 8 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 8.png" alt="Professional Certificate 8">
+          <span class="card-tag">REF-08</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">Professional Cert</div>
+            <div class="cert-sub">Advanced Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 9 -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="Ecert 9.JPG" alt="Professional Certificate 9">
+          <span class="card-tag">REF-09</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">Professional Cert</div>
+            <div class="cert-sub">Advanced Credential</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QuickBooks ProAdvisor Certification -->
+      <div class="cert-card">
+        <div class="img-wrap">
+          <img src="QuickBooksOnlineCertification.jpg" alt="QuickBooks Online ProAdvisor Certification">
+          <span class="card-tag">INTUIT CERTIFIED</span>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="cert-name">QuickBooks Online</div>
+            <div class="cert-sub">ProAdvisor Certified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Ambient particle background
 const canvas = document.getElementById('cert-canvas');
-const ctx = canvas.getContext('2d');
-let W, H;
-function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-resize();
-window.addEventListener('resize', resize);
-
-const particles = Array.from({ length: 45 }, () => ({
-  x: Math.random(),
-  y: Math.random()
-}));
-
-const symbols = [
-  '$', '₱', 'Σ', '%', '+', '-', '＝', 'DR', 'CR', 
-  '0.00', '1040', 'Balance', 'Tax', 'ROI', 'Ledger', 
-  'Audit', 'Equity', 'Assets', 'Profit', 'Debit', 'Credit'
-];
-
-const richParticles = particles.map(p => ({
-  ...p,
-  text: symbols[Math.floor(Math.random() * symbols.length)],
-  size: Math.random() * 12 + 10,
-  speed: Math.random() * 0.4 + 0.1,
-  opacity: Math.random() * 0.12 + 0.04,
-  rotation: (Math.random() - 0.5) * 0.3,
-  rotSpeed: (Math.random() - 0.5) * 0.005
-}));
-
-function loop() {
-  ctx.clearRect(0,0,W,H);
+if (canvas) {
+  const ctx = canvas.getContext('2d');
   
-  // Faint bookkeeping ledger lines in the background
-  ctx.strokeStyle = 'rgba(192, 132, 252, 0.02)';
-  ctx.lineWidth = 1;
-  for (let x = 100; x < W; x += 250) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, H);
-    ctx.stroke();
-  }
-  for (let y = 80; y < H; y += 120) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(W, y);
-    ctx.stroke();
-  }
-
-  richParticles.forEach(p => {
-    ctx.save();
-    ctx.translate(p.x * W, p.y * H);
-    ctx.rotate(p.rotation);
-    ctx.font = `600 ${p.size}px 'JetBrains Mono', monospace`;
-    ctx.fillStyle = `rgba(192, 132, 252, ${p.opacity})`;
-    ctx.fillText(p.text, -ctx.measureText(p.text).width / 2, p.size / 2);
-    ctx.restore();
-
-    p.y -= (p.speed / H) * 20;
-    p.rotation += p.rotSpeed;
-    if (p.y < -0.05) {
-      p.y = 1.05;
-      p.x = Math.random();
+  let W = canvas.width = window.innerWidth;
+  let H = canvas.height = window.innerHeight;
+  
+  const handleResize = () => {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  };
+  window.addEventListener('resize', handleResize);
+  
+  const symbols = ['$', '₱', 'Σ', '%', '+', '-', '＝', 'DR', 'CR', '0.00', '1040', 'Balance', 'Tax', 'ROI', 'Ledger', 'Audit'];
+  const particles = Array.from({ length: 35 }, () => ({
+    x: Math.random() * W,
+    y: Math.random() * H,
+    text: symbols[Math.floor(Math.random() * symbols.length)],
+    size: Math.random() * 11 + 9,
+    speed: Math.random() * 0.35 + 0.1,
+    opacity: Math.random() * 0.10 + 0.03,
+    rotation: (Math.random() - 0.5) * 0.3,
+    rotSpeed: (Math.random() - 0.5) * 0.004
+  }));
+  
+  let animationFrameId;
+  const render = () => {
+    ctx.clearRect(0, 0, W, H);
+    
+    ctx.strokeStyle = 'rgba(192, 132, 252, 0.015)';
+    ctx.lineWidth = 1;
+    for (let x = 80; x < W; x += 220) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
     }
+    for (let y = 60; y < H; y += 110) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+    }
+    
+    particles.forEach(p => {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.font = `600 ${p.size}px 'JetBrains Mono', monospace`;
+      ctx.fillStyle = `rgba(192, 132, 252, ${p.opacity})`;
+      ctx.fillText(p.text, -ctx.measureText(p.text).width / 2, p.size / 2);
+      ctx.restore();
+      
+      p.y -= p.speed;
+      p.rotation += p.rotSpeed;
+      if (p.y < -30) {
+        p.y = H + 30;
+        p.x = Math.random() * W;
+        p.opacity = Math.random() * 0.10 + 0.03;
+      }
+    });
+    
+    animationFrameId = requestAnimationFrame(render);
+  };
+  
+  render();
+  
+  window.addEventListener('beforeunload', () => {
+    cancelAnimationFrame(animationFrameId);
   });
-
-  requestAnimationFrame(loop);
 }
-loop();
-
-// Close on escape, left/right navigate
-document.addEventListener('keydown', e => {
-  const lightbox = document.getElementById('lightbox');
-  if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') navigateLightbox(-1);
-  if (e.key === 'ArrowRight') navigateLightbox(1);
-});
 </script>
+
 </body>
 </html>
