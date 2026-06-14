@@ -5,15 +5,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden py-10 md:py-14"
+      className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-7xl mx-auto py-12 md:py-16"
     >
       {/* Decorative Glow Elements */}
       <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-[#ddb7ff]/15 rounded-full blur-[120px] md:blur-[160px] pointer-events-none" />
       <div className="absolute left-1/4 -top-10 w-[260px] h-[260px] bg-[#842bd2]/15 rounded-full blur-[90px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 lg:gap-10 items-center w-full">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center w-full">
         {/* LEFT — Copy */}
-        <div className="w-full">
+        <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-[#7a6f86]"
+            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-[#7a6f86]"
           >
             <span>QuickBooks Certified</span>
             <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
@@ -88,13 +88,13 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-          className="relative block"
+          className="relative hidden lg:block"
         >
           {/* Glow behind card */}
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#ddb7ff]/20 via-[#842bd2]/10 to-transparent rounded-3xl blur-2xl" />
 
           {/* Main card */}
-          <div className="relative rounded-3xl border border-[#4d4354]/60 bg-gradient-to-br from-[#171f33]/80 to-[#0e0a1f]/90 backdrop-blur-xl p-4 md:p-6 shadow-[0_20px_60px_-15px_rgba(132,43,210,0.4)]">
+          <div className="relative rounded-3xl border border-[#4d4354]/60 bg-gradient-to-br from-[#171f33]/80 to-[#0e0a1f]/90 backdrop-blur-xl p-6 shadow-[0_20px_60px_-15px_rgba(132,43,210,0.4)]">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#7a6f86] mb-1">Monthly Overview</p>
@@ -108,12 +108,12 @@ export default function Hero() {
 
             {/* Big metric */}
             <div className="mb-6">
-              <p className="text-3xl md:text-4xl font-extrabold text-gradient tracking-tight">$184,250</p>
+              <p className="text-4xl font-extrabold text-gradient tracking-tight">$184,250</p>
               <p className="text-xs text-[#7a6f86] mt-1">Net revenue · Q3</p>
             </div>
 
             {/* Mini bar chart */}
-            <div className="flex items-end gap-1.5 h-16 md:h-24 mb-6">
+            <div className="flex items-end gap-2 h-24 mb-6">
               {[40, 65, 50, 80, 55, 90, 70, 95, 60, 100, 75, 85].map((h, i) => (
                 <motion.div
                   key={i}
@@ -147,7 +147,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="absolute -bottom-4 left-2 md:-bottom-6 md:-left-6 rounded-2xl border border-[#ddb7ff]/30 bg-[#171f33]/90 backdrop-blur-lg px-3 py-2.5 md:px-4 md:py-3 shadow-xl flex items-center gap-3"
+            className="absolute -bottom-6 -left-6 rounded-2xl border border-[#ddb7ff]/30 bg-[#171f33]/90 backdrop-blur-lg px-4 py-3 shadow-xl flex items-center gap-3"
           >
             <div className="h-9 w-9 rounded-full bg-[#ddb7ff]/15 grid place-items-center">
               <ShieldCheck size={16} className="text-[#ddb7ff]" />
