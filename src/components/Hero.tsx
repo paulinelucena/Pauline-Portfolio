@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-7xl mx-auto py-24 md:py-32 min-h-[calc(100vh-80px)]"
+      className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-7xl mx-auto py-24 md:py-32"
     >
       {/* Decorative Glow Elements */}
       <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-[#ddb7ff]/15 rounded-full blur-[120px] md:blur-[160px] pointer-events-none" />
@@ -91,29 +91,29 @@ export default function Hero() {
           className="relative block mb-6 lg:mb-0"
         >
           {/* Glow behind card */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#ddb7ff]/20 via-[#842bd2]/10 to-transparent rounded-3xl blur-2xl" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#ddb7ff]/20 via-[#842bd2]/10 to-transparent rounded-3xl blur-2xl scale-110" />
 
           {/* Main card */}
-          <div className="relative rounded-3xl border border-[#4d4354]/60 bg-gradient-to-br from-[#171f33]/80 to-[#0e0a1f]/90 backdrop-blur-xl p-4 md:p-6 shadow-[0_20px_60px_-15px_rgba(132,43,210,0.4)]">
-            <div className="flex items-center justify-between mb-6">
+          <div className="relative rounded-3xl border border-[#4d4354]/60 bg-gradient-to-br from-[#171f33]/80 to-[#0e0a1f]/90 backdrop-blur-xl p-8 md:p-10 shadow-[0_20px_60px_-15px_rgba(132,43,210,0.4)]">
+            <div className="flex items-center justify-between mb-8">
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#7a6f86] mb-1">Monthly Overview</p>
-                <p className="text-[#dae2fd] font-semibold">Cash Flow Summary</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-[#7a6f86] mb-1.5">Monthly Overview</p>
+                <p className="text-[#dae2fd] font-semibold text-lg">Cash Flow Summary</p>
               </div>
-              <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-300 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-400/20">
-                <TrendingUp size={11} />
+              <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-300 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-400/20">
+                <TrendingUp size={13} />
                 +24.8%
               </div>
             </div>
 
             {/* Big metric */}
-            <div className="mb-6">
-              <p className="text-3xl md:text-4xl font-extrabold text-gradient tracking-tight">$184,250</p>
-              <p className="text-xs text-[#7a6f86] mt-1">Net revenue · Q3</p>
+            <div className="mb-8">
+              <p className="text-4xl md:text-5xl font-extrabold text-gradient tracking-tight">$184,250</p>
+              <p className="text-sm text-[#7a6f86] mt-2">Net revenue · Q3</p>
             </div>
 
             {/* Mini bar chart */}
-            <div className="flex items-end gap-1.5 h-16 md:h-24 mb-6">
+            <div className="flex items-end gap-2 h-28 md:h-36 mb-8">
               {[40, 65, 50, 80, 55, 90, 70, 95, 60, 100, 75, 85].map((h, i) => (
                 <motion.div
                   key={i}
@@ -126,17 +126,17 @@ export default function Hero() {
             </div>
 
             {/* Row items */}
-            <div className="space-y-3">
+            <div className="space-y-4">
               {[
                 { icon: FileSpreadsheet, label: 'Reconciliation', value: 'Complete' },
                 { icon: ShieldCheck, label: 'Audit-ready', value: 'Verified' },
               ].map(({ icon: Icon, label, value }) => (
-                <div key={label} className="flex items-center justify-between text-sm py-2.5 px-3 rounded-lg bg-[#0e0a1f]/60 border border-[#4d4354]/40">
-                  <div className="flex items-center gap-2.5 text-[#cfc2d6]">
-                    <Icon size={14} className="text-[#ddb7ff]" />
+                <div key={label} className="flex items-center justify-between text-base py-3.5 px-4 rounded-xl bg-[#0e0a1f]/60 border border-[#4d4354]/40">
+                  <div className="flex items-center gap-3 text-[#cfc2d6]">
+                    <Icon size={17} className="text-[#ddb7ff]" />
                     {label}
                   </div>
-                  <span className="text-xs font-semibold text-emerald-300">{value}</span>
+                  <span className="text-sm font-semibold text-emerald-300">{value}</span>
                 </div>
               ))}
             </div>
@@ -147,14 +147,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="absolute -bottom-4 left-2 md:-bottom-6 md:-left-6 rounded-2xl border border-[#ddb7ff]/30 bg-[#171f33]/90 backdrop-blur-lg px-3 py-2.5 md:px-4 md:py-3 shadow-xl flex items-center gap-3"
+            className="absolute -bottom-5 left-2 md:-bottom-7 md:-left-8 rounded-2xl border border-[#ddb7ff]/30 bg-[#171f33]/90 backdrop-blur-lg px-4 py-3 md:px-5 md:py-4 shadow-xl flex items-center gap-4"
           >
-            <div className="h-9 w-9 rounded-full bg-[#ddb7ff]/15 grid place-items-center">
-              <ShieldCheck size={16} className="text-[#ddb7ff]" />
+            <div className="h-11 w-11 rounded-full bg-[#ddb7ff]/15 grid place-items-center">
+              <ShieldCheck size={20} className="text-[#ddb7ff]" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-wider text-[#7a6f86]">Books closed</p>
-              <p className="text-sm font-semibold text-[#dae2fd]">On time, every month</p>
+              <p className="text-xs uppercase tracking-wider text-[#7a6f86]">Books closed</p>
+              <p className="text-base font-semibold text-[#dae2fd]">On time, every month</p>
             </div>
           </motion.div>
         </motion.div>
