@@ -36,11 +36,31 @@ export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: 
           className="flex items-center gap-3 group cursor-pointer select-none"
           title="Pauline Lucena"
         >
-          <img
-            alt="Pauline Lucena Logo"
-            className="h-10 w-10 rounded-full transition-transform duration-300 group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLtp21sku3BF3pu9-wyo6oN2oRnshH6MztvC8HyuLrHVXIl650UsgoyVVOQKDB2x_Tg2Gb1Yx_khLgILx20j0Cwci2roVYeeIhxumWTfkfDrO9C3LZ0jTIljxSnjD7AiLsgel217dRjLGub7gaw60G-JwYeXuxHpbZqPTkGDl49LLKhD-NGRbKLUoBAeYJQqtLERMgtjincACPpbmp_cdw-xoNDuOzqiWl-X4WhXmhvBj4aOggkAI7BJ-1A"
-          />
+          <svg 
+            viewBox="0 0 100 100" 
+            className="h-10 w-10 transition-transform duration-300 group-hover:scale-105"
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Background Accent Circle */}
+            <circle cx="50" cy="50" r="44" fill="rgba(168, 85, 247, 0.04)" />
+            {/* Precise vector path for the stylized P */}
+            <path 
+              d="M 30 76 L 30 26 C 30 18, 38 12, 48 12 L 58 12 C 72 12, 80 20, 80 32 C 80 44, 72 52, 58 52 L 30 52" 
+              stroke="#c084fc" 
+              strokeWidth="11" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+            {/* Precise vector path for the stylized L */}
+            <path 
+              d="M 54 52 L 54 70 C 54 76, 60 81, 68 81 L 80 81" 
+              stroke="#c084fc" 
+              strokeWidth="11" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+          </svg>
           <span className="font-bold text-xl md:text-2xl text-[#dae2fd] tracking-tight group-hover:text-[#ddb7ff] transition-colors">
             Pauline Lucena
           </span>
@@ -67,7 +87,9 @@ export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: 
             Tools
           </a>
           <a
-            href="#certificates"
+            href="certificates.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
           >
             Certificates
@@ -132,7 +154,9 @@ export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: 
             Tools
           </a>
           <a
-            href="#certificates"
+            href="certificates.html"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
           >
