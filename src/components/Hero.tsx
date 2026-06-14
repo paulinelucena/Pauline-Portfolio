@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-6xl mx-auto py-10 md:py-14"
+      className="relative flex items-center overflow-hidden max-w-6xl mx-auto"
     >
       {/* Decorative Glow Elements */}
       <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-[#ddb7ff]/15 rounded-full blur-[120px] md:blur-[160px] pointer-events-none" />
