@@ -5,15 +5,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-fit md:min-h-[85vh] flex items-center overflow-hidden px-6 md:px-12 max-w-7xl mx-auto py-10 md:py-16"
+      className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-6xl mx-auto py-10 md:py-14"
     >
       {/* Decorative Glow Elements */}
       <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-[#ddb7ff]/15 rounded-full blur-[120px] md:blur-[160px] pointer-events-none" />
       <div className="absolute left-1/4 -top-10 w-[260px] h-[260px] bg-[#842bd2]/15 rounded-full blur-[90px] pointer-events-none" />
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-16 items-center w-full">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full">
         {/* LEFT — Copy */}
-        <div className="max-w-2xl">
+        <div className="w-full">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,9 +77,9 @@ export default function Hero() {
           >
             <span>QuickBooks Certified</span>
             <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
-            <span>Xero Advisor</span>
+            <span>Experience with NetSuite ERP</span>
             <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
-            <span>10+ Years Exp.</span>
+            <span>3+ Years Exp.</span>
           </motion.div>
         </div>
 
