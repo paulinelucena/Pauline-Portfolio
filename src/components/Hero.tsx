@@ -5,13 +5,13 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-7xl mx-auto min-h-[calc(100vh-5rem)] py-12"
+      className="relative flex items-center overflow-hidden min-h-screen pt-20 pb-12 px-6 md:px-12"
     >
       {/* Decorative Glow Elements */}
       <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-[#ddb7ff]/15 rounded-full blur-[120px] md:blur-[160px] pointer-events-none" />
       <div className="absolute left-1/4 -top-10 w-[260px] h-[260px] bg-[#842bd2]/15 rounded-full blur-[90px] pointer-events-none" />
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full max-w-7xl mx-auto">
         {/* LEFT — Copy */}
         <div className="w-full">
           <motion.p
