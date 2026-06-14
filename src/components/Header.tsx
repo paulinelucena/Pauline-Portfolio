@@ -1,164 +1,166 @@
-import { motion } from 'motion/react';
-import { ArrowRight, TrendingUp, ShieldCheck, FileSpreadsheet, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, MessageSquare } from 'lucide-react';
 
-export default function Hero() {
+interface HeaderProps {
+  onAdminToggle?: () => void;
+  showAdminBtn?: boolean;
+  onSecretUnlock?: () => void;
+}
+
+export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: HeaderProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section
-      id="hero"
-      className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-6xl mx-auto py-10 md:py-14"
+    <nav
+      id="top-navbar"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+        isScrolled
+          ? 'h-16 bg-[#0b1326]/90 backdrop-blur-md border-[#4d4354]'
+          : 'h-20 bg-[#0b1326]/40 backdrop-blur-sm border-transparent'
+      }`}
     >
-      {/* Decorative Glow Elements */}
-      <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-[#ddb7ff]/15 rounded-full blur-[120px] md:blur-[160px] pointer-events-none" />
-      <div className="absolute left-1/4 -top-10 w-[260px] h-[260px] bg-[#842bd2]/15 rounded-full blur-[90px] pointer-events-none" />
-
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full">
-        {/* LEFT — Copy */}
-        <div className="w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#ddb7ff] mb-5 px-3 py-1.5 rounded-full border border-[#ddb7ff]/20 bg-[#ddb7ff]/5"
-          >
-            <Sparkles size={12} />
-            Executive Accounting Support
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-[44px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight text-gradient leading-[1.05] mb-6"
-          >
-            Your Books.
-            <br />
-            In Good Hands.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-[#cfc2d6] text-base md:text-lg leading-relaxed max-w-xl mb-10"
-          >
-            With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-wrap gap-4 sm:gap-5"
-          >
-            <a
-              href="#services"
-              id="see-services-hero-btn"
-              className="bg-[#ddb7ff] text-[#490080] px-8 py-4 rounded-xl font-bold text-sm md:text-base hover:brightness-110 hover:-translate-y-0.5 transition-all flex items-center gap-2 shadow-[0_4px_24px_rgba(221,183,255,0.25)] group"
-            >
-              See My Services
-              <ArrowRight size={18} className="transform group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            <a
-              href="#contact"
-              id="lets-talk-hero-btn"
-              className="border border-[#4d4354] hover:border-[#ddb7ff] text-[#dae2fd] px-8 py-4 rounded-xl font-bold text-sm md:text-base hover:bg-[#171f33]/40 hover:-translate-y-0.5 transition-all"
-            >
-              Let's Talk
-            </a>
-          </motion.div>
-
-          {/* Trust strip */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs uppercase tracking-widest text-[#7a6f86]"
-          >
-            <span>QuickBooks Certified</span>
-            <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
-            <span>Experience with NetSuite ERP</span>
-            <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
-            <span>3+ Years Exp.</span>
-          </motion.div>
+      <div className="flex justify-between items-center px-6 md:px-12 max-w-7xl mx-auto h-full">
+        {/* Logo and Branding with secret double-click toggle */}
+        <div 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onDoubleClick={onSecretUnlock}
+          className="flex items-center gap-3 group cursor-pointer select-none"
+          title="Pauline Lucena"
+        >
+          <img
+            alt="Pauline Lucena Logo"
+            className="h-10 w-10 rounded-full transition-transform duration-300 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida/AP1WRLtp21sku3BF3pu9-wyo6oN2oRnshH6MztvC8HyuLrHVXIl650UsgoyVVOQKDB2x_Tg2Gb1Yx_khLgILx20j0Cwci2roVYeeIhxumWTfkfDrO9C3LZ0jTIljxSnjD7AiLsgel217dRjLGub7gaw60G-JwYeXuxHpbZqPTkGDl49LLKhD-NGRbKLUoBAeYJQqtLERMgtjincACPpbmp_cdw-xoNDuOzqiWl-X4WhXmhvBj4aOggkAI7BJ-1A"
+          />
+          <span className="font-bold text-xl md:text-2xl text-[#dae2fd] tracking-tight group-hover:text-[#ddb7ff] transition-colors">
+            Pauline Lucena
+          </span>
         </div>
 
-        {/* RIGHT — Visual: floating dashboard card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-          className="relative block mb-6 lg:mb-0"
-        >
-          {/* Glow behind card */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#ddb7ff]/20 via-[#842bd2]/10 to-transparent rounded-3xl blur-2xl" />
-
-          {/* Main card */}
-          <div className="relative rounded-3xl border border-[#4d4354]/60 bg-gradient-to-br from-[#171f33]/80 to-[#0e0a1f]/90 backdrop-blur-xl p-4 md:p-6 shadow-[0_20px_60px_-15px_rgba(132,43,210,0.4)]">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#7a6f86] mb-1">Monthly Overview</p>
-                <p className="text-[#dae2fd] font-semibold">Cash Flow Summary</p>
-              </div>
-              <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-300 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-400/20">
-                <TrendingUp size={11} />
-                +24.8%
-              </div>
-            </div>
-
-            {/* Big metric */}
-            <div className="mb-6">
-              <p className="text-3xl md:text-4xl font-extrabold text-gradient tracking-tight">$184,250</p>
-              <p className="text-xs text-[#7a6f86] mt-1">Net revenue · Q3</p>
-            </div>
-
-            {/* Mini bar chart */}
-            <div className="flex items-end gap-1.5 h-16 md:h-24 mb-6">
-              {[40, 65, 50, 80, 55, 90, 70, 95, 60, 100, 75, 85].map((h, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ height: 0 }}
-                  animate={{ height: `${h}%` }}
-                  transition={{ duration: 0.6, delay: 0.7 + i * 0.04 }}
-                  className="flex-1 rounded-t bg-gradient-to-t from-[#842bd2]/40 to-[#ddb7ff] opacity-90"
-                />
-              ))}
-            </div>
-
-            {/* Row items */}
-            <div className="space-y-3">
-              {[
-                { icon: FileSpreadsheet, label: 'Reconciliation', value: 'Complete' },
-                { icon: ShieldCheck, label: 'Audit-ready', value: 'Verified' },
-              ].map(({ icon: Icon, label, value }) => (
-                <div key={label} className="flex items-center justify-between text-sm py-2.5 px-3 rounded-lg bg-[#0e0a1f]/60 border border-[#4d4354]/40">
-                  <div className="flex items-center gap-2.5 text-[#cfc2d6]">
-                    <Icon size={14} className="text-[#ddb7ff]" />
-                    {label}
-                  </div>
-                  <span className="text-xs font-semibold text-emerald-300">{value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Floating badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="absolute -bottom-4 left-2 md:-bottom-6 md:-left-6 rounded-2xl border border-[#ddb7ff]/30 bg-[#171f33]/90 backdrop-blur-lg px-3 py-2.5 md:px-4 md:py-3 shadow-xl flex items-center gap-3"
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center gap-8">
+          <a
+            href="#about"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
           >
-            <div className="h-9 w-9 rounded-full bg-[#ddb7ff]/15 grid place-items-center">
-              <ShieldCheck size={16} className="text-[#ddb7ff]" />
-            </div>
-            <div>
-              <p className="text-[10px] uppercase tracking-wider text-[#7a6f86]">Books closed</p>
-              <p className="text-sm font-semibold text-[#dae2fd]">On time, every month</p>
-            </div>
-          </motion.div>
-        </motion.div>
+            About
+          </a>
+          <a
+            href="#services"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
+          >
+            Services
+          </a>
+          <a
+            href="#toolkit"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
+          >
+            Tools
+          </a>
+          <a
+            href="#certificates"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
+          >
+            Certificates
+          </a>
+
+          {showAdminBtn && (
+            <button
+              onClick={onAdminToggle}
+              className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200 mr-2"
+              id="admin-dashboard-btn"
+            >
+              Inquiries Portal
+            </button>
+          )}
+
+          <a
+            href="#contact"
+            id="lets-chat-desktop-btn"
+            className="bg-[#ddb7ff] text-[#490080] px-6 py-2.5 rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all text-sm flex items-center gap-1.5 shadow-[0_0_20px_rgba(221,183,255,0.15)]"
+          >
+            <MessageSquare size={16} />
+            Let's Chat
+          </a>
+        </div>
+
+        {/* Mobile Menu Toggle Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden text-[#dae2fd] p-2 hover:bg-[#171f33]/60 rounded-lg transition-colors"
+          id="mobile-menu-toggle-btn"
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-    </section>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div
+          id="mobile-dropdown-menu"
+          className="absolute top-full left-0 right-0 bg-[#0b1326] border-b border-[#4d4354] px-6 py-8 flex flex-col gap-6 md:hidden animate-in fade-in slide-in-from-top-5 duration-200"
+        >
+          <a
+            href="#about"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            About
+          </a>
+          <a
+            href="#services"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            Services
+          </a>
+          <a
+            href="#toolkit"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            Tools
+          </a>
+          <a
+            href="#certificates"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            Certificates
+          </a>
+
+          {showAdminBtn && (
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onAdminToggle?.();
+              }}
+              className="text-left text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+            >
+              Inquiries Portal
+            </button>
+          )}
+
+          <a
+            href="#contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="bg-[#ddb7ff] text-[#490080] py-3.5 rounded-lg font-bold text-center hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2"
+          >
+            <MessageSquare size={18} />
+            Let's Chat
+          </a>
+        </div>
+      )}
+    </nav>
   );
 }
