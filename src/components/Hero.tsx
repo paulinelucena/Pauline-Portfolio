@@ -5,7 +5,6 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      // Changed max-w-6xl to max-w-7xl to match the Header component container width
       className="relative flex items-center overflow-hidden px-6 md:px-12 max-w-7xl mx-auto py-10 md:py-14"
     >
       {/* Decorative Glow Elements */}
