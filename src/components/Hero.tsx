@@ -77,9 +77,9 @@ export default function Hero() {
           >
             <span>QuickBooks Certified</span>
             <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
-            <span>Xero Advisor</span>
+            <span>Virtual Support</span>
             <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
-            <span>10+ Years Exp.</span>
+            <span>3 Years Exp.</span>
           </motion.div>
         </div>
 
