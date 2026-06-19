@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, MapPin, Copy, Check, Send, Sparkles, Trash2, ShieldCheck, Linkedin, Instagram, Music, Facebook } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, Send, Sparkles, Trash2, ShieldCheck, Linkedin, Instagram, Music, Facebook, Calendar, ArrowUpRight } from 'lucide-react';
 import { Inquiry } from '../types';
 
 interface ContactProps {
@@ -139,6 +139,28 @@ ${inq.name}`;
             <p className="text-[#cfc2d6] text-base md:text-lg leading-relaxed mb-10 font-normal">
               Currently accepting new corporate partners and executive clients. Let's discuss how I can streamline your financial workflows.
             </p>
+
+            {/* Discovery Call CTA */}
+            <a
+              href="https://calendly.com/paulinelucena27/30min"
+              target="_blank"
+              rel="noreferrer"
+              id="book-discovery-call-btn"
+              className="group relative inline-flex items-center justify-between gap-4 w-full sm:w-auto mb-10 pl-5 pr-4 py-4 rounded-xl bg-[#ddb7ff] text-[#490080] font-bold text-sm sm:text-base shadow-[0_4px_24px_rgba(221,183,255,0.25)] hover:brightness-110 hover:shadow-[0_6px_28px_rgba(221,183,255,0.4)] active:scale-[0.98] transition-all cursor-pointer overflow-hidden"
+            >
+              <span className="flex items-center gap-3">
+                <span className="w-8 h-8 rounded-lg bg-[#490080]/15 flex items-center justify-center">
+                  <Calendar size={16} />
+                </span>
+                <span className="flex flex-col items-start leading-tight">
+                  <span className="text-[9px] uppercase font-extrabold tracking-[0.18em] opacity-70">
+                    Free 30-min Session
+                  </span>
+                  <span>Book a Discovery Call</span>
+                </span>
+              </span>
+              <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
 
             {/* Micro Details info */}
             <div className="space-y-6 mb-12">
