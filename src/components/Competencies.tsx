@@ -10,8 +10,13 @@ const competenciesData: Competency[] = [
     items: [
       'Accounts Payable & Receivable',
       'Bank Reconciliation',
-      'Financial Reporting',
-      'Ledger Maintenance',
+      'Receipt Management',
+      'Invoice Creation & Delivery',
+      'Payment Tracking & Follow-ups',
+      'Bill Logging & Scheduling',
+      'Expense Report Compilation',
+      'Generating Basic Reports',
+      'Data Entry & Clean-up',
     ],
   },
   {
@@ -20,9 +25,10 @@ const competenciesData: Competency[] = [
     iconName: 'communication',
     items: [
       'Stakeholder Liaison',
+      'Collection & Payment Follow-up Emails',
       'Email Management',
       'Professional Correspondence',
-      'Client Onboarding',
+      'Basic Email Support',
     ],
   },
   {
@@ -30,10 +36,10 @@ const competenciesData: Competency[] = [
     title: 'General Admin Support',
     iconName: 'admin',
     items: [
-      'Executive Scheduling',
+      'Data Entry',
       'Document Organization',
       'Workflow Optimization',
-      'Travel Coordination',
+      'Email Management'
     ],
   },
 ];
