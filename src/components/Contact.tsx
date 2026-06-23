@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Mail, MapPin, Copy, Check, Send, Sparkles, Trash2, ShieldCheck, Linkedin, Instagram, Music, Facebook, Calendar, ArrowUpRight } from 'lucide-react';
-import { Inquiry } from '../types';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, MapPin, Copy, Check, Send, Sparkles, Linkedin, Instagram, Music, Facebook, Calendar, ArrowUpRight } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
+import { Inquiry } from '@/types';
 
 interface ContactProps {
   onInquirySubmitted?: (inquiry: Inquiry) => void;
@@ -215,6 +216,7 @@ ${inq.name}`;
                 { icon: <Instagram size={18} />, name: 'Instagram', url: 'https://instagram.com/' },
                 { icon: <Music size={18} />, name: 'TikTok', url: 'https://tiktok.com/' },
                 { icon: <Facebook size={18} />, name: 'Facebook', url: 'https://facebook.com/' },
+                { icon: <WhatsAppIcon size={18} />, name: 'WhatsApp', url: 'https://wa.me/qr/NZFGQQNZY3GNC1' },
               ].map((soc) => (
                 <a
                   key={soc.name}
