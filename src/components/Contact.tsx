@@ -12,7 +12,7 @@ interface ContactProps {
 export default function Contact({ onInquirySubmitted, inquiries = [], onDeleteInquiry }: ContactProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [serviceIntersection, setServiceIntersection] = useState('Accounting / Bookkeeping Support');
+  const [serviceIntersection, setServiceIntersection] = useState('');
   const [message, setMessage] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
@@ -119,7 +119,7 @@ ${inq.name}`;
     // Reset Form
     setName('');
     setEmail('');
-    setServiceIntersection('Accounting / Bookkeeping Support');
+    setServiceIntersection('');
     setMessage('');
     setTouched({});
   };
@@ -317,8 +317,9 @@ ${inq.name}`;
                     id="form-service-select"
                     value={serviceIntersection}
                     onChange={(e) => setServiceIntersection(e.target.value)}
-                    className="w-full bg-[#0b1326] border border-[#4d4354] hover:border-[#cfc2d6]/40 rounded-xl p-3.5 text-sm md:text-base text-[#dae2fd] focus:outline-none focus:border-[#ddb7ff] transition-all cursor-pointer"
+                    className={`w-full bg-[#0b1326] border border-[#4d4354] hover:border-[#cfc2d6]/40 rounded-xl p-3.5 text-sm md:text-base focus:outline-none focus:border-[#ddb7ff] transition-all cursor-pointer ${serviceIntersection === '' ? 'text-[#cfc2d6]/30' : 'text-[#dae2fd]'}`}
                   >
+                    <option value="" disabled hidden>Select a service...</option>
                     <option value="Accounting / Bookkeeping Support">Accounting / Bookkeeping Support</option>
                     <option value="Catch-up / Clean-up">Catch-up / Clean-up</option>
                     <option value="Invoicing & AR">Invoicing &amp; AR</option>
