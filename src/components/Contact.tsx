@@ -12,7 +12,7 @@ interface ContactProps {
 export default function Contact({ onInquirySubmitted, inquiries = [], onDeleteInquiry }: ContactProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [serviceIntersection, setServiceIntersection] = useState('Accounting Support');
+  const [serviceIntersection, setServiceIntersection] = useState('Accounting / Bookkeeping Support');
   const [message, setMessage] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
@@ -119,7 +119,7 @@ ${inq.name}`;
     // Reset Form
     setName('');
     setEmail('');
-    setServiceIntersection('Accounting Support');
+    setServiceIntersection('Accounting / Bookkeeping Support');
     setMessage('');
     setTouched({});
   };
@@ -319,9 +319,12 @@ ${inq.name}`;
                     onChange={(e) => setServiceIntersection(e.target.value)}
                     className="w-full bg-[#0b1326] border border-[#4d4354] hover:border-[#cfc2d6]/40 rounded-xl p-3.5 text-sm md:text-base text-[#dae2fd] focus:outline-none focus:border-[#ddb7ff] transition-all cursor-pointer"
                   >
-                    <option value="Accounting Support">Accounting Support</option>
-                    <option value="Executive Admin">Executive Admin</option>
-                    <option value="Consultation">Consultation / Assessment</option>
+                    <option value="Accounting / Bookkeeping Support">Accounting / Bookkeeping Support</option>
+                    <option value="Catch-up / Clean-up">Catch-up / Clean-up</option>
+                    <option value="Invoicing & AR">Invoicing &amp; AR</option>
+                    <option value="Billing & AP">Billing &amp; AP</option>
+                    <option value="Virtual Admin Support">Virtual Admin Support</option>
+                    <option value="Not sure - let's talk">Not sure - let&apos;s talk</option>
                   </select>
                 </div>
 
