@@ -5,6 +5,9 @@ import About from './components/About';
 import Competencies from './components/Competencies';
 import Toolkit from './components/Toolkit';
 import Certificates from './components/Certificates';
+import ResultOutcomes from './components/ResultOutcomes';
+import Workflow from './components/Workflow';
+import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminPortal from './components/AdminPortal';
@@ -115,6 +118,15 @@ export default function App() {
 
         {/* Premium verified qualifications and certificates section */}
         <Certificates />
+
+        {/* Proven Case Outcomes */}
+        <ResultOutcomes />
+
+        {/* Dynamic secure workflow process */}
+        <Workflow />
+
+        {/* Transparent starting packages */}
+        <Pricing />
 
         {/* Action contact inquiry submission form */}
         <Contact

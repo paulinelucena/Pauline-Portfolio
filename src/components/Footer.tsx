@@ -62,12 +62,12 @@ export default function Footer({ onSecretUnlock }: FooterProps) {
             LinkedIn
           </a>
           <a
-            href="https://instagram.com"
+            href="https://wa.me/qr/NZFGQQNZY3GNC1"
             target="_blank"
             rel="noreferrer"
             className="hover:text-[#ddb7ff] underline underline-offset-4 decoration-[#4d4354] hover:decoration-[#ddb7ff] transition-all"
           >
-            Instagram
+            WhatsApp
           </a>
           <a
             href="mailto:paulinelucena27@gmail.com"

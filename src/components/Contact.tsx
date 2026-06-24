@@ -212,9 +212,6 @@ ${inq.name}`;
             <div className="flex gap-4 flex-wrap">
               {[
                 { icon: <Linkedin size={18} />, name: 'LinkedIn', url: 'https://linkedin.com/' },
-                { icon: <Instagram size={18} />, name: 'Instagram', url: 'https://instagram.com/' },
-                { icon: <Music size={18} />, name: 'TikTok', url: 'https://tiktok.com/' },
-                { icon: <Facebook size={18} />, name: 'Facebook', url: 'https://facebook.com/' },
                 {
                   icon: (
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -224,6 +221,7 @@ ${inq.name}`;
                   name: 'WhatsApp',
                   url: 'https://wa.me/qr/NZFGQQNZY3GNC1',
                 },
+                { icon: <Mail size={18} />, name: 'Email', url: 'mailto:paulinelucena27@gmail.com' },
               ].map((soc) => (
                 <a
                   key={soc.name}

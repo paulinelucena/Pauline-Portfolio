@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { BadgeCheck, Sparkles, Award } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
 
 export default function About() {
   const [isColored, setIsColored] = useState(false);
@@ -37,19 +38,22 @@ export default function About() {
 
           {/* Floating Experience Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95, y: 15 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="absolute -bottom-6 right-2 sm:right-6 md:right-10 glass-card border border-[#4d4354]/80 p-5 rounded-2xl shadow-xl hover:border-[#ddb7ff]/50 transition-colors cursor-default"
+            transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.2 }}
+            whileHover={{ y: -8, scale: 1.03, boxShadow: "0 15px 30px -5px rgba(221,183,255,0.15)" }}
+            className="absolute -bottom-6 right-2 sm:right-6 md:right-10 glass-card border border-[#4d4354]/80 p-5 rounded-2xl shadow-xl hover:border-[#ddb7ff]/50 transition-all cursor-default"
           >
             <div className="flex items-center gap-3">
               <div className="p-2 bg-[#ddb7ff]/10 rounded-lg text-[#ddb7ff]">
                 <Award size={20} />
               </div>
               <div>
-                <p className="text-xl md:text-2xl font-bold text-[#ddb7ff] leading-none">3+ Years</p>
-                <p className="text-[10px] uppercase font-semibold tracking-wider text-[#cfc2d6]">
+                <p className="text-xl md:text-2xl font-bold text-[#ddb7ff] leading-none">
+                  <AnimatedCounter value={3} suffix="+" /> Years
+                </p>
+                <p className="text-[10px] uppercase font-semibold tracking-wider text-[#cfc2d6] mt-1">
                   Corporate Expertise
                 </p>
               </div>
@@ -71,22 +75,53 @@ export default function About() {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-6 mb-10">
-            <div className="border-l-2 border-[#ddb7ff] pl-5 group cursor-default">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover={{ x: 4 }}
+              transition={{ duration: 0.3 }}
+              className="relative pl-5 group cursor-default"
+            >
+              {/* Animated vertical bar */}
+              <motion.div 
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+                className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#ddb7ff] origin-top"
+              />
               <span className="text-3xl font-extrabold block text-[#dae2fd] tracking-tight group-hover:text-[#ddb7ff] transition-colors">
-                100%
+                <AnimatedCounter value={100} suffix="%" />
               </span>
               <span className="text-[11px] font-semibold text-[#cfc2d6] uppercase tracking-wider block mt-1">
                 Accuracy Rate
               </span>
-            </div>
-            <div className="border-l-2 border-[#ddb7ff] pl-5 group cursor-default">
+            </motion.div>
+
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover={{ x: 4 }}
+              transition={{ duration: 0.3 }}
+              className="relative pl-5 group cursor-default"
+            >
+              {/* Animated vertical bar */}
+              <motion.div 
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#ddb7ff] origin-top"
+              />
               <span className="text-3xl font-extrabold block text-[#dae2fd] tracking-tight group-hover:text-[#ddb7ff] transition-colors">
-                8+
+                <AnimatedCounter value={8} suffix="+" />
               </span>
               <span className="text-[11px] font-semibold text-[#cfc2d6] uppercase tracking-wider block mt-1">
                 ERP/Tools Mastered
               </span>
-            </div>
+            </motion.div>
           </div>
 
           {/* Beautiful Blockquote */}

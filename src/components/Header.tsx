@@ -87,6 +87,24 @@ export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: 
             Tools
           </a>
           <a
+            href="#process"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
+          >
+            Process
+          </a>
+          <a
+            href="#outcomes"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
+          >
+            Outcomes
+          </a>
+          <a
+            href="#pricing"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
+          >
+            Pricing
+          </a>
+          <a
             href="certificates.html"
             target="_blank"
             rel="noopener noreferrer"
@@ -152,6 +170,27 @@ export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: 
             className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
           >
             Tools
+          </a>
+          <a
+            href="#process"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            Process
+          </a>
+          <a
+            href="#outcomes"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            Outcomes
+          </a>
+          <a
+            href="#pricing"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            Pricing
           </a>
           <a
             href="certificates.html"
