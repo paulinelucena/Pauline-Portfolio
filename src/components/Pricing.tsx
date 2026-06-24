@@ -24,7 +24,7 @@ const pricingTiers: PricingTier[] = [
     subEyebrow: 'STARTING FROM',
     price: '$5',
     priceSuffix: '/hr',
-    priceSubtext: 'or from $1500 / month · billed monthly',
+    priceSubtext: 'or from $1000 / month · billed monthly',
     features: [
       'Bank reconciliation (up to 1 account)',
       'Invoice creation & delivery',
@@ -42,7 +42,7 @@ const pricingTiers: PricingTier[] = [
     subEyebrow: 'STARTING FROM',
     price: '$7',
     priceSuffix: '/hr',
-    priceSubtext: 'or from $2000 / month · billed monthly',
+    priceSubtext: 'or from $1500 / month · billed monthly',
     features: [
       'Everything in Essentials',
       'Multi-account reconciliation',
