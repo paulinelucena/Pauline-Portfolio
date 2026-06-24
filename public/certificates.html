@@ -388,15 +388,14 @@ nav {
   .cert-modal { padding: 1rem; align-items: flex-start; overflow-y: auto; }
   .cert-modal.active { display: flex; }
   .cert-modal-inner {
-    display: flex;
-    flex-direction: column;
-    padding: 3.5rem 1.2rem 0;
+    grid-template-columns: 1fr;
+    padding: 3.5rem 1.2rem 4.5rem;
     gap: 1.5rem;
     min-height: unset;
     border-radius: 6px;
     margin: auto;
     width: 100%;
-    align-items: stretch;
+    align-items: start;
   }
   .cert-modal-inner::before, .cert-modal-inner::after { display: none; }
   .modal-close { top: 12px; right: 12px; }
@@ -405,17 +404,10 @@ nav {
   .modal-panel { padding: 0 0 0.5rem; }
   .modal-title { font-size: 1.35rem; }
   .modal-footer {
-    position: sticky;
-    bottom: 0;
-    left: auto; right: auto;
-    margin: 1rem -1.2rem 0;
+    position: absolute; bottom: 0; left: 0; right: 0;
     padding: 0.7rem 1rem;
     flex-wrap: wrap; gap: 0.5rem;
     border-radius: 0 0 6px 6px;
-    z-index: 10;
-    background: var(--bg-card);
-    border-top: 1px solid var(--border);
-    box-shadow: 0 -8px 20px rgba(0,0,0,0.35);
   }
   .modal-footer-left { font-size: 0.65rem; gap: 0.5rem; }
   .modal-footer-left > span:last-child { display: none; }
@@ -595,7 +587,7 @@ nav {
       <!-- Module I -->
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%201.png" alt="TESDA Module I - Introduction to Bookkeeping">
+          <img src="Ecert 1.png" alt="TESDA Module I - Introduction to Bookkeeping">
           <span class="card-tag">REF-01</span>
         </div>
         <div class="card-footer">
@@ -609,7 +601,7 @@ nav {
       <!-- Module II -->
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%202.png" alt="TESDA Module II - Journalizing Transactions">
+          <img src="Ecert 2.png" alt="TESDA Module II - Journalizing Transactions">
           <span class="card-tag">REF-02</span>
         </div>
         <div class="card-footer">
@@ -623,7 +615,7 @@ nav {
       <!-- Module III -->
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%203.png" alt="TESDA Module III - Posting Transactions">
+          <img src="Ecert 3.png" alt="TESDA Module III - Posting Transactions">
           <span class="card-tag">REF-03</span>
         </div>
         <div class="card-footer">
@@ -637,7 +629,7 @@ nav {
       <!-- Module IV -->
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%204.png" alt="TESDA Module IV - Preparing Trial Balance">
+          <img src="Ecert 4.png" alt="TESDA Module IV - Preparing Trial Balance">
           <span class="card-tag">REF-04</span>
         </div>
         <div class="card-footer">
@@ -651,7 +643,7 @@ nav {
       <!-- Module V -->
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%205.png" alt="TESDA Module V - Preparing Financial Reports">
+          <img src="Ecert 5.png" alt="TESDA Module V - Preparing Financial Reports">
           <span class="card-tag">REF-05</span>
         </div>
         <div class="card-footer">
@@ -665,7 +657,7 @@ nav {
       <!-- Module VI -->
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%206.png" alt="TESDA Module VI - Reviewing Internal Control System">
+          <img src="Ecert 6.png" alt="TESDA Module VI - Reviewing Internal Control System">
           <span class="card-tag">REF-06</span>
         </div>
         <div class="card-footer">
@@ -689,7 +681,7 @@ nav {
     <div class="cert-grid">
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%207.png" alt="Cyber Safe Learning for Education Project (CLEP)">
+          <img src="Ecert 7.png" alt="Cyber Safe Learning for Education Project (CLEP)">
           <span class="card-tag">REF-07</span>
         </div>
         <div class="card-footer">
@@ -713,7 +705,7 @@ nav {
     <div class="cert-grid">
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%208.png" alt="Relentless: Outlining the Parameter and Reach the Post">
+          <img src="Ecert 8.png" alt="Relentless: Outlining the Parameter and Reach the Post">
           <span class="card-tag">REF-08</span>
         </div>
         <div class="card-footer">
@@ -726,7 +718,7 @@ nav {
 
       <div class="cert-card">
         <div class="img-wrap">
-          <img src="Ecert%209.JPG" alt="F.A.C.E (Fight, Aim, Conquer, Excel)">
+          <img src="Ecert 9.JPG" alt="F.A.C.E (Fight, Aim, Conquer, Excel)">
           <span class="card-tag">REF-09</span>
         </div>
         <div class="card-footer">
@@ -878,7 +870,7 @@ if (canvas) {
 // ── Certificate Detail Modal Data & Logic ──
 const certData = [
   {
-    ref: "REF-01", index: 1, img: "Ecert%201.png",
+    ref: "REF-01", index: 1, img: "Ecert 1.png",
     title: "TESDA Module I - Introduction to Bookkeeping",
     subtitle: "TESDA Course Certification 1",
     org: "TESDA - Technical Education and Skills Development Authority",
@@ -887,7 +879,7 @@ const certData = [
     signatories: ["TESDA Regional Assessment Center"]
   },
   {
-    ref: "REF-02", index: 2, img: "Ecert%202.png",
+    ref: "REF-02", index: 2, img: "Ecert 2.png",
     title: "TESDA Module II - Journalizing Transactions",
     subtitle: "TESDA Course Certification 2",
     org: "TESDA Authorized Center", date: "May 27, 2026",
@@ -895,7 +887,7 @@ const certData = [
     signatories: ["TESDA Regional Assessment Center"]
   },
   {
-    ref: "REF-03", index: 3, img: "Ecert%203.png",
+    ref: "REF-03", index: 3, img: "Ecert 3.png",
     title: "TESDA Module III - Posting Transactions",
     subtitle: "TESDA Course Certification 3",
     org: "TESDA Skills Development Center", date: "May 29, 2026",
@@ -903,7 +895,7 @@ const certData = [
     signatories: ["TESDA Regional Assessment Center"]
   },
   {
-    ref: "REF-04", index: 4, img: "Ecert%204.png",
+    ref: "REF-04", index: 4, img: "Ecert 4.png",
     title: "TESDA Module IV - Preparing Trial Balance",
     subtitle: "TESDA Course Certification 4",
     org: "TESDA / National Training Institute", date: "June 1, 2026",
@@ -911,7 +903,7 @@ const certData = [
     signatories: ["TESDA Regional Assessment Center"]
   },
   {
-    ref: "REF-05", index: 5, img: "Ecert%205.png",
+    ref: "REF-05", index: 5, img: "Ecert 5.png",
     title: "TESDA Module V - Preparing Financial Reports",
     subtitle: "TESDA Course Certification 5",
     org: "TESDA / National Training Institute", date: "June 7, 2026",
@@ -919,7 +911,7 @@ const certData = [
     signatories: ["TESDA Regional Assessment Center"]
   },
   {
-    ref: "REF-06", index: 6, img: "Ecert%206.png",
+    ref: "REF-06", index: 6, img: "Ecert 6.png",
     title: "TESDA Module VI - Reviewing Internal Control System",
     subtitle: "TESDA Course Certification 6",
     org: "TESDA / National Training Institute", date: "June 7, 2026",
@@ -927,7 +919,7 @@ const certData = [
     signatories: ["TESDA Regional Assessment Center"]
   },
   {
-    ref: "REF-07", index: 7, img: "Ecert%207.png",
+    ref: "REF-07", index: 7, img: "Ecert 7.png",
     title: "CYBER SAFE LEARNING FOR EDUCATION PROJECT (CLEP)",
     subtitle: "Achievement & Recognition",
     org: "University of Caloocan City - BSAIS", date: "September 9, 2022",
@@ -935,7 +927,7 @@ const certData = [
     signatories: ["MARIA LOURDES AQUILIZAN [OIC Director IV/DICT-ILCDB]","KARL LEUNG [Chief Partnership and Strategy Officer / Go Philippines]","DICT","ILCDB","GOPHILIPPINES","Microsoft"]
   },
   {
-    ref: "REF-08", index: 8, img: "Ecert%208.png",
+    ref: "REF-08", index: 8, img: "Ecert 8.png",
     title: "RELENTLESS: OUTLINING THE PARAMETER AND REACH THE POST",
     subtitle: "Achievement & Recognition",
     org: "University of Caloocan City - BSAIS", date: "January 31, 2021",
@@ -943,7 +935,7 @@ const certData = [
     signatories: ["Remedios R. Santos, CPA, MBA [PICPA NMMC President]","Jyzze Ozonia D.'Encabo [Regional Council President]"]
   },
   {
-    ref: "REF-09", index: 9, img: "Ecert%209.JPG",
+    ref: "REF-09", index: 9, img: "Ecert 9.JPG",
     title: "F.A.C.E (Fight, Aim, Conquer, Excel)",
     subtitle: "Achievement & Recognition",
     org: "University of Caloocan City - BSAIS", date: "2021",
@@ -1040,4 +1032,3 @@ document.addEventListener('keydown', (e) => {
 
 </body>
 </html>
-
