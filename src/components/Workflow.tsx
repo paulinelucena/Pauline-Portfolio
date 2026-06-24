@@ -65,7 +65,7 @@ export default function Workflow() {
         </div>
 
         {/* Steps Horizontal/Grid Layout */}
-        <div className="flex flex-wrap justify-center gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16 justify-center items-stretch">
           {workflowSteps.map((step, idx) => (
             <motion.div
               key={step.num}
@@ -73,7 +73,7 @@ export default function Workflow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="glass-card p-6 rounded-2xl border border-[#4d4354]/40 hover:border-[#ddb7ff]/40 transition-all duration-300 flex flex-col justify-between group h-full relative w-full max-w-md lg:max-w-none lg:flex-1 min-w-[200px]"
+              className="glass-card p-6 rounded-2xl border border-[#4d4354]/40 hover:border-[#ddb7ff]/40 transition-all duration-300 flex flex-col justify-between group relative w-full h-full mx-auto max-w-md lg:max-w-none"
             >
               {/* Card top border glow line effect */}
               <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#ddb7ff]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

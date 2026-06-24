@@ -1,7 +1,13 @@
 import { motion } from 'motion/react';
 import { ArrowRight, TrendingUp, ShieldCheck, FileSpreadsheet, Sparkles } from 'lucide-react';
 
-export default function Hero() {
+interface HeroProps {
+  selectedHeadline?: string;
+}
+
+export default function Hero({ selectedHeadline }: HeroProps) {
+  const defaultHeadline = "With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.";
+  
   return (
     <section
       id="hero"
@@ -36,12 +42,13 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            key={selectedHeadline || defaultHeadline}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-[#cfc2d6] text-base md:text-lg leading-relaxed max-w-xl mb-10"
+            transition={{ duration: 0.6 }}
+            className="text-[#cfc2d6] text-base md:text-lg leading-relaxed max-w-xl mb-10 min-h-[56px]"
           >
-            With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.
+            {selectedHeadline || defaultHeadline}
           </motion.p>
 
           <motion.div

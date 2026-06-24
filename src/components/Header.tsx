@@ -99,6 +99,12 @@ export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: 
             Outcomes
           </a>
           <a
+            href="#coach-blueprint"
+            className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
+          >
+            Strategy
+          </a>
+          <a
             href="#pricing"
             className="text-sm font-medium text-[#cfc2d6] hover:text-[#ddb7ff] transition-colors duration-200"
           >
@@ -184,6 +190,13 @@ export default function Header({ onAdminToggle, showAdminBtn, onSecretUnlock }: 
             className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
           >
             Outcomes
+          </a>
+          <a
+            href="#coach-blueprint"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-[#cfc2d6] hover:text-[#ddb7ff] pb-2 border-b border-[#171f33]"
+          >
+            Strategy
           </a>
           <a
             href="#pricing"

@@ -7,6 +7,7 @@ import Toolkit from './components/Toolkit';
 import Certificates from './components/Certificates';
 import ResultOutcomes from './components/ResultOutcomes';
 import Workflow from './components/Workflow';
+import CareerCoachBlueprint from './components/CareerCoachBlueprint';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -17,6 +18,7 @@ export default function App() {
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [isAdminModeEnabled, setIsAdminModeEnabled] = useState(false);
+  const [activeHeadline, setActiveHeadline] = useState("Certified Bookkeeper and Virtual Assistant specializing in ledger integrity, multi-account reconciliation, and operational systems administration.");
 
   // Check URL parameter or stored preference to enable admin controls
   useEffect(() => {
@@ -105,7 +107,7 @@ export default function App() {
 
       <main className="pt-20">
         {/* Animated Hero section */}
-        <Hero />
+        <Hero selectedHeadline={activeHeadline} />
 
         {/* Detail-driven stats and headshot */}
         <About />
@@ -124,6 +126,9 @@ export default function App() {
 
         {/* Dynamic secure workflow process */}
         <Workflow />
+
+        {/* Career strategy blueprint center */}
+        <CareerCoachBlueprint activeHeadline={activeHeadline} onHeadlineChange={setActiveHeadline} />
 
         {/* Transparent starting packages */}
         <Pricing />
