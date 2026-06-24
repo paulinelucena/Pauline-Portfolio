@@ -1,55 +1,59 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle, ArrowRight, Sparkles, TrendingUp, HelpCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight, TrendingUp } from 'lucide-react';
 
 interface ResultCard {
   title: string;
   category: string;
   metric: string;
   metricLabel: string;
-  initialState: string;
-  resolvedState: string;
-  details: string[];
+  problem: string;
+  action: string;
+  result: string;
+  methodology: string[];
 }
 
 const resultCardsData: ResultCard[] = [
   {
-    title: '14-Month Catch-Up & Clean-Up',
-    category: 'Ledger Maintenance',
-    metric: '14 Months',
-    metricLabel: 'Cleared in 12 Days',
-    initialState: '$180k+ in unclassified expenses, 3 completely unreconciled corporate accounts, and delayed annual tax filing.',
-    resolvedState: '100% ledger accuracy restored in QuickBooks Online, bank statements perfectly matched, and audit-ready reports compiled.',
-    details: [
-      'Categorized 800+ legacy transactions with 100% accuracy',
-      'Reconciled three-year-old discrepancy items',
-      'Provided clear profit and loss sheets for tax preparation'
+    title: 'Ledger Reconciliation & Catch-Up',
+    category: 'Bookkeeping Case Study',
+    metric: '100% Reconciled',
+    metricLabel: 'Restored Ledger Integrity',
+    problem: 'A small business had 14 months of unclassified bank transactions, missing receipts, and completely unreconciled accounts, leading to severe tax filing delays.',
+    action: 'Established a standardized chart of accounts in QuickBooks Online, linked secure bank feeds, matched historic transaction trails, and contacted vendors to retrieve legacy invoices.',
+    result: 'Successfully classified over 800 legacy transactions, matched all bank statement balances with zero discrepancies, and delivered clean, accountant-ready Profit & Loss statements.',
+    methodology: [
+      'Configured automated bank feed matching rules',
+      'Categorized expense items according to IRS guidelines',
+      'Designed a clear missing-receipt audit checklist'
     ]
   },
   {
-    title: 'Accounts Receivable (AR) Optimization',
-    category: 'Cash Flow Management',
-    metric: '-18 Days',
-    metricLabel: 'Reduced Payment Cycle',
-    initialState: 'Outstanding client balances of $45k+ extending past 60 days, driven by manual, inconsistent billing spreadsheets.',
-    resolvedState: 'Centralized invoice system created, automated communication flows deployed, and collections pipeline stabilized.',
-    details: [
-      'Integrated prompt automated reminder sequences',
-      'Developed live cash collection tracking spreadsheets',
-      'Significantly improved agency working capital health'
+    title: 'Inbox Triage & Client Operations',
+    category: 'Administrative Case Study',
+    metric: '-65% Delay',
+    metricLabel: 'Optimized Email Turnaround',
+    problem: 'A busy founder was overwhelmed by 100+ daily inbound client inquiry emails, leading to delayed quotes and missed commercial leads.',
+    action: 'Analyzed historic email patterns, established a nested folder organization hierarchy, drafted 12 personalized response templates, and deployed automation rules.',
+    result: 'Reduced average email turnaround delay by 65%, automated spam filtering, and ensured high-value client leads were flagged and answered within 2 hours.',
+    methodology: [
+      'Designed logical folder systems & automated filters',
+      'Developed objective canned response templates',
+      'Formulated an inbox management standard SOP'
     ]
   },
   {
-    title: 'ERP Migration & Audit Readiness',
-    category: 'System Integration',
-    metric: '-60%',
-    metricLabel: 'Audit Prep Overhead',
-    initialState: 'Fragmented billing files, inconsistent double-entry practices across legacy systems, and tedious manually managed spreadsheets.',
-    resolvedState: 'Mapped and migrated historical financial logs to structured templates fully ready for NetSuite integration.',
-    details: [
-      'Sanitized ledger accounts to ensure system alignment',
-      'Created robust month-end close coordination checklists',
-      'Protected data integrity during complex legacy migrations'
+    title: 'Operations & Tracking Pipeline',
+    category: 'Systems Case Study',
+    metric: '-60% Effort',
+    metricLabel: 'Automated Status Pipeline',
+    problem: 'A team was utilizing fragmented, manually updated text files to track weekly task progress, leading to duplicate entries and slow report compilations.',
+    action: 'Centralized all tracking logs into a secure, dynamic Google Sheets dashboard, configured strict validation lists, and wrote self-summarizing formulas.',
+    result: 'Created a centralized dashboard that reduced weekly progress compilation time from 5 hours to 2 hours, eliminating duplicate entry risks entirely.',
+    methodology: [
+      'Constructed robust dropdown data validation lists',
+      'Created automated visual progress summary charts',
+      'Engineered clean, self-recalculating formulas'
     ]
   }
 ];
@@ -65,17 +69,17 @@ export default function ResultOutcomes() {
         {/* Eyebrow */}
         <div className="flex justify-center mb-5">
           <span className="text-[10px] uppercase font-semibold tracking-[0.25em] px-3 py-1 rounded-full border border-[#4d4354] text-[#ddb7ff]/80 bg-[#131b2e]/40">
-            Transformation Portfolio
+            Methodology & Outcomes
           </span>
         </div>
 
         {/* Header Block */}
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-[#dae2fd] mb-4">
-            Proven Case Outcomes
+            Project Showcases
           </h2>
           <p className="text-sm md:text-base text-[#cfc2d6] leading-relaxed">
-            Real transformations and operational results. Anonymous, outcome-based highlights demonstrating premium financial integrity.
+            Real-world academic and training case studies structured with a rigorous Problem-Action-Result (PAR) methodology.
           </p>
         </div>
 
@@ -117,39 +121,49 @@ export default function ResultOutcomes() {
                   Outcome: {card.metricLabel}
                 </p>
 
-                {/* State comparison cards */}
+                {/* PAR comparison blocks */}
                 <div className="space-y-4 mb-6">
-                  {/* Before */}
+                  {/* Problem */}
                   <div className="p-4 rounded-xl bg-[#0b1326]/40 border border-[#4d4354]/30 relative">
-                    <span className="absolute top-2 right-3 text-[9px] uppercase font-bold tracking-widest text-rose-400/70">
-                      Before
+                    <span className="absolute top-2 right-3 text-[9px] uppercase font-black tracking-widest text-rose-400">
+                      [P] Problem
                     </span>
-                    <p className="text-xs text-[#cfc2d6]/85 leading-relaxed mt-1">
-                      {card.initialState}
+                    <p className="text-xs text-[#cfc2d6]/85 leading-relaxed mt-2.5">
+                      {card.problem}
                     </p>
                   </div>
 
-                  {/* After */}
-                  <div className="p-4 rounded-xl bg-[#110729]/50 border border-[#ddb7ff]/20 relative">
-                    <span className="absolute top-2 right-3 text-[9px] uppercase font-bold tracking-widest text-[#ddb7ff]">
-                      After
+                  {/* Action */}
+                  <div className="p-4 rounded-xl bg-[#0b1326]/40 border border-[#4d4354]/30 relative">
+                    <span className="absolute top-2 right-3 text-[9px] uppercase font-black tracking-widest text-amber-400">
+                      [A] Action Taken
                     </span>
-                    <p className="text-xs text-[#dae2fd]/90 leading-relaxed mt-1 font-medium">
-                      {card.resolvedState}
+                    <p className="text-xs text-[#cfc2d6]/85 leading-relaxed mt-2.5">
+                      {card.action}
+                    </p>
+                  </div>
+
+                  {/* Result */}
+                  <div className="p-4 rounded-xl bg-[#110729]/50 border border-[#ddb7ff]/20 relative">
+                    <span className="absolute top-2 right-3 text-[9px] uppercase font-black tracking-widest text-[#ddb7ff]">
+                      [R] Result Delivered
+                    </span>
+                    <p className="text-xs text-[#dae2fd]/90 leading-relaxed mt-2.5 font-medium">
+                      {card.result}
                     </p>
                   </div>
                 </div>
 
-                {/* Key Execution Steps */}
+                {/* Precise Methodology */}
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-[#cfc2d6]/60 mb-3">
-                    Scope of Work Completed
+                    Precise Methodology
                   </h4>
                   <ul className="space-y-2.5">
-                    {card.details.map((detail, dIdx) => (
-                      <li key={dIdx} className="flex items-start gap-2.5 text-xs text-[#cfc2d6]/80">
+                    {card.methodology.map((step, sIdx) => (
+                      <li key={sIdx} className="flex items-start gap-2.5 text-xs text-[#cfc2d6]/80">
                         <CheckCircle size={13} className="text-[#ddb7ff] shrink-0 mt-0.5" />
-                        <span>{detail}</span>
+                        <span>{step}</span>
                       </li>
                     ))}
                   </ul>
@@ -167,7 +181,7 @@ export default function ResultOutcomes() {
                   }}
                   className="text-xs font-bold text-[#ddb7ff] group-hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
-                  Request Similar Outcome
+                  Request Similar Service
                   <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
                 </button>
               </div>

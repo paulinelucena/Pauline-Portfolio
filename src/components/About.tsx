@@ -51,10 +51,10 @@ export default function About() {
               </div>
               <div>
                 <p className="text-xl md:text-2xl font-bold text-[#ddb7ff] leading-none">
-                  <AnimatedCounter value={3} suffix="+" /> Years
+                  <AnimatedCounter value={10} suffix="" /> Verified
                 </p>
                 <p className="text-[10px] uppercase font-semibold tracking-wider text-[#cfc2d6] mt-1">
-                  Corporate Expertise
+                  Credentials Online
                 </p>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function About() {
           </h2>
 
           <p className="text-[#cfc2d6] text-base md:text-lg leading-relaxed mb-8 font-normal">
-            I specialize in bridging the gap between complex financial data and actionable business insights. My career is built on the foundation of 100% accuracy and the relentless pursuit of organizational excellence.
+            I specialize in providing structured administrative and ledger support for growing businesses. With a strong foundation in Accounting Information Systems (BSAIS) and comprehensive training, I deliver absolute accuracy, clear organization, and peace of mind for busy founders.
           </p>
 
           {/* Stats Grid */}
@@ -95,7 +95,7 @@ export default function About() {
                 <AnimatedCounter value={100} suffix="%" />
               </span>
               <span className="text-[11px] font-semibold text-[#cfc2d6] uppercase tracking-wider block mt-1">
-                Accuracy Rate
+                Accuracy Standard
               </span>
             </motion.div>
 
@@ -119,14 +119,14 @@ export default function About() {
                 <AnimatedCounter value={8} suffix="+" />
               </span>
               <span className="text-[11px] font-semibold text-[#cfc2d6] uppercase tracking-wider block mt-1">
-                ERP/Tools Mastered
+                Core Tools Mastered
               </span>
             </motion.div>
           </div>
 
           {/* Beautiful Blockquote */}
           <blockquote className="italic border-l-4 border-[#4d4354] pl-6 py-2.5 text-[#cfc2d6]/80 text-sm md:text-base leading-relaxed bg-[#131b2e]/35 rounded-r-lg">
-            "Precision isn't just about the numbers; it's about the peace of mind that comes from knowing every decimal is in its place."
+            "Accuracy in administration isn't just a requirement; it's the standard that keeps your daily business operations running seamlessly."
           </blockquote>
         </div>
       </div>

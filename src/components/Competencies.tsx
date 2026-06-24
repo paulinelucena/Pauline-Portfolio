@@ -5,41 +5,43 @@ import { Competency } from '../types';
 const competenciesData: Competency[] = [
   {
     id: 'comp-1',
-    title: 'Accounting Support',
+    title: 'Technical Bookkeeping Support',
     iconName: 'wallet',
     items: [
-      'Accounts Payable & Receivable',
-      'Bank Reconciliation',
-      'Receipt Management',
-      'Invoice Creation & Delivery',
-      'Payment Tracking & Follow-ups',
-      'Bill Logging & Scheduling',
-      'Expense Report Compilation',
-      'Generating Basic Reports',
-      'Data Entry & Clean-up',
+      'Bank Reconciliation & Matching',
+      'Accounts Payable & Receivable Tracking',
+      'Invoice Setup, Creation & Delivery',
+      'Receipt & Expense Digitization',
+      'Payment Reminders & Collection Correspondence',
+      'Ledger Data Entry & Verification',
+      'Basic Financial Report Generation',
+      'QuickBooks Online System Setup',
     ],
   },
   {
     id: 'comp-2',
-    title: 'Client Communication',
+    title: 'Client & Inbox Operations',
     iconName: 'communication',
     items: [
-      'Stakeholder Liaison',
-      'Collection & Payment Follow-up Emails',
-      'Email Management',
-      'Professional Correspondence',
-      'Basic Email Support',
+      'Professional Email Correspondence',
+      'Inbox Triage & Response Templates',
+      'Calendar Scheduling & Coordination',
+      'Stakeholder Liaison support',
+      'FAQ Customer Service Support',
+      'Meeting Minutes & Agenda Drafting',
     ],
   },
   {
     id: 'comp-3',
-    title: 'General Admin Support',
+    title: 'Administrative Systems',
     iconName: 'admin',
     items: [
-      'Data Entry',
-      'Document Organization',
-      'Workflow Optimization',
-      'Email Management'
+      'Google Drive & Dropbox File Organization',
+      'Spreadsheet design (Excel / Sheets)',
+      'Data Cleansing & Record Management',
+      'Document Formatting & Compilation',
+      'Basic Workflow SOP Documentation',
+      'Digital Office Operations Coordination',
     ],
   },
 ];
@@ -78,7 +80,7 @@ export default function Competencies() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-sm md:text-base text-[#cfc2d6] leading-relaxed"
           >
-            Tailored financial and administrative solutions designed to scale with your business needs.
+            Technical administrative and foundational bookkeeping support built on rigorous systems training and verified industry credentials.
           </motion.p>
         </div>
 

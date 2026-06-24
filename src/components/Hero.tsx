@@ -6,7 +6,7 @@ interface HeroProps {
 }
 
 export default function Hero({ selectedHeadline }: HeroProps) {
-  const defaultHeadline = "With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.";
+  const defaultHeadline = "Accounting Information Systems graduate and Certified QuickBooks ProAdvisor offering structured administrative support, ledger maintenance, and data organization.";
   
   return (
     <section
@@ -27,7 +27,7 @@ export default function Hero({ selectedHeadline }: HeroProps) {
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#ddb7ff] mb-5 px-3 py-1.5 rounded-full border border-[#ddb7ff]/20 bg-[#ddb7ff]/5"
           >
             <Sparkles size={12} />
-            Executive Accounting Support
+            Virtual Operations & Admin
           </motion.p>
 
           <motion.h1
@@ -36,9 +36,9 @@ export default function Hero({ selectedHeadline }: HeroProps) {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-[44px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight text-gradient leading-[1.05] mb-6"
           >
-            Your Books.
+            Your Office.
             <br />
-            In Good Hands.
+            In Safe Hands.
           </motion.h1>
 
           <motion.p
@@ -86,7 +86,7 @@ export default function Hero({ selectedHeadline }: HeroProps) {
             <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
             <span>Virtual Support</span>
             <span className="h-1 w-1 rounded-full bg-[#4d4354]" />
-            <span>3 Years Exp.</span>
+            <span>TESDA Trained</span>
           </motion.div>
         </div>
 
@@ -160,8 +160,8 @@ export default function Hero({ selectedHeadline }: HeroProps) {
               <ShieldCheck size={20} className="text-[#ddb7ff]" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-[#7a6f86]">Books closed</p>
-              <p className="text-base font-semibold text-[#dae2fd]">On time, every month</p>
+              <p className="text-xs uppercase tracking-wider text-[#7a6f86]">Support Delivered</p>
+              <p className="text-base font-semibold text-[#dae2fd]">Accurate & on time</p>
             </div>
           </motion.div>
         </motion.div>
