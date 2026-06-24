@@ -384,33 +384,58 @@ nav {
   .shape-3d { width: 60px !important; height: 60px !important; opacity: 0.25 !important; }
   .shape-3d.s5, .shape-3d.s7, .shape-3d.s3, .shape-3d.s8 { display: none; }
 
-  /* Modal: full-screen stacked layout */
-  .cert-modal { padding: 1rem; align-items: flex-start; overflow-y: auto; }
+  /* Modal: natural page-scroll stacked layout (ported from Certificates_1) */
+  .cert-modal {
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 15px 0;
+  }
   .cert-modal.active { display: flex; }
   .cert-modal-inner {
     grid-template-columns: 1fr;
-    padding: 3.5rem 1.2rem 4.5rem;
-    gap: 1.5rem;
-    min-height: unset;
+    width: 94%;
+    margin: 0 auto;
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    overflow: visible;
+    padding: 50px 20px 25px;
+    gap: 1.25rem;
     border-radius: 6px;
-    margin: auto;
-    width: 100%;
     align-items: start;
   }
   .cert-modal-inner::before, .cert-modal-inner::after { display: none; }
   .modal-close { top: 12px; right: 12px; }
   .modal-cert-img { padding: 0; justify-content: center; }
-  .modal-cert-img img { max-height: 55vw; width: 100%; height: auto; object-fit: contain; }
-  .modal-panel { padding: 0 0 0.5rem; }
-  .modal-title { font-size: 1.35rem; }
+  .modal-cert-img img {
+    max-height: none;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .modal-panel {
+    padding: 25px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .modal-title { font-size: 1.4rem; }
+  /* Footer flows inline (not fixed) and stacks */
   .modal-footer {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 0.7rem 1rem;
-    flex-wrap: wrap; gap: 0.5rem;
+    position: static;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
     border-radius: 0 0 6px 6px;
   }
-  .modal-footer-left { font-size: 0.65rem; gap: 0.5rem; }
-  .modal-footer-left > span:last-child { display: none; }
+  .modal-footer-left {
+    justify-content: center;
+    font-size: 0.65rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .modal-nav { justify-content: center; }
   .modal-nav-btn { width: 32px; height: 32px; }
 }
 
