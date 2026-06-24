@@ -39,7 +39,7 @@ export default function AdminPortal({
     {
       id: 'var-1',
       label: 'Focus: Systems & Ledger Integrity (Primary/Default)',
-      text: 'Accounting Information Systems graduate and Certified QuickBooks ProAdvisor offering structured administrative support, ledger maintenance, and data organization.'
+      text: 'With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.'
     },
     {
       id: 'var-2',

@@ -19,7 +19,7 @@ export default function App() {
   const [isAdminModeEnabled, setIsAdminModeEnabled] = useState(false);
   const [activeHeadline, setActiveHeadline] = useState<string>(() => {
     return localStorage.getItem('pauline_lucena_headline') || 
-           "Accounting Information Systems graduate and Certified QuickBooks ProAdvisor offering structured administrative support, ledger maintenance, and data organization.";
+           "With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.";
   });
 
   const handleHeadlineChange = (newHeadline: string) => {
@@ -29,6 +29,12 @@ export default function App() {
 
   // Check URL parameter or stored preference to enable admin controls
   useEffect(() => {
+    const savedHeadline = localStorage.getItem('pauline_lucena_headline');
+    if (savedHeadline === "Accounting Information Systems graduate and Certified QuickBooks ProAdvisor offering structured administrative support, ledger maintenance, and data organization.") {
+      localStorage.setItem('pauline_lucena_headline', "With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.");
+      setActiveHeadline("With a rigorous background in corporate accounting and executive administration, I bring precision, transparency, and high-level strategy to your financial operations.");
+    }
+
     const params = new URLSearchParams(window.location.search);
     const hasAdminQuery = params.get('admin') === 'true';
     const isSavedAdmin = localStorage.getItem('pauline_lucena_admin_enabled') === 'true';

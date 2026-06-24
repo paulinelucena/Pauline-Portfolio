@@ -102,23 +102,20 @@ export default function Workflow() {
 
         {/* Dynamic call to action button */}
         <div className="flex justify-center">
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.02 }}
             whileActive={{ scale: 0.98 }}
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="bg-[#ddb7ff] text-[#490080] hover:brightness-110 px-8 py-4 rounded-xl font-bold text-xs sm:text-sm tracking-widest uppercase flex items-center gap-2.5 shadow-[0_4px_24px_rgba(221,183,255,0.25)] cursor-pointer"
+            href="https://calendly.com/paulinelucena27/30min"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-[#ddb7ff] text-[#490080] hover:brightness-110 px-8 py-4 rounded-xl font-bold text-xs sm:text-sm tracking-widest uppercase flex items-center gap-2.5 shadow-[0_4px_24px_rgba(221,183,255,0.25)] cursor-pointer text-center inline-flex"
           >
             BOOK FREE DISCOVERY CALL
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock">
               <circle cx="12" cy="12" r="10"/>
               <polyline points="12 6 12 12 16 14"/>
             </svg>
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </section>
