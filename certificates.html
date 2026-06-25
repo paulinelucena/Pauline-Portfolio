@@ -207,7 +207,6 @@ nav {
   background: var(--modal-inner-bg);
   border: 1px solid var(--border-bright);
   border-radius: 6px;
-  overflow: hidden;
 }
 .cert-modal-body {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -232,6 +231,7 @@ nav {
   font-size: 1rem; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: 0.25s;
+  z-index: 100;
 }
 .modal-close:hover { background: rgba(192,132,252,0.18); }
 
