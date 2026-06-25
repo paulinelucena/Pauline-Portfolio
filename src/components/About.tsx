@@ -116,7 +116,7 @@ export default function About() {
                 className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#ddb7ff] origin-top"
               />
               <span className="text-3xl font-extrabold block text-[#dae2fd] tracking-tight group-hover:text-[#ddb7ff] transition-colors">
-                <AnimatedCounter value={8} suffix="+" />
+                <AnimatedCounter value={9} suffix="+" />
               </span>
               <span className="text-[11px] font-semibold text-[#cfc2d6] uppercase tracking-wider block mt-1">
                 ERP/Tools Mastered
