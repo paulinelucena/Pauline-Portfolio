@@ -32,7 +32,7 @@ const pricingTiers: PricingTier[] = [
       'Monthly summary report',
       'Email support within 1 business day'
     ],
-    ctaText: 'GET A QUOTE'
+    ctaText: 'Book a Call →'
   },
   {
     id: 'growth',
@@ -51,7 +51,7 @@ const pricingTiers: PricingTier[] = [
       'Calendar & email management',
       'Weekly check-in call (30 min)'
     ],
-    ctaText: 'GET A QUOTE',
+    ctaText: 'Book a Call →',
     highlighted: true
   },
   {
@@ -69,7 +69,7 @@ const pricingTiers: PricingTier[] = [
       'Custom reporting & dashboards',
       'Priority turnaround'
     ],
-    ctaText: 'GET A QUOTE'
+    ctaText: 'Book a Call →'
   }
 ];
 
