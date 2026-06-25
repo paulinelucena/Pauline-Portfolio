@@ -22,7 +22,7 @@ const pricingTiers: PricingTier[] = [
     name: 'Essentials',
     description: 'For freelancers or small businesses that need clean books without the overhead.',
     subEyebrow: 'STARTING FROM',
-    price: '$5',
+    price: '$7',
     priceSuffix: '/hr',
     priceSubtext: 'or from $1000 / month · billed monthly',
     features: [
@@ -40,9 +40,9 @@ const pricingTiers: PricingTier[] = [
     name: 'Full Support',
     description: 'For growing businesses that need a reliable ongoing finance & admin partner.',
     subEyebrow: 'STARTING FROM',
-    price: '$7',
+    price: '$10',
     priceSuffix: '/hr',
-    priceSubtext: 'or from $1500 / month · billed monthly',
+    priceSubtext: 'or from $2000 / month · billed monthly',
     features: [
       'Everything in Essentials',
       'Multi-account reconciliation',
