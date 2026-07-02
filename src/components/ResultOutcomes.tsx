@@ -15,45 +15,87 @@ interface ResultCard {
 
 const resultCardsData: ResultCard[] = [
   {
-    title: 'Ledger Reconciliation & Catch-Up',
-    category: 'Bookkeeping Case Study',
+    title: 'Month-End AP/AR Cleanup & Close',
+    category: 'AP/AR Case Study',
     metric: '100% Reconciled',
-    metricLabel: 'Restored Ledger Integrity',
-    problem: 'A small business had 14 months of unclassified bank transactions, missing receipts, and completely unreconciled accounts, leading to severe tax filing delays.',
-    action: 'Established a standardized chart of accounts in QuickBooks Online, linked secure bank feeds, matched historic transaction trails, and contacted vendors to retrieve legacy invoices.',
-    result: 'Successfully classified over 800 legacy transactions, matched all bank statement balances with zero discrepancies, and delivered clean, accountant-ready Profit & Loss statements.',
+    metricLabel: 'Zero Open Items at Close',
+    problem: 'A month-end ledger had 14 unclassified transactions and 6 bills with no matching PO or receipt, leaving the close checklist at 40% complete two days before deadline.',
+    action: 'Mapped every entry to the correct GL account, matched outstanding bills to POs and receipts, and cleared unapplied customer payments.',
+    result: 'Closed with zero unclassified entries and zero unmatched bills, taking the close checklist from 12/30 to 30/30 tasks a full day early.',
     methodology: [
-      'Configured automated bank feed matching rules',
-      'Categorized expense items according to IRS guidelines',
-      'Designed a clear missing-receipt audit checklist'
+      'Mapped entries to a standardized chart of accounts',
+      'Matched bills against POs, receipts, and vendor records',
+      'Cleared unapplied payments and resolved overpayments'
     ]
   },
   {
-    title: 'Inbox Triage & Client Operations',
-    category: 'Administrative Case Study',
-    metric: '-65% Delay',
-    metricLabel: 'Optimized Email Turnaround',
-    problem: 'A busy founder was overwhelmed by 100+ daily inbound client inquiry emails, leading to delayed quotes and missed commercial leads.',
-    action: 'Analyzed historic email patterns, established a nested folder organization hierarchy, drafted 12 personalized response templates, and deployed automation rules.',
-    result: 'Reduced average email turnaround delay by 65%, automated spam filtering, and ensured high-value client leads were flagged and answered within 2 hours.',
+    title: 'PTO Accrual Formula Audit & Correction',
+    category: 'Payroll Case Study',
+    metric: '0 Formula Errors',
+    metricLabel: 'Corrected Balances, Full Team',
+    problem: "A PTO tracker returned #REF! and #VALUE! errors, plus negative and overstated balances, for every employee whose salary period changed mid-cycle.",
+    action: "Traced the error to a proration formula that didn't adjust for mid-period transitions, rebuilt the calculation logic, and cross-checked balances against policy.",
+    result: 'Corrected balances for all 5 affected employees and verified accuracy across the full 22-person team, with an audit note logged for future changes.',
     methodology: [
-      'Designed logical folder systems & automated filters',
-      'Developed objective canned response templates',
-      'Formulated an inbox management standard SOP'
+      'Traced formula errors to a proration logic gap',
+      'Rebuilt accrual formulas with mid-period proration',
+      'Verified all balances against written PTO policy'
     ]
   },
   {
-    title: 'Operations & Tracking Pipeline',
-    category: 'Systems Case Study',
-    metric: '-60% Effort',
-    metricLabel: 'Automated Status Pipeline',
-    problem: 'A team was utilizing fragmented, manually updated text files to track weekly task progress, leading to duplicate entries and slow report compilations.',
-    action: 'Centralized all tracking logs into a secure, dynamic Google Sheets dashboard, configured strict validation lists, and wrote self-summarizing formulas.',
-    result: 'Created a centralized dashboard that reduced weekly progress compilation time from 5 hours to 2 hours, eliminating duplicate entry risks entirely.',
+    title: 'Bank & Credit Card Reconciliation',
+    category: 'Reconciliation Case Study',
+    metric: '$0.00 Variance',
+    metricLabel: 'Full Variance Resolution',
+    problem: 'A $4,318.62 gap between the bank statement and book balance was blocking month-end close, with 5 transactions unrecorded, mismatched, or duplicated.',
+    action: 'Traced each discrepancy to source documentation, recorded a missing wire and bank fee, corrected a mismatched CC settlement, and removed a duplicate entry.',
+    result: 'Reconciled bank and book balances to the penny, closing the month with a $0.00 variance and a clean file ready for audit.',
     methodology: [
-      'Constructed robust dropdown data validation lists',
-      'Created automated visual progress summary charts',
-      'Engineered clean, self-recalculating formulas'
+      'Traced every unmatched line to source documentation',
+      'Corrected mismatched CC settlement postings',
+      'Verified final tie-out to $0.00 variance'
+    ]
+  },
+  {
+    title: 'Client Credit File & Database Cleanup',
+    category: 'Credit & Data Case Study',
+    metric: '100% Synced',
+    metricLabel: 'One Source of Truth',
+    problem: 'Client credit records were split across the internal system, a G-Sheet database, and paper CAR forms, leaving 4 clients with incomplete trade reference checks and 7 approvals stalled.',
+    action: 'Completed the outstanding trade reference calls, filed missing CAR forms, resolved a duplicate credit file, and reconciled every record between the system and database.',
+    result: 'Brought system-to-database accuracy from 62% to 100% and cleared all pending approvals, giving credit staff one reliable source per client.',
+    methodology: [
+      'Completed all outstanding trade reference checks',
+      'Reconciled records across system and G-Sheet database',
+      'Resolved duplicate and incomplete CAR forms'
+    ]
+  },
+  {
+    title: 'Revenue & Gross Profit Dashboard',
+    category: 'Reporting Case Study',
+    metric: '+101% of Goal',
+    metricLabel: 'Automated MTD/YTD Reporting',
+    problem: 'Stakeholders received only a raw daily data export with no MTD/YTD rollup or goal comparison, requiring a manual scan of the numbers every week.',
+    action: 'Built an automated MTD/YTD summary with goal-vs-actual tracking, trailing averages, and a daily trend chart on top of the existing raw feed.',
+    result: 'Delivered a dashboard that closed December 1% ahead of the gross profit goal and cut weekly reporting prep to a 5-second read.',
+    methodology: [
+      'Built automated MTD/YTD rollup formulas',
+      'Added goal-vs-actual and trailing average tracking',
+      'Designed a stakeholder-ready daily trend view'
+    ]
+  },
+  {
+    title: 'Past-Due Collections & Follow-Up System',
+    category: 'Collections Case Study',
+    metric: '12 Accounts Cleared',
+    metricLabel: 'Streamlined Weekly Collections',
+    problem: 'Past-due accounts were tracked inconsistently across sales reps, with follow-up emails sent ad hoc and no unified view of overpayments or unapplied credits tied to open balances.',
+    action: 'Built a standardized weekly collections report segmented by sales rep, established a consistent past-due follow-up email cadence, and cross-referenced unapplied payments against open balances.',
+    result: 'Cleared 12 aging past-due accounts in the first cycle and gave every sales rep a reliable, accurate weekly view of their outstanding balances.',
+    methodology: [
+      'Segmented past-due report by sales rep, updated weekly',
+      'Standardized the collections follow-up email cadence',
+      'Cross-checked unapplied payments against open balances'
     ]
   }
 ];
@@ -79,7 +121,7 @@ export default function ResultOutcomes() {
             Project Showcases
           </h2>
           <p className="text-sm md:text-base text-[#cfc2d6] leading-relaxed">
-            Real-world academic and training case studies structured with a rigorous Problem-Action-Result (PAR) methodology.
+            Real-world accounting and finance support case studies structured with a rigorous Problem-Action-Result (PAR) methodology.
           </p>
         </div>
 
